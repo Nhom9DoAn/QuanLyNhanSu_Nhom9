@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6F86F576-02FC-4B9A-AF67-ACD1BC960245}</ProjectGuid>
+    <ProjectGuid>{6BB99E31-29E3-40B2-8148-34D19AC550AD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Main</RootNamespace>
-    <AssemblyName>Main</AssemblyName>
+    <RootNamespace>KimPhuong</RootNamespace>
+    <AssemblyName>KimPhuong</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,16 +54,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmTrangChu.cs">
+    <Compile Include="GUI\frmHocVan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTrangChu.Designer.cs">
-      <DependentUpon>frmTrangChu.cs</DependentUpon>
+    <Compile Include="GUI\frmHocVan.Designer.cs">
+      <DependentUpon>frmHocVan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmNghiPhep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmNghiPhep.Designer.cs">
+      <DependentUpon>frmNghiPhep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmPhongBan.Designer.cs">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmTrangChu.resx">
-      <DependentUpon>frmTrangChu.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\frmHocVan.resx">
+      <DependentUpon>frmHocVan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmPhongBan.resx">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,10 +104,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KimPhuong\KimPhuong.csproj">
-      <Project>{6bb99e31-29e3-40b2-8148-34d19ac550ad}</Project>
-      <Name>KimPhuong</Name>
-    </ProjectReference>
+    <Folder Include="BUL\" />
+    <Folder Include="DAL\" />
+    <Folder Include="DTO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

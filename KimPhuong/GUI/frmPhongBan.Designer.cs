@@ -1,6 +1,6 @@
-﻿namespace Main
+﻿namespace KimPhuong
 {
-    partial class frmTrangChu
+    partial class frmPhongBan
     {
         /// <summary>
         /// Required designer variable.
@@ -30,24 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Aside
+            // frmPhongBan
             // 
-            this.Aside.LineColor = System.Drawing.Color.Black;
-            this.Aside.Location = new System.Drawing.Point(0, 72);
-            this.Aside.Size = new System.Drawing.Size(250, 378);
-            // 
-            // Header
-            // 
-            this.Header.Size = new System.Drawing.Size(800, 37);
-            // 
-            // frmTrangChu
-            // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "frmTrangChu";
-            this.Text = "Trang chủ";
-            this.ZoomScaleRect = new System.Drawing.Rectangle(22, 22, 800, 450);
+            this.Name = "frmPhongBan";
+            this.Text = "QUẢN LÝ PHÒNG BAN";
             this.ResumeLayout(false);
 
         }
