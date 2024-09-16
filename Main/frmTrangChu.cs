@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Sunny.UI;
+namespace Main
+{
+    public partial class frmTrangChu : UIHeaderAsideMainFrame
+    {
+        public frmTrangChu()
+        {
+            InitializeComponent();
+            int pageIndex = 1000;
+            TreeNode root = Aside.CreateNode("QUẢN LÝ PHÒNG BAN", 61451, 24, pageIndex);
+            //Aside.CreateChildNode(root, AddPage(new frmPhongBan(), ++pageIndex));
+
+        }
+    }
+}
