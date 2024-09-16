@@ -17,7 +17,12 @@ namespace Main
             InitializeComponent();
             int pageIndex = 1000;
             TreeNode root = Aside.CreateNode("QUẢN LÝ PHÒNG BAN", 61451, 24, pageIndex);
-            //Aside.CreateChildNode(root, AddPage(new frmPhongBan(), ++pageIndex));
+            Aside.CreateChildNode(root, AddPage(new frmPhongBan(), ++pageIndex));
+
+            pageIndex = 2000;
+            root = Aside.CreateNode("QUẢN LÝ NHÂN SỰ", 61451, 24, pageIndex);
+            Aside.CreateChildNode(root, AddPage(new frmNghiPhep(), ++pageIndex));
+            Aside.CreateChildNode(root, AddPage(new frmHocVan(), ++pageIndex));
 
         }
     }
