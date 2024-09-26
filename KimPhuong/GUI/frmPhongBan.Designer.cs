@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMaPB = new System.Windows.Forms.Label();
             this.lblTenPB = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
@@ -63,10 +64,10 @@
             this.lblMaPB.AutoSize = true;
             this.lblMaPB.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblMaPB.Font = new System.Drawing.Font("Arial", 13F);
-            this.lblMaPB.Location = new System.Drawing.Point(258, 0);
+            this.lblMaPB.Location = new System.Drawing.Point(362, 0);
             this.lblMaPB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMaPB.Name = "lblMaPB";
-            this.lblMaPB.Size = new System.Drawing.Size(136, 45);
+            this.lblMaPB.Size = new System.Drawing.Size(196, 31);
             this.lblMaPB.TabIndex = 0;
             this.lblMaPB.Text = "Mã Phòng Ban";
             this.lblMaPB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -76,10 +77,10 @@
             this.lblTenPB.AutoSize = true;
             this.lblTenPB.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTenPB.Font = new System.Drawing.Font("Arial", 13F);
-            this.lblTenPB.Location = new System.Drawing.Point(258, 45);
+            this.lblTenPB.Location = new System.Drawing.Point(362, 45);
             this.lblTenPB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenPB.Name = "lblTenPB";
-            this.lblTenPB.Size = new System.Drawing.Size(136, 45);
+            this.lblTenPB.Size = new System.Drawing.Size(196, 31);
             this.lblTenPB.TabIndex = 1;
             this.lblTenPB.Text = "Tên Phòng Ban";
             this.lblTenPB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -89,10 +90,10 @@
             this.lblDiaChi.AutoSize = true;
             this.lblDiaChi.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDiaChi.Font = new System.Drawing.Font("Arial", 13F);
-            this.lblDiaChi.Location = new System.Drawing.Point(258, 90);
+            this.lblDiaChi.Location = new System.Drawing.Point(362, 90);
             this.lblDiaChi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(136, 31);
+            this.lblDiaChi.Size = new System.Drawing.Size(196, 31);
             this.lblDiaChi.TabIndex = 2;
             this.lblDiaChi.Text = "Địa Chỉ";
             this.lblDiaChi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -102,10 +103,10 @@
             this.lblSoDienThoai.AutoSize = true;
             this.lblSoDienThoai.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblSoDienThoai.Font = new System.Drawing.Font("Arial", 13F);
-            this.lblSoDienThoai.Location = new System.Drawing.Point(258, 135);
+            this.lblSoDienThoai.Location = new System.Drawing.Point(362, 135);
             this.lblSoDienThoai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSoDienThoai.Name = "lblSoDienThoai";
-            this.lblSoDienThoai.Size = new System.Drawing.Size(136, 45);
+            this.lblSoDienThoai.Size = new System.Drawing.Size(196, 31);
             this.lblSoDienThoai.TabIndex = 3;
             this.lblSoDienThoai.Text = "Số Điện Thoại";
             this.lblSoDienThoai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -115,10 +116,10 @@
             this.lblTongNV.AutoSize = true;
             this.lblTongNV.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTongNV.Font = new System.Drawing.Font("Arial", 13F);
-            this.lblTongNV.Location = new System.Drawing.Point(806, 180);
+            this.lblTongNV.Location = new System.Drawing.Point(1137, 180);
             this.lblTongNV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTongNV.Name = "lblTongNV";
-            this.lblTongNV.Size = new System.Drawing.Size(119, 45);
+            this.lblTongNV.Size = new System.Drawing.Size(171, 31);
             this.lblTongNV.TabIndex = 4;
             this.lblTongNV.Text = "Số nhân viên";
             this.lblTongNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -128,10 +129,10 @@
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiaChi.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtDiaChi.Enabled = false;
-            this.txtDiaChi.Location = new System.Drawing.Point(402, 93);
+            this.txtDiaChi.Location = new System.Drawing.Point(566, 93);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(396, 35);
+            this.txtDiaChi.Size = new System.Drawing.Size(563, 37);
             this.txtDiaChi.TabIndex = 5;
             // 
             // txtTongNV
@@ -139,10 +140,10 @@
             this.txtTongNV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTongNV.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtTongNV.Enabled = false;
-            this.txtTongNV.Location = new System.Drawing.Point(933, 183);
+            this.txtTongNV.Location = new System.Drawing.Point(1316, 183);
             this.txtTongNV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTongNV.Name = "txtTongNV";
-            this.txtTongNV.Size = new System.Drawing.Size(120, 35);
+            this.txtTongNV.Size = new System.Drawing.Size(174, 37);
             this.txtTongNV.TabIndex = 9;
             // 
             // txtMaPhongBan
@@ -150,10 +151,10 @@
             this.txtMaPhongBan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaPhongBan.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtMaPhongBan.Enabled = false;
-            this.txtMaPhongBan.Location = new System.Drawing.Point(402, 3);
+            this.txtMaPhongBan.Location = new System.Drawing.Point(566, 3);
             this.txtMaPhongBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtMaPhongBan.Name = "txtMaPhongBan";
-            this.txtMaPhongBan.Size = new System.Drawing.Size(396, 35);
+            this.txtMaPhongBan.Size = new System.Drawing.Size(563, 37);
             this.txtMaPhongBan.TabIndex = 10;
             // 
             // txtSDT
@@ -161,11 +162,11 @@
             this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSDT.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtSDT.Enabled = false;
-            this.txtSDT.Location = new System.Drawing.Point(402, 138);
+            this.txtSDT.Location = new System.Drawing.Point(566, 138);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSDT.Mask = "(999) 000-0000";
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(396, 35);
+            this.txtSDT.Size = new System.Drawing.Size(563, 37);
             this.txtSDT.TabIndex = 12;
             // 
             // tableLayoutPanel2
@@ -198,7 +199,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1057, 225);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1494, 225);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // txtTenPhongBan
@@ -206,10 +207,10 @@
             this.txtTenPhongBan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTenPhongBan.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtTenPhongBan.Enabled = false;
-            this.txtTenPhongBan.Location = new System.Drawing.Point(402, 48);
+            this.txtTenPhongBan.Location = new System.Drawing.Point(566, 48);
             this.txtTenPhongBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTenPhongBan.Name = "txtTenPhongBan";
-            this.txtTenPhongBan.Size = new System.Drawing.Size(396, 35);
+            this.txtTenPhongBan.Size = new System.Drawing.Size(563, 37);
             this.txtTenPhongBan.TabIndex = 11;
             // 
             // tableLayoutPanel1
@@ -226,7 +227,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1065, 577);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1502, 577);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // dgvPhongBan
@@ -236,6 +237,14 @@
             this.dgvPhongBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhongBan.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvPhongBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhongBan.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPhongBan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhongBan.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvPhongBan.Location = new System.Drawing.Point(4, 3);
@@ -245,7 +254,7 @@
             this.dgvPhongBan.RowHeadersWidth = 62;
             this.dgvPhongBan.RowTemplate.Height = 28;
             this.dgvPhongBan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhongBan.Size = new System.Drawing.Size(1057, 340);
+            this.dgvPhongBan.Size = new System.Drawing.Size(1494, 340);
             this.dgvPhongBan.TabIndex = 0;
             // 
             // btnHuy
@@ -334,7 +343,7 @@
             this.btnHuy});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1065, 40);
+            this.toolStrip.Size = new System.Drawing.Size(1502, 40);
             this.toolStrip.TabIndex = 2;
             this.toolStrip.Text = "Menu";
             // 
@@ -349,9 +358,10 @@
             // frmPhongBan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1065, 617);
+            this.ClientSize = new System.Drawing.Size(1502, 617);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip);
+            this.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmPhongBan";
             this.Text = "QUẢN LÝ PHÒNG BAN";
             this.tableLayoutPanel2.ResumeLayout(false);
