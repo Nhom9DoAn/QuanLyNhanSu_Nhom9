@@ -33,7 +33,7 @@
             // frmHocVan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1162, 498);
+            this.ClientSize = new System.Drawing.Size(1371, 652);
             this.Name = "frmHocVan";
             this.ResumeLayout(false);
 

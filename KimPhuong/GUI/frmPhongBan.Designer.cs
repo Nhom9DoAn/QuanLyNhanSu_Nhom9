@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMaPB = new System.Windows.Forms.Label();
             this.lblTenPB = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
@@ -37,26 +36,15 @@
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTongNV = new System.Windows.Forms.TextBox();
             this.txtMaPhongBan = new System.Windows.Forms.TextBox();
-            this.txtSDT = new System.Windows.Forms.MaskedTextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtTenPhongBan = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvPhongBan = new System.Windows.Forms.DataGridView();
-            this.btnHuy = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tìmTheoMãToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tìmTheoTênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnTim = new System.Windows.Forms.ToolStripDropDownButton();
-            this.btnRefresh = new System.Windows.Forms.ToolStripButton();
-            this.btnSua = new System.Windows.Forms.ToolStripButton();
-            this.btnXoa = new System.Windows.Forms.ToolStripButton();
-            this.btnThem = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.btnLuu = new System.Windows.Forms.ToolStripButton();
+            this.menucontrol1 = new DynamicControl.menucontrol();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhongBan)).BeginInit();
-            this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMaPB
@@ -64,10 +52,10 @@
             this.lblMaPB.AutoSize = true;
             this.lblMaPB.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblMaPB.Font = new System.Drawing.Font("Arial", 13F);
-            this.lblMaPB.Location = new System.Drawing.Point(362, 0);
+            this.lblMaPB.Location = new System.Drawing.Point(500, 0);
             this.lblMaPB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMaPB.Name = "lblMaPB";
-            this.lblMaPB.Size = new System.Drawing.Size(196, 31);
+            this.lblMaPB.Size = new System.Drawing.Size(275, 31);
             this.lblMaPB.TabIndex = 0;
             this.lblMaPB.Text = "Mã Phòng Ban";
             this.lblMaPB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -77,10 +65,10 @@
             this.lblTenPB.AutoSize = true;
             this.lblTenPB.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTenPB.Font = new System.Drawing.Font("Arial", 13F);
-            this.lblTenPB.Location = new System.Drawing.Point(362, 45);
+            this.lblTenPB.Location = new System.Drawing.Point(500, 46);
             this.lblTenPB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenPB.Name = "lblTenPB";
-            this.lblTenPB.Size = new System.Drawing.Size(196, 31);
+            this.lblTenPB.Size = new System.Drawing.Size(275, 31);
             this.lblTenPB.TabIndex = 1;
             this.lblTenPB.Text = "Tên Phòng Ban";
             this.lblTenPB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -90,10 +78,10 @@
             this.lblDiaChi.AutoSize = true;
             this.lblDiaChi.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblDiaChi.Font = new System.Drawing.Font("Arial", 13F);
-            this.lblDiaChi.Location = new System.Drawing.Point(362, 90);
+            this.lblDiaChi.Location = new System.Drawing.Point(500, 92);
             this.lblDiaChi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(196, 31);
+            this.lblDiaChi.Size = new System.Drawing.Size(275, 31);
             this.lblDiaChi.TabIndex = 2;
             this.lblDiaChi.Text = "Địa Chỉ";
             this.lblDiaChi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -103,10 +91,10 @@
             this.lblSoDienThoai.AutoSize = true;
             this.lblSoDienThoai.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblSoDienThoai.Font = new System.Drawing.Font("Arial", 13F);
-            this.lblSoDienThoai.Location = new System.Drawing.Point(362, 135);
+            this.lblSoDienThoai.Location = new System.Drawing.Point(500, 138);
             this.lblSoDienThoai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSoDienThoai.Name = "lblSoDienThoai";
-            this.lblSoDienThoai.Size = new System.Drawing.Size(196, 31);
+            this.lblSoDienThoai.Size = new System.Drawing.Size(275, 31);
             this.lblSoDienThoai.TabIndex = 3;
             this.lblSoDienThoai.Text = "Số Điện Thoại";
             this.lblSoDienThoai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -116,10 +104,10 @@
             this.lblTongNV.AutoSize = true;
             this.lblTongNV.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTongNV.Font = new System.Drawing.Font("Arial", 13F);
-            this.lblTongNV.Location = new System.Drawing.Point(1137, 180);
+            this.lblTongNV.Location = new System.Drawing.Point(1572, 184);
             this.lblTongNV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTongNV.Name = "lblTongNV";
-            this.lblTongNV.Size = new System.Drawing.Size(171, 31);
+            this.lblTongNV.Size = new System.Drawing.Size(240, 31);
             this.lblTongNV.TabIndex = 4;
             this.lblTongNV.Text = "Số nhân viên";
             this.lblTongNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -129,10 +117,10 @@
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiaChi.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtDiaChi.Enabled = false;
-            this.txtDiaChi.Location = new System.Drawing.Point(566, 93);
+            this.txtDiaChi.Location = new System.Drawing.Point(783, 95);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(563, 37);
+            this.txtDiaChi.Size = new System.Drawing.Size(781, 37);
             this.txtDiaChi.TabIndex = 5;
             // 
             // txtTongNV
@@ -140,10 +128,10 @@
             this.txtTongNV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTongNV.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtTongNV.Enabled = false;
-            this.txtTongNV.Location = new System.Drawing.Point(1316, 183);
+            this.txtTongNV.Location = new System.Drawing.Point(1820, 187);
             this.txtTongNV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTongNV.Name = "txtTongNV";
-            this.txtTongNV.Size = new System.Drawing.Size(174, 37);
+            this.txtTongNV.Size = new System.Drawing.Size(241, 37);
             this.txtTongNV.TabIndex = 9;
             // 
             // txtMaPhongBan
@@ -151,23 +139,11 @@
             this.txtMaPhongBan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaPhongBan.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtMaPhongBan.Enabled = false;
-            this.txtMaPhongBan.Location = new System.Drawing.Point(566, 3);
+            this.txtMaPhongBan.Location = new System.Drawing.Point(783, 3);
             this.txtMaPhongBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtMaPhongBan.Name = "txtMaPhongBan";
-            this.txtMaPhongBan.Size = new System.Drawing.Size(563, 37);
+            this.txtMaPhongBan.Size = new System.Drawing.Size(781, 37);
             this.txtMaPhongBan.TabIndex = 10;
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSDT.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtSDT.Enabled = false;
-            this.txtSDT.Location = new System.Drawing.Point(566, 138);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtSDT.Mask = "(999) 000-0000";
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(563, 37);
-            this.txtSDT.TabIndex = 12;
             // 
             // tableLayoutPanel2
             // 
@@ -190,7 +166,7 @@
             this.tableLayoutPanel2.Controls.Add(this.txtTenPhongBan, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtSDT, 3, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 349);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 443);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
@@ -199,7 +175,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1494, 225);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(2065, 230);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // txtTenPhongBan
@@ -207,27 +183,40 @@
             this.txtTenPhongBan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTenPhongBan.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtTenPhongBan.Enabled = false;
-            this.txtTenPhongBan.Location = new System.Drawing.Point(566, 48);
+            this.txtTenPhongBan.Location = new System.Drawing.Point(783, 49);
             this.txtTenPhongBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTenPhongBan.Name = "txtTenPhongBan";
-            this.txtTenPhongBan.Size = new System.Drawing.Size(563, 37);
+            this.txtTenPhongBan.Size = new System.Drawing.Size(781, 37);
             this.txtTenPhongBan.TabIndex = 11;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSDT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSDT.Enabled = false;
+            this.txtSDT.Location = new System.Drawing.Point(782, 141);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(783, 37);
+            this.txtSDT.TabIndex = 12;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.dgvPhongBan, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dgvPhongBan, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.menucontrol1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 40);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1502, 577);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(2073, 676);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // dgvPhongBan
@@ -235,132 +224,36 @@
             this.dgvPhongBan.AllowUserToAddRows = false;
             this.dgvPhongBan.AllowUserToDeleteRows = false;
             this.dgvPhongBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPhongBan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPhongBan.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvPhongBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhongBan.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPhongBan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhongBan.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvPhongBan.Location = new System.Drawing.Point(4, 3);
+            this.dgvPhongBan.Location = new System.Drawing.Point(4, 89);
             this.dgvPhongBan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvPhongBan.MultiSelect = false;
             this.dgvPhongBan.Name = "dgvPhongBan";
             this.dgvPhongBan.ReadOnly = true;
             this.dgvPhongBan.RowHeadersWidth = 62;
             this.dgvPhongBan.RowTemplate.Height = 28;
             this.dgvPhongBan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhongBan.Size = new System.Drawing.Size(1494, 340);
-            this.dgvPhongBan.TabIndex = 0;
+            this.dgvPhongBan.Size = new System.Drawing.Size(2065, 348);
+            this.dgvPhongBan.TabIndex = 3;
             // 
-            // btnHuy
+            // menucontrol1
             // 
-            this.btnHuy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnHuy.Size = new System.Drawing.Size(68, 35);
-            this.btnHuy.Text = "Hủy";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
-            // 
-            // tìmTheoMãToolStripMenuItem
-            // 
-            this.tìmTheoMãToolStripMenuItem.Name = "tìmTheoMãToolStripMenuItem";
-            this.tìmTheoMãToolStripMenuItem.Size = new System.Drawing.Size(279, 40);
-            this.tìmTheoMãToolStripMenuItem.Text = "Tìm Theo Mã";
-            // 
-            // tìmTheoTênToolStripMenuItem
-            // 
-            this.tìmTheoTênToolStripMenuItem.Name = "tìmTheoTênToolStripMenuItem";
-            this.tìmTheoTênToolStripMenuItem.Size = new System.Drawing.Size(279, 40);
-            this.tìmTheoTênToolStripMenuItem.Text = "Tìm Theo Tên";
-            // 
-            // btnTim
-            // 
-            this.btnTim.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tìmTheoTênToolStripMenuItem,
-            this.tìmTheoMãToolStripMenuItem});
-            this.btnTim.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnTim.Size = new System.Drawing.Size(82, 35);
-            this.btnTim.Text = "Tìm";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnRefresh.Size = new System.Drawing.Size(113, 35);
-            this.btnRefresh.Text = "Refresh";
-            // 
-            // btnSua
-            // 
-            this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnSua.Size = new System.Drawing.Size(71, 35);
-            this.btnSua.Text = "Sửa";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnXoa.Size = new System.Drawing.Size(68, 35);
-            this.btnXoa.Text = "Xóa";
-            // 
-            // btnThem
-            // 
-            this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnThem.Size = new System.Drawing.Size(89, 35);
-            this.btnThem.Text = "Thêm";
-            // 
-            // toolStrip
-            // 
-            this.toolStrip.BackColor = System.Drawing.SystemColors.Menu;
-            this.toolStrip.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnThem,
-            this.btnXoa,
-            this.btnSua,
-            this.btnRefresh,
-            this.btnTim,
-            this.toolStripSeparator1,
-            this.btnLuu,
-            this.btnHuy});
-            this.toolStrip.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1502, 40);
-            this.toolStrip.TabIndex = 2;
-            this.toolStrip.Text = "Menu";
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.btnLuu.Size = new System.Drawing.Size(68, 35);
-            this.btnLuu.Text = "Lưu";
+            this.menucontrol1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menucontrol1.Location = new System.Drawing.Point(3, 3);
+            this.menucontrol1.Name = "menucontrol1";
+            this.menucontrol1.Size = new System.Drawing.Size(2067, 80);
+            this.menucontrol1.TabIndex = 13;
+            this.menucontrol1.ButtonClicked += new DynamicControl.menucontrol.ButtonClickedHandler(this.menucontrol1_ButtonClicked);
             // 
             // frmPhongBan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1502, 617);
+            this.ClientSize = new System.Drawing.Size(2073, 676);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.toolStrip);
             this.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmPhongBan";
             this.Text = "QUẢN LÝ PHÒNG BAN";
@@ -368,10 +261,7 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhongBan)).EndInit();
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -385,22 +275,12 @@
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtTongNV;
         private System.Windows.Forms.TextBox txtMaPhongBan;
-        private System.Windows.Forms.MaskedTextBox txtSDT;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox txtTenPhongBan;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private DynamicControl.menucontrol menucontrol1;
+        private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.DataGridView dgvPhongBan;
-        private System.Windows.Forms.ToolStripButton btnHuy;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem tìmTheoMãToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tìmTheoTênToolStripMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton btnTim;
-        private System.Windows.Forms.ToolStripButton btnRefresh;
-        private System.Windows.Forms.ToolStripButton btnSua;
-        private System.Windows.Forms.ToolStripButton btnXoa;
-        private System.Windows.Forms.ToolStripButton btnThem;
-        private System.Windows.Forms.ToolStrip toolStrip;
-        private System.Windows.Forms.ToolStripButton btnLuu;
     }
 }
 

@@ -33,6 +33,89 @@ namespace KimPhuong.DAL
             }
             return lst;
         }
+        public bool insert(PhongBanDTO phongBan)
+        {
+            DataRow newRow = dt_phongban.NewRow();
+            newRow["MaPB"] = phongBan.MaPB;
+            newRow["TenPB"] = phongBan.TenPB;
+            newRow["DiaChi"] = phongBan.DiaChi;
+            newRow["SDTPB"] = phongBan.SoDienThoai;
+            dt_phongban.Rows.Add(newRow);
+
+            SqlCommandBuilder cmd = new SqlCommandBuilder(adapter);
+            int kq = adapter.Update(dt_phongban);
+            if (kq != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public bool delete(PhongBanDTO phongBan)
+        {
+            DataRow[] deleteRow = dt_phongban.Select("MaPB = '" + phongBan.MaPB + "'");
+            foreach (DataRow row in deleteRow)
+            {
+                row.Delete();
+            }
+
+            SqlCommandBuilder cmd = new SqlCommandBuilder(adapter);
+            int kq = adapter.Update(dt_phongban);
+
+            if (kq != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public bool update(PhongBanDTO phongBan)
+        {
+            DataRow updateRow = dt_phongban.Select("MaPB = '" + phongBan.MaPB + "'").FirstOrDefault();
+
+            if (updateRow != null)
+            {
+                updateRow["TenPB"] = phongBan.TenPB;
+                updateRow["DiaChi"] = phongBan.DiaChi;
+                updateRow["SDTPB"] = phongBan.SoDienThoai;
+
+                SqlCommandBuilder cmd = new SqlCommandBuilder(adapter);
+                int kq = adapter.Update(dt_phongban);
+                return kq != 0;
+            }
+            return false;
+        }
+        public int tinhTongNhanVienTrongPhongBan(string maPB)
+        {
+            int soNhanVien = 0;
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM NHANVIEN WHERE MaPB = @MaPB", dB.GetConnection());
+            cmd.Parameters.AddWithValue("@MaPB", maPB);
+            soNhanVien = (int) cmd.ExecuteScalar();
+            return soNhanVien;
+        }
+        public List<PhongBanDTO> searchLinq(string maPB, string tenPB)
+        {
+            var query = this.getAll().AsQueryable();
+
+            if (!string.IsNullOrEmpty(maPB))
+            {
+                query = query.Where(pb => pb.MaPB.ToLower().Contains(maPB.ToLower()));
+            }
+            if (!string.IsNullOrEmpty(tenPB))
+            {
+                query = query.Where(pb => pb.TenPB.ToLower().Contains(tenPB.ToLower()));
+            }
+            return query.ToList();
+        }
+
+
     }
-   
+
 }

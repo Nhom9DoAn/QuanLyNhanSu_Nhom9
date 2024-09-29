@@ -1,4 +1,6 @@
-﻿using Sunny.UI;
+﻿using KimPhuong.BUL;
+using KimPhuong.DAL;
+using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,32 +15,11 @@ namespace KimPhuong.GUI
 {
     public partial class frmNghiPhep : UIPage
     {
-        public frmNghiPhep()
-        {
-            InitializeComponent();
-        }
+        NghiPhepDAO nghiPhepDAO;
+        NghiPhepBUL nghiPhepBUL;
+        bool them, xoa, sua, tim = false;
 
-        private void toolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void grpNhanVien_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblMaNV_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTenNV_Click(object sender, EventArgs e)
+        private void dgvNghiPhep_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -48,179 +29,41 @@ namespace KimPhuong.GUI
 
         }
 
-        private void lblSDT_Click(object sender, EventArgs e)
+        private void dgvNghiPhep_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
+            if (e.RowIndex % 2 == 0)
+            {
+                dgvNghiPhep.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.AliceBlue;
+            }
+            else
+            {
+                dgvNghiPhep.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+            }
+        }
+
+        public frmNghiPhep()
+        {
+            InitializeComponent();
+            nghiPhepBUL = new NghiPhepBUL();
+            LoadData();
+            dgvNghiPhep.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14);
 
         }
 
-        private void lblChucVu_Click(object sender, EventArgs e)
+        private void LoadData()
         {
+            dgvNghiPhep.DataSource = null;
+            nghiPhepBUL = new NghiPhepBUL();
+            dgvNghiPhep.DataSource = nghiPhepBUL.getAll();
 
+            dgvNghiPhep.Columns["MaNP"].HeaderText = "Mã Phòng Ban";
+            dgvNghiPhep.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
+            dgvNghiPhep.Columns["TuNgay"].HeaderText = "Từ Ngày";
+            dgvNghiPhep.Columns["DenNgay"].HeaderText = "Đến Ngày";
+            dgvNghiPhep.Columns["LyDo"].HeaderText = "Lý Do";
+            dgvNghiPhep.Columns["TinhTrang"].HeaderText = "Tình Trạng";
         }
 
-        private void cboMaNV_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void cboChucVu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTenNV_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void masktxtSDT_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblLyDo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblMaNP_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTuNgay_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDenNgay_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpDenNgay_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTinhTrang_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grpNghiPhep_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void radChuaDuyet_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radDaDuyet_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMaNP_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLyDo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tìmTheoNgàyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tìmTheoMãToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLoc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvNghiPhep_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void toolStripSeparator1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
