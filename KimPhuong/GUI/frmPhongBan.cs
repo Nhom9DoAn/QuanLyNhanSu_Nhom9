@@ -50,6 +50,26 @@ namespace KimPhuong
 
         PhongBanBUL phongBanBUL;
         PhongBanDTO phongBanDTO;
+
+        private void dgvPhongBan_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (dgvPhongBan.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvPhongBan.SelectedRows[0];
+                string maPB = selectedRow.Cells["MaPB"].Value.ToString();
+                string tenPB = selectedRow.Cells["TenPB"].Value.ToString();
+                string diaChi = selectedRow.Cells["DiaChi"].Value.ToString();
+                string sodienThoai = selectedRow.Cells["SoDienThoai"].Value.ToString();
+
+                txtMaPhongBan.Text = maPB;
+                txtTenPhongBan.Text = tenPB;
+                txtDiaChi.Text = diaChi;
+                txtSDT.Text = sodienThoai;
+                txtTongNV.Text = phongBanBUL.tinhTongNhanVienTrongPhongBan(maPB).ToString();
+
+            }
+        }
+
         public frmPhongBan()
         {
             InitializeComponent();

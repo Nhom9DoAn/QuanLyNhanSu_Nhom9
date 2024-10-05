@@ -239,6 +239,7 @@
             this.dgvPhongBan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhongBan.Size = new System.Drawing.Size(2065, 348);
             this.dgvPhongBan.TabIndex = 3;
+            this.dgvPhongBan.SelectionChanged += new System.EventHandler(this.dgvPhongBan_SelectionChanged_1);
             // 
             // menucontrol1
             // 
