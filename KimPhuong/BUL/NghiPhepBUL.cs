@@ -51,31 +51,9 @@ namespace KimPhuong.BUL
         {
             return nghiPhepDAO.update(nghiPhep);
         }
-        //public List<NghiPhepDTO> filter(string maNV, bool chuaDuyet, bool daDuyet)
-        //{
-        //    List<NghiPhepDTO> allnghiPhep = nghiPhepDAO.getAll();
-        //    List<NghiPhepDTO> filternghiPhep = allnghiPhep
-        //        .Where(
-        //        emp => (maNV == "" || emp.MaNV == maNV) && ((chuaDuyet && emp.TinhTrang == "Chưa duyệt") || (daDuyet && emp.TinhTrang == "Đã duyệt"))
-        //        )
-        //        .ToList();
-        //    return filternghiPhep;
-        //}
-        public List<NghiPhepDTO> searchMaNP(string keyMa)
+        public List<NghiPhepDTO> searchLinq(string maNV)
         {
-            List<NghiPhepDTO> ketQua = new List<NghiPhepDTO>();
-            foreach (NghiPhepDTO nghiPhep in getAll())
-            {
-                if (nghiPhep.MaNP.ToLower().Contains(keyMa.ToLower()))
-                {
-                    ketQua.Add(nghiPhep);
-                }
-            }
-            return ketQua;
-        }
-        public List<NghiPhepDTO> TimNghiPhepTheoNgay(DateTime ngayBatDau)
-        {
-            return nghiPhepDAO.TimNghiPhepTheoNgay(ngayBatDau);
+            return nghiPhepDAO.searchLinq(maNV);
         }
     }
 }

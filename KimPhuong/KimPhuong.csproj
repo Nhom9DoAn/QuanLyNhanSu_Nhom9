@@ -55,8 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUL\BUS_ChucVu.cs" />
+    <Compile Include="BUL\BUS_NhanVien.cs" />
     <Compile Include="BUL\NghiPhepBUL.cs" />
     <Compile Include="BUL\PhongBanBUL.cs" />
+    <Compile Include="DAL\DAO_ChucVu.cs" />
+    <Compile Include="DAL\DAO_NhanVien.cs" />
     <Compile Include="DAL\dbQuanLyNhanSu.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -65,6 +69,8 @@
     <Compile Include="DAL\NghiPhepDAO.cs" />
     <Compile Include="DAL\PhongBanDAO.cs" />
     <Compile Include="DBC\DBConnection.cs" />
+    <Compile Include="DTO\DTO_ChucVu.cs" />
+    <Compile Include="DTO\DTO_NhanVien.cs" />
     <Compile Include="DTO\NghiPhepDTO.cs" />
     <Compile Include="DTO\PhongBanDTO.cs" />
     <Compile Include="GUI\frmHocVan.cs">

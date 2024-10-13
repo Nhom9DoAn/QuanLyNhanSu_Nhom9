@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpNhanVien = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMaNV = new System.Windows.Forms.Label();
@@ -42,7 +40,7 @@
             this.cboChucVu = new System.Windows.Forms.ComboBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtTenNV = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvNghiPhep = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -101,7 +99,7 @@
             this.tableLayoutPanel4.Controls.Add(this.cboChucVu, 2, 5);
             this.tableLayoutPanel4.Controls.Add(this.dtpNgaySinh, 2, 3);
             this.tableLayoutPanel4.Controls.Add(this.txtTenNV, 2, 2);
-            this.tableLayoutPanel4.Controls.Add(this.textBox1, 2, 4);
+            this.tableLayoutPanel4.Controls.Add(this.txtSDT, 2, 4);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 34);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -177,17 +175,20 @@
             // 
             this.cboMaNV.Dock = System.Windows.Forms.DockStyle.Top;
             this.cboMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaNV.Enabled = false;
             this.cboMaNV.FormattingEnabled = true;
             this.cboMaNV.Location = new System.Drawing.Point(292, 2);
             this.cboMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboMaNV.Name = "cboMaNV";
             this.cboMaNV.Size = new System.Drawing.Size(521, 39);
             this.cboMaNV.TabIndex = 5;
+            this.cboMaNV.SelectedIndexChanged += new System.EventHandler(this.cboMaNV_SelectedIndexChanged);
             // 
             // cboChucVu
             // 
             this.cboChucVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.cboChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChucVu.Enabled = false;
             this.cboChucVu.FormattingEnabled = true;
             this.cboChucVu.Location = new System.Drawing.Point(292, 198);
             this.cboChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -198,6 +199,7 @@
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpNgaySinh.Enabled = false;
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaySinh.Location = new System.Drawing.Point(292, 100);
             this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -209,20 +211,22 @@
             // 
             this.txtTenNV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTenNV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtTenNV.Enabled = false;
             this.txtTenNV.Location = new System.Drawing.Point(292, 51);
             this.txtTenNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(521, 37);
             this.txtTenNV.TabIndex = 8;
             // 
-            // textBox1
+            // txtSDT
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(292, 150);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(521, 37);
-            this.textBox1.TabIndex = 9;
+            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSDT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSDT.Enabled = false;
+            this.txtSDT.Location = new System.Drawing.Point(292, 150);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(521, 37);
+            this.txtSDT.TabIndex = 9;
             // 
             // tableLayoutPanel1
             // 
@@ -249,23 +253,7 @@
             this.dgvNghiPhep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNghiPhep.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvNghiPhep.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNghiPhep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNghiPhep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNghiPhep.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNghiPhep.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNghiPhep.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvNghiPhep.Location = new System.Drawing.Point(4, 74);
@@ -274,14 +262,15 @@
             this.dgvNghiPhep.Name = "dgvNghiPhep";
             this.dgvNghiPhep.ReadOnly = true;
             this.dgvNghiPhep.RowHeadersWidth = 62;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvNghiPhep.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvNghiPhep.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNghiPhep.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvNghiPhep.RowTemplate.Height = 28;
             this.dgvNghiPhep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNghiPhep.Size = new System.Drawing.Size(1719, 303);
             this.dgvNghiPhep.TabIndex = 0;
             this.dgvNghiPhep.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNghiPhep_CellContentClick);
+            this.dgvNghiPhep.SelectionChanged += new System.EventHandler(this.dgvNghiPhep_SelectionChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -404,6 +393,7 @@
             // dtpTuNgay
             // 
             this.dtpTuNgay.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpTuNgay.Enabled = false;
             this.dtpTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTuNgay.Location = new System.Drawing.Point(292, 51);
             this.dtpTuNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -414,6 +404,7 @@
             // dtpDenNgay
             // 
             this.dtpDenNgay.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpDenNgay.Enabled = false;
             this.dtpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDenNgay.Location = new System.Drawing.Point(292, 100);
             this.dtpDenNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -440,7 +431,9 @@
             // radChuaDuyet
             // 
             this.radChuaDuyet.AutoSize = true;
+            this.radChuaDuyet.Checked = true;
             this.radChuaDuyet.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radChuaDuyet.Enabled = false;
             this.radChuaDuyet.Location = new System.Drawing.Point(3, 2);
             this.radChuaDuyet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radChuaDuyet.Name = "radChuaDuyet";
@@ -454,12 +447,12 @@
             // 
             this.radDaDuyet.AutoSize = true;
             this.radDaDuyet.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radDaDuyet.Enabled = false;
             this.radDaDuyet.Location = new System.Drawing.Point(263, 2);
             this.radDaDuyet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radDaDuyet.Name = "radDaDuyet";
             this.radDaDuyet.Size = new System.Drawing.Size(254, 35);
             this.radDaDuyet.TabIndex = 1;
-            this.radDaDuyet.TabStop = true;
             this.radDaDuyet.Text = "Đã duyệt";
             this.radDaDuyet.UseVisualStyleBackColor = true;
             // 
@@ -467,16 +460,19 @@
             // 
             this.txtMaNP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaNP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtMaNP.Enabled = false;
             this.txtMaNP.Location = new System.Drawing.Point(292, 2);
             this.txtMaNP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaNP.Name = "txtMaNP";
             this.txtMaNP.Size = new System.Drawing.Size(520, 37);
             this.txtMaNP.TabIndex = 8;
+            this.txtMaNP.TextChanged += new System.EventHandler(this.txtMaNP_TextChanged);
             // 
             // txtLyDo
             // 
             this.txtLyDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLyDo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtLyDo.Enabled = false;
             this.txtLyDo.Location = new System.Drawing.Point(292, 149);
             this.txtLyDo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLyDo.Multiline = true;
@@ -492,6 +488,7 @@
             this.menucontrol1.Name = "menucontrol1";
             this.menucontrol1.Size = new System.Drawing.Size(1723, 67);
             this.menucontrol1.TabIndex = 2;
+            this.menucontrol1.ButtonClicked += new DynamicControl.menucontrol.ButtonClickedHandler(this.menucontrol1_ButtonClicked);
             // 
             // frmNghiPhep
             // 
@@ -500,6 +497,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmNghiPhep";
             this.Text = "frmNghiPhep";
+            this.Load += new System.EventHandler(this.frmNghiPhep_Load);
             this.grpNhanVien.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
@@ -544,7 +542,7 @@
         private System.Windows.Forms.RadioButton radDaDuyet;
         private System.Windows.Forms.TextBox txtMaNP;
         private System.Windows.Forms.TextBox txtLyDo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSDT;
         private DynamicControl.menucontrol menucontrol1;
         private System.Windows.Forms.DataGridView dgvNghiPhep;
     }

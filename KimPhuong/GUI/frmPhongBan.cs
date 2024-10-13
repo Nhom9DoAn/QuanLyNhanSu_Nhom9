@@ -70,6 +70,7 @@ namespace KimPhuong
             }
         }
 
+
         public frmPhongBan()
         {
             InitializeComponent();
@@ -146,6 +147,7 @@ namespace KimPhuong
                     }
                     break;
                 case DynamicControl.menucontrol.ButtonType.Cancel:
+                    them = xoa = sua = tim = false;
                     txtMaPhongBan.Enabled = txtTenPhongBan.Enabled = txtSDT.Enabled = false;
                     break;
                 case DynamicControl.menucontrol.ButtonType.Save:

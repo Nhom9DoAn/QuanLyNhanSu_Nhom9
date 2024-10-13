@@ -171,33 +171,14 @@ namespace KimPhuong.DAL
                 return false;
             }
         }
-        public List<NghiPhepDTO> TimNghiPhepTheoNgay(DateTime ngayBatDau)
+        public List<NghiPhepDTO> searchLinq(string maNV)
         {
-            List<NghiPhepDTO> filterNghiPhep = new List<NghiPhepDTO>();
-
-            string query = "SELECT * FROM NGHIPHEP WHERE CONVERT(date, TuNgay) >= @NgayBatDau";
-            SqlCommand command = new SqlCommand(query, dB.GetConnection());
-            command.Parameters.AddWithValue("@NgayBatDau", ngayBatDau);
-
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable dataTable = new DataTable();
-
-            adapter.Fill(dataTable);
-
-            foreach (DataRow row in dataTable.Rows)
+            var query = this.getAll().AsQueryable();
+            if (!string.IsNullOrEmpty(maNV))
             {
-                NghiPhepDTO nghiPhep = new NghiPhepDTO(
-                    row["MaNP"].ToString(),
-                    row["MaNV"].ToString(),
-                    Convert.ToDateTime(row["TuNgay"]),
-                    Convert.ToDateTime(row["DenNgay"]),
-                    row["LyDo"].ToString(),
-                    row["TinhTrang"].ToString()
-                );
-                filterNghiPhep.Add(nghiPhep);
+                query = query.Where(pb => pb.MaNV.ToLower().Contains(maNV.ToLower()));
             }
-
-            return filterNghiPhep;
+            return query.ToList();
         }
     }
 }
