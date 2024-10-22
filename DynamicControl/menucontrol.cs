@@ -108,5 +108,6 @@ namespace DynamicControl
             SetStatus(Status.View);
             OnButtonClicked(sender, ButtonType.Reload, e);
         }
+
     }
 }
