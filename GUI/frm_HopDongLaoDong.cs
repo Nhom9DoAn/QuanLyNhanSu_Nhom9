@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Sunny.UI;
 namespace GUI
 {
-    public partial class frm_HopDongLaoDong : Form
+    public partial class frm_HopDongLaoDong : UIPage
     {
         public frm_HopDongLaoDong()
         {

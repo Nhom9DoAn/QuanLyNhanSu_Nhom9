@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using KimPhuong;
 using KimPhuong.GUI;
 using Sunny.UI;
+using GUI;
 namespace Main
 {
     public partial class frmTrangChu : UIHeaderAsideMainFrame
@@ -25,6 +26,9 @@ namespace Main
             root = Aside.CreateNode("QUẢN LÝ NHÂN SỰ", 61451, 24, pageIndex);
             Aside.CreateChildNode(root, AddPage(new frmNghiPhep(), ++pageIndex));
             Aside.CreateChildNode(root, AddPage(new frmHocVan(), ++pageIndex));
+            Aside.CreateChildNode(root, AddPage(new frm_CongTac(), ++pageIndex));
+            Aside.CreateChildNode(root, AddPage(new frm_HopDongLaoDong(), ++pageIndex));
+            Aside.CreateChildNode(root, AddPage(new frm_ThuongPhat(), ++pageIndex));
         }
     }
 }

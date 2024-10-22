@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Sunny.UI;
 namespace GUI
 {
-    public partial class frm_ThuongPhat : Form
+    public partial class frm_ThuongPhat : UIPage
     {
         public frm_ThuongPhat()
         {
