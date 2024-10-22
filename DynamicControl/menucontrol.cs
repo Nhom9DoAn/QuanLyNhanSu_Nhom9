@@ -19,13 +19,14 @@ namespace DynamicControl
         }
         public enum ButtonType
         {
-            Add, Delete, Edit, Save, Exit, Cancel, Search
+            Add, Delete, Edit, Save, Exit, Cancel, Search, Reload
         }
         private Status currentStatus;
 
         public menucontrol()
         {
             InitializeComponent();
+            SetStatus(Status.View);
         }
         public delegate void ButtonClickedHandler(object sender, ButtonType buttonType, EventArgs e);
         public event ButtonClickedHandler ButtonClicked;
@@ -37,7 +38,7 @@ namespace DynamicControl
         private void SetStatus(Status status)
         {
             currentStatus = status;
-            switch(status)
+            switch (status)
             {
                 case Status.View:
                     btnThem.Enabled = true;
@@ -46,6 +47,8 @@ namespace DynamicControl
                     btnThoat.Enabled = true;
                     btnLuu.Enabled = false;
                     btnHuy.Enabled = false;
+                    btnTim.Enabled = true;
+                    btnRefresh.Enabled = true;
                     break;
 
                 case Status.Edit:
@@ -55,6 +58,8 @@ namespace DynamicControl
                     btnThoat.Enabled = false;
                     btnLuu.Enabled = true;
                     btnHuy.Enabled = true;
+                    btnTim.Enabled = false;
+                    btnRefresh.Enabled = true;
                     break;
             }
         }
@@ -92,5 +97,17 @@ namespace DynamicControl
         {
             OnButtonClicked(sender, ButtonType.Exit, e);
         }
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            SetStatus(Status.Edit);
+            OnButtonClicked(sender, ButtonType.Search, e);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            SetStatus(Status.View);
+            OnButtonClicked(sender, ButtonType.Reload, e);
+        }
+
     }
 }
