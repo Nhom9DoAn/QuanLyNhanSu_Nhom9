@@ -60,8 +60,8 @@ namespace GUI
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dgvHopDong = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menucontrol1 = new DynamicControl.menucontrol();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             this.grpHopDong.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -461,6 +461,15 @@ namespace GUI
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1424, 798);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
+            // menucontrol1
+            // 
+            this.menucontrol1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menucontrol1.Location = new System.Drawing.Point(4, 4);
+            this.menucontrol1.Margin = new System.Windows.Forms.Padding(4);
+            this.menucontrol1.Name = "menucontrol1";
+            this.menucontrol1.Size = new System.Drawing.Size(1416, 65);
+            this.menucontrol1.TabIndex = 2;
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -475,15 +484,6 @@ namespace GUI
             this.imageList1.Images.SetKeyName(7, "remove.png");
             this.imageList1.Images.SetKeyName(8, "save.png");
             this.imageList1.Images.SetKeyName(9, "search.png");
-            // 
-            // menucontrol1
-            // 
-            this.menucontrol1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.menucontrol1.Location = new System.Drawing.Point(4, 4);
-            this.menucontrol1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.menucontrol1.Name = "menucontrol1";
-            this.menucontrol1.Size = new System.Drawing.Size(1416, 65);
-            this.menucontrol1.TabIndex = 2;
             // 
             // frm_HopDongLaoDong
             // 

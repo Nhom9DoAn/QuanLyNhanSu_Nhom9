@@ -1,184 +1,187 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using KimPhuong.DBC;
-using KimPhuong.DTO;
 
 namespace KimPhuong.DAL
 {
     public class NghiPhepDAO
     {
-        DataTable dt_nghiphep;
-        SqlDataAdapter adapter;
-        private DBConnection dB;
+        private dbQuanLyNhanSuDataContext db;
+
         public NghiPhepDAO()
         {
-            dB = new DBConnection();
-            dt_nghiphep = new DataTable();
-            adapter = new SqlDataAdapter("select * from NGHIPHEP", dB.GetConnection());
-            adapter.Fill(dt_nghiphep);
-        }
-        public List<NghiPhepDTO> getAll()
-        {
-            List<NghiPhepDTO> lst = new List<NghiPhepDTO>();
-            foreach (DataRow row in dt_nghiphep.Rows)
-            {
-                NghiPhepDTO nghiphep = new NghiPhepDTO(
-                    row["MaNP"].ToString(), row["MaNV"].ToString(),
-                    Convert.ToDateTime(row["TuNgay"].ToString()), Convert.ToDateTime(row["DenNgay"].ToString()), row["LyDo"].ToString(), row["TinhTrang"].ToString());
-                lst.Add(nghiphep);
-            }
-            return lst;
+            db = new dbQuanLyNhanSuDataContext();
         }
 
-        public string LayTenNhanVienTheoMa(string maNV)
+        public List<NghiPhep> GetAll()
         {
-            dB.Open();
-            string tenNV = string.Empty;
-            SqlCommand cmd = new SqlCommand("SELECT HoTen FROM NHANVIEN WHERE MaNV = @manv", dB.GetConnection());
-            cmd.Parameters.AddWithValue("@manv", maNV);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.Read())
+            try
             {
-                tenNV = reader["HoTen"].ToString();
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    return db.NghiPheps.ToList();
+                }
             }
-
-            dB.Close();
-            return tenNV;
+            catch
+            {
+                return new List<NghiPhep>();
+            }
         }
-        public string LayNgaySinhNhanVienTheoMa(string maNV)
+
+        public bool Insert(int maNV, DateTime ngayBatDau, DateTime ngayKetThuc,
+            string lyDo, string trangThai)
         {
-            dB.Open();
-            string ngaySinh = string.Empty;
-            SqlCommand cmd = new SqlCommand("SELECT NgaySinh FROM NHANVIEN WHERE MaNV = @manv", dB.GetConnection());
-            cmd.Parameters.AddWithValue("@manv", maNV);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.Read())
+            try
             {
-                ngaySinh = reader["NgaySinh"].ToString();
-            }
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    int tongNgay = (ngayKetThuc - ngayBatDau).Days + 1;
 
-            dB.Close();
-            return ngaySinh;
-        }
-        public string LaySDTNhanVienTheoMa(string maNV)
-        {
-            dB.Open();
-            string SDT = string.Empty;
-            SqlCommand cmd = new SqlCommand("SELECT SoDienThoai FROM NHANVIEN WHERE MaNV = @manv", dB.GetConnection());
-            cmd.Parameters.AddWithValue("@manv", maNV);
-            SqlDataReader reader = cmd.ExecuteReader();
+                    NghiPhep np = new NghiPhep
+                    {
+                        MaNV = maNV,
+                        NgayBatDau = ngayBatDau,
+                        NgayKetThuc = ngayKetThuc,
+                        TongNgay = tongNgay,
+                        LyDo = lyDo,
+                        TrangThai = trangThai
+                    };
 
-            if (reader.Read())
-            {
-                SDT = reader["SoDienThoai"].ToString();
+                    db.NghiPheps.InsertOnSubmit(np);
+                    db.SubmitChanges();
+                    return true;
+                }
             }
-
-            dB.Close();
-            return SDT;
-        }
-        public string LayTenChucVu(string maNV)
-        {
-            dB.Open();
-            string tenCV = string.Empty;
-            SqlCommand cmd = new SqlCommand("SELECT CHUCVU.TenCV FROM NHANVIEN INNER JOIN CHUCVU ON NHANVIEN.MaCV = CHUCVU.MaCV WHERE NHANVIEN.MaNV = @maNV", dB.GetConnection());
-            cmd.Parameters.AddWithValue("@maNV", maNV);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.Read())
-            {
-                tenCV = reader["TenCV"].ToString();
-            }
-
-            dB.Close();
-            return tenCV;
-        }
-        public bool delete(NghiPhepDTO nghiPhep)
-        {
-            DataRow[] deleteRows = dt_nghiphep.Select($"MaNP = '{nghiPhep.MaNP}'");
-            foreach (DataRow row in deleteRows)
-            {
-                row.Delete();
-            }
-            SqlCommandBuilder cmd = new SqlCommandBuilder(adapter);
-            int kq = adapter.Update(dt_nghiphep);
-            if (kq > 0)
-            {
-                return true;
-            }
-            else
+            catch
             {
                 return false;
             }
         }
-        public bool insert(NghiPhepDTO nghiPhep)
+
+        public bool Update(int maNghiPhep, DateTime ngayBatDau, DateTime ngayKetThuc,
+            string lyDo, string trangThai)
         {
-            DataRow newRow = dt_nghiphep.NewRow();
-            newRow["MaNP"] = nghiPhep.MaNP;
-            newRow["MaNV"] = nghiPhep.MaNV;
-            newRow["TuNgay"] = nghiPhep.TuNgay;
-            newRow["DenNgay"] = nghiPhep.DenNgay;
-            newRow["LyDo"] = nghiPhep.LyDo;
-            newRow["TinhTrang"] = nghiPhep.TinhTrang;
-
-            dt_nghiphep.Rows.Add(newRow);
-
-            SqlCommandBuilder cmd = new SqlCommandBuilder(adapter);
-            int kq = adapter.Update(dt_nghiphep);
-            if (kq > 0)
+            try
             {
-                return true;
-            }
-            else { return false; }
-        }
-        public bool KiemTraTrungMa(string maNP)
-        {
-            dB.Open();
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM NGHIPHEP WHERE MaNP = @MaNP", dB.GetConnection());
-            cmd.Parameters.AddWithValue("@MaNP", maNP);
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    var np = db.NghiPheps.FirstOrDefault(x => x.MaNghiPhep == maNghiPhep);
+                    if (np != null)
+                    {
+                        np.NgayBatDau = ngayBatDau;
+                        np.NgayKetThuc = ngayKetThuc;
+                        np.TongNgay = (ngayKetThuc - ngayBatDau).Days + 1;
+                        np.LyDo = lyDo;
+                        np.TrangThai = trangThai;
 
-            int count = (int) cmd.ExecuteScalar();
-            if (count > 0)
-                return false;
-            else
-                return true;
-        }
-        public bool update(NghiPhepDTO nghiPhep)
-        {
-            string query = "UPDATE NGHIPHEP SET LyDo = @lyDo, TuNgay = @tuNgay, DenNgay = @denNgay, TinhTrang = @tinhTrang" +
-                " where MaNP = @maNP";
-            SqlCommand cmd = new SqlCommand(query, dB.GetConnection());
-            cmd.Parameters.AddWithValue("@maNP", nghiPhep.MaNP);
-            cmd.Parameters.AddWithValue("@lyDo", nghiPhep.LyDo);
-            cmd.Parameters.AddWithValue("@tuNgay", nghiPhep.TuNgay);
-            cmd.Parameters.AddWithValue("@denNgay", nghiPhep.DenNgay);
-            cmd.Parameters.AddWithValue("@tinhTrang", nghiPhep.TinhTrang);
-            dB.Open();
-            int kq = cmd.ExecuteNonQuery();
-            dB.Close();
-            if (kq > 0)
-            {
-                return true;
+                        db.SubmitChanges();
+                        return true;
+                    }
+                    return false;
+                }
             }
-            else
+            catch
             {
                 return false;
             }
         }
-        public List<NghiPhepDTO> searchLinq(string maNV)
+
+        public bool Delete(int maNghiPhep)
         {
-            var query = this.getAll().AsQueryable();
-            if (!string.IsNullOrEmpty(maNV))
+            try
             {
-                query = query.Where(pb => pb.MaNV.ToLower().Contains(maNV.ToLower()));
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    var np = db.NghiPheps.FirstOrDefault(x => x.MaNghiPhep == maNghiPhep);
+                    if (np != null)
+                    {
+                        db.NghiPheps.DeleteOnSubmit(np);
+                        db.SubmitChanges();
+                        return true;
+                    }
+                    return false;
+                }
             }
-            return query.ToList();
+            catch
+            {
+                return false;
+            }
+        }
+
+        public NghiPhep GetByID(int maNghiPhep)
+        {
+            try
+            {
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    return db.NghiPheps.FirstOrDefault(x => x.MaNghiPhep == maNghiPhep);
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public List<NghiPhep> GetByNhanVien(int maNV)
+        {
+            try
+            {
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    return db.NghiPheps.Where(x => x.MaNV == maNV).ToList();
+                }
+            }
+            catch
+            {
+                return new List<NghiPhep>();
+            }
+        }
+
+        public List<NghiPhep> Search(int maNV, DateTime tuNgay, DateTime denNgay, string trangThai)
+        {
+            try
+            {
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    var query = from np in db.NghiPheps
+                                where
+                                    (maNV == 0 || np.MaNV == maNV) &&
+                                    (tuNgay == DateTime.MinValue || np.NgayBatDau >= tuNgay) &&
+                                    (denNgay == DateTime.MinValue || np.NgayKetThuc <= denNgay) &&
+                                    (string.IsNullOrEmpty(trangThai) || np.TrangThai == trangThai)
+                                select np;
+
+                    return query.ToList();
+                }
+            }
+            catch
+            {
+                return new List<NghiPhep>();
+            }
+        }
+
+
+        public int GetTongNgayNghi(int maNV, DateTime tuNgay, DateTime denNgay)
+        {
+            try
+            {
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    var tongNgay = db.NghiPheps
+                        .Where(x => x.MaNV == maNV &&
+                               x.NgayBatDau >= tuNgay &&
+                               x.NgayKetThuc <= denNgay &&
+                               x.TrangThai == "Đã duyệt")
+                        .Sum(x => x.TongNgay);
+
+                    return tongNgay.HasValue ? tongNgay.Value : 0;
+                }
+            }
+            catch
+            {
+                return 0;
+            }
         }
     }
 }

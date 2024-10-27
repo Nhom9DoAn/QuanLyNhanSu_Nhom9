@@ -34,6 +34,7 @@ namespace GUI
             this.lblNgaySinh = new System.Windows.Forms.Label();
             this.lblChucVu = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.menucontrol1 = new DynamicControl.menucontrol();
             this.lblSDTNV = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -55,7 +56,6 @@ namespace GUI
             this.masktxtSDTNV = new System.Windows.Forms.MaskedTextBox();
             this.cboChucVu = new System.Windows.Forms.ComboBox();
             this.dgvCongTac = new System.Windows.Forms.DataGridView();
-            this.menucontrol1 = new DynamicControl.menucontrol();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -123,6 +123,15 @@ namespace GUI
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1249, 71);
             this.tableLayoutPanel5.TabIndex = 3;
+            // 
+            // menucontrol1
+            // 
+            this.menucontrol1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menucontrol1.Location = new System.Drawing.Point(4, 4);
+            this.menucontrol1.Margin = new System.Windows.Forms.Padding(4);
+            this.menucontrol1.Name = "menucontrol1";
+            this.menucontrol1.Size = new System.Drawing.Size(1241, 53);
+            this.menucontrol1.TabIndex = 0;
             // 
             // lblSDTNV
             // 
@@ -407,15 +416,6 @@ namespace GUI
             this.dgvCongTac.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCongTac.Size = new System.Drawing.Size(1249, 471);
             this.dgvCongTac.TabIndex = 2;
-            // 
-            // menucontrol1
-            // 
-            this.menucontrol1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.menucontrol1.Location = new System.Drawing.Point(4, 4);
-            this.menucontrol1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.menucontrol1.Name = "menucontrol1";
-            this.menucontrol1.Size = new System.Drawing.Size(1241, 53);
-            this.menucontrol1.TabIndex = 0;
             // 
             // frm_CongTac
             // 

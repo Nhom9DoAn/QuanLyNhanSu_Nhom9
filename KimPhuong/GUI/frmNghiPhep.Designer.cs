@@ -37,10 +37,10 @@
             this.lblSDT = new System.Windows.Forms.Label();
             this.lblChucVu = new System.Windows.Forms.Label();
             this.cboMaNV = new System.Windows.Forms.ComboBox();
-            this.cboChucVu = new System.Windows.Forms.ComboBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtChucVu = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvNghiPhep = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -96,10 +96,10 @@
             this.tableLayoutPanel4.Controls.Add(this.lblSDT, 1, 4);
             this.tableLayoutPanel4.Controls.Add(this.lblChucVu, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.cboMaNV, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.cboChucVu, 2, 5);
             this.tableLayoutPanel4.Controls.Add(this.dtpNgaySinh, 2, 3);
             this.tableLayoutPanel4.Controls.Add(this.txtTenNV, 2, 2);
             this.tableLayoutPanel4.Controls.Add(this.txtSDT, 2, 4);
+            this.tableLayoutPanel4.Controls.Add(this.txtChucVu, 2, 5);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 34);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -184,18 +184,6 @@
             this.cboMaNV.TabIndex = 5;
             this.cboMaNV.SelectedIndexChanged += new System.EventHandler(this.cboMaNV_SelectedIndexChanged);
             // 
-            // cboChucVu
-            // 
-            this.cboChucVu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboChucVu.Enabled = false;
-            this.cboChucVu.FormattingEnabled = true;
-            this.cboChucVu.Location = new System.Drawing.Point(292, 198);
-            this.cboChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboChucVu.Name = "cboChucVu";
-            this.cboChucVu.Size = new System.Drawing.Size(521, 39);
-            this.cboChucVu.TabIndex = 6;
-            // 
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.Dock = System.Windows.Forms.DockStyle.Top;
@@ -227,6 +215,14 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(521, 37);
             this.txtSDT.TabIndex = 9;
+            // 
+            // txtChucVu
+            // 
+            this.txtChucVu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtChucVu.Location = new System.Drawing.Point(292, 199);
+            this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.Size = new System.Drawing.Size(521, 37);
+            this.txtChucVu.TabIndex = 10;
             // 
             // tableLayoutPanel1
             // 
@@ -387,7 +383,7 @@
             this.lblTinhTrang.Name = "lblTinhTrang";
             this.lblTinhTrang.Size = new System.Drawing.Size(257, 31);
             this.lblTinhTrang.TabIndex = 4;
-            this.lblTinhTrang.Text = "Tình Trạng";
+            this.lblTinhTrang.Text = "Trạng thái";
             this.lblTinhTrang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtpTuNgay
@@ -523,7 +519,6 @@
         private System.Windows.Forms.Label lblSDT;
         private System.Windows.Forms.Label lblChucVu;
         private System.Windows.Forms.ComboBox cboMaNV;
-        private System.Windows.Forms.ComboBox cboChucVu;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.TextBox txtTenNV;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -545,5 +540,6 @@
         private System.Windows.Forms.TextBox txtSDT;
         private DynamicControl.menucontrol menucontrol1;
         private System.Windows.Forms.DataGridView dgvNghiPhep;
+        private System.Windows.Forms.TextBox txtChucVu;
     }
 }

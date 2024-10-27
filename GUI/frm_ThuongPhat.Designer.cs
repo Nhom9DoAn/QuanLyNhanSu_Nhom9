@@ -439,7 +439,7 @@ namespace GUI
             // 
             this.menucontrol1.Dock = System.Windows.Forms.DockStyle.Top;
             this.menucontrol1.Location = new System.Drawing.Point(4, 4);
-            this.menucontrol1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menucontrol1.Margin = new System.Windows.Forms.Padding(4);
             this.menucontrol1.Name = "menucontrol1";
             this.menucontrol1.Size = new System.Drawing.Size(1240, 53);
             this.menucontrol1.TabIndex = 0;

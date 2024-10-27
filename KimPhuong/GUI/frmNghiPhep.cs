@@ -1,4 +1,5 @@
 ﻿using KimPhuong.BUL;
+using KimPhuong.BUS;
 using KimPhuong.DAL;
 using KimPhuong.DTO;
 using Sunny.UI;
@@ -17,8 +18,7 @@ namespace KimPhuong.GUI
     public partial class frmNghiPhep : UIPage
     {
         NghiPhepBUL nghiPhepBUL;
-        BUS_NhanVien nhanVienBUS;
-        BUS_ChucVu chucVuBUS;
+        NhanVienBUS nhanVienBUS;
         bool them, xoa, sua, tim = false;
 
         private void dgvNghiPhep_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -32,98 +32,45 @@ namespace KimPhuong.GUI
         }
         private void LoadCombobox()
         {
-
-            List<DTO_NhanVien> nhanVienList = nhanVienBUS.getAll();
-            nhanVienList.Insert(0, new DTO_NhanVien { MaNV = "Tất cả", HoTen = "" });
-            BindComboBox(cboMaNV, nhanVienList, "MaNV", "MaNV");
-
-            List<DTO_ChucVu> chucVuList = chucVuBUS.getAll();
-            chucVuList.Insert(0, new DTO_ChucVu { MaCV = "", TenCV = "Tất cả" });
-            BindComboBox(cboChucVu, chucVuList, "TenCV", "MaCV");
+            var dsNhanVien = nhanVienBUS.GetAll();
+            cboMaNV.DataSource = dsNhanVien;
+            cboMaNV.DisplayMember = "HoTen";
+            cboMaNV.ValueMember = "MaNV";
+            cboMaNV.SelectedIndex = -1;
         }
-        private void BindComboBox<T>(ComboBox comboBox, List<T> dataSource, string displayMember, string valueMember, bool isCurrency = false)
-        {
-            var bindingSource = new BindingSource();
-            bindingSource.DataSource = dataSource;
 
-            comboBox.DataSource = bindingSource;
-            comboBox.DisplayMember = displayMember;
-            comboBox.ValueMember = valueMember;
-        }
         private void LoadControls()
-        {
-
-            txtMaNP.Text = txtLyDo.Text = dtpTuNgay.Text = dtpDenNgay.Text = dtpNgaySinh.Text = txtTenNV.Text = txtSDT.Text = "";
-
-            cboMaNV.SelectedValue = "Tất cả";
-            cboChucVu.SelectedValue = "Tất cả";
-
-
-            dgvNghiPhep.ClearSelection();
+        { 
         }
 
         private void dgvNghiPhep_SelectionChanged(object sender, EventArgs e)
         {
-            LoadCombobox();
-            dgvNghiPhep.Columns["MaNP"].HeaderText = "Mã Phòng Ban";
-            dgvNghiPhep.Columns["TuNgay"].HeaderText = "Từ Ngày";
-            dgvNghiPhep.Columns["DenNgay"].HeaderText = "Đến Ngày";
-            dgvNghiPhep.Columns["LyDo"].HeaderText = "Lý Do";
-            dgvNghiPhep.Columns["TinhTrang"].HeaderText = "Tình Trạng";
-            dgvNghiPhep.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
-            if (dgvNghiPhep.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selected = dgvNghiPhep.SelectedRows[0];
-                string maNP = selected.Cells["MaNP"].Value.ToString();
-                string tuNgay = selected.Cells["TuNgay"].Value.ToString();
-                string denNgay = selected.Cells["DenNgay"].Value.ToString();
-                string lyDo = selected.Cells["LyDo"].Value.ToString();
-                string tinhTrang = selected.Cells["TinhTrang"].Value.ToString();
-                if (tinhTrang == "Chưa duyệt")
-                {
-                    radChuaDuyet.Checked = true;
-                    radDaDuyet.Checked = false;
-                }
-                else
-                {
-                    radChuaDuyet.Checked = false;
-                    radDaDuyet.Checked = true;
-                }
-
-                string maNV = selected.Cells["MaNV"].Value.ToString();
-                string tenNV = nghiPhepBUL.LayTenNhanVienTuMa(maNV);
-                string ngaySinh = nghiPhepBUL.LayNgaySinhNhanVienTuMa(maNV);
-                string sdt = nghiPhepBUL.LaySDTNhanVienTuMa(maNV);
-                string maCV = nghiPhepBUL.LayTenCV(maNV);
-
-                txtMaNP.Text = maNP;
-                txtLyDo.Text = lyDo;
-                cboMaNV.SelectedValue = maNV;
-                dtpTuNgay.Text = tuNgay;
-                dtpDenNgay.Text = denNgay;
-                txtTenNV.Text = tenNV;
-                dtpNgaySinh.Text = ngaySinh;
-                txtSDT.Text = sdt;
-                cboChucVu.Text = maCV;
-            }
+            
         }
 
         private void cboMaNV_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboMaNV.SelectedIndex > 0)
+            try
             {
-                string maNV = cboMaNV.SelectedValue.ToString();
-
-
-                string tenNV = nghiPhepBUL.LayTenNhanVienTuMa(maNV);
-                string ngaySinh = nghiPhepBUL.LayNgaySinhNhanVienTuMa(maNV);
-                string sdt = nghiPhepBUL.LaySDTNhanVienTuMa(maNV);
-                string chucVu = nghiPhepBUL.LayTenCV(maNV);
-
-                txtTenNV.Text = tenNV;
-                dtpNgaySinh.Text = ngaySinh;
-                txtSDT.Text = sdt;
-                cboChucVu.Text = chucVu;
+                if (cboMaNV.SelectedItem != null && cboMaNV.SelectedItem is NhanVien nv)
+                {
+                    txtTenNV.Text = nv.HoTen;
+                    dtpNgaySinh.Value = nv.NgaySinh ?? DateTime.Now;
+                    txtSDT.Text = nv.DienThoai;
+                    txtChucVu.Text = nhanVienBUS.GetChucVuName(nv.MaNV);
+                }
+                else
+                {
+                    txtTenNV.Clear();
+                    dtpNgaySinh.Value = DateTime.Now;
+                    txtSDT.Clear();
+                    txtChucVu.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xử lý thông tin nhân viên: {ex.Message}",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -154,26 +101,12 @@ namespace KimPhuong.GUI
         public frmNghiPhep()
         {
             InitializeComponent();
-            nghiPhepBUL = new NghiPhepBUL();
-            LoadData();
-            dgvNghiPhep.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14);
-            LoadControls();
-            nhanVienBUS = new BUS_NhanVien();
-            chucVuBUS = new BUS_ChucVu();
+            
         }
 
         private void LoadData()
         {
-            dgvNghiPhep.DataSource = null;
-            nghiPhepBUL = new NghiPhepBUL();
-            dgvNghiPhep.DataSource = nghiPhepBUL.getAll();
-
-            dgvNghiPhep.Columns["MaNP"].HeaderText = "Mã Phòng Ban";
-            dgvNghiPhep.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
-            dgvNghiPhep.Columns["TuNgay"].HeaderText = "Từ Ngày";
-            dgvNghiPhep.Columns["DenNgay"].HeaderText = "Đến Ngày";
-            dgvNghiPhep.Columns["LyDo"].HeaderText = "Lý Do";
-            dgvNghiPhep.Columns["TinhTrang"].HeaderText = "Tình Trạng";
+           
         }
 
         private void frmNghiPhep_Load(object sender, EventArgs e)
@@ -205,26 +138,7 @@ namespace KimPhuong.GUI
                     if (dgvNghiPhep.SelectedRows.Count > 0)
                     {
 
-                        DialogResult result = MessageBox.Show("Bạn có xác nhận xóa?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                        if (result == DialogResult.OK)
-                        {
-                            DataGridViewRow selectedRow = dgvNghiPhep.SelectedRows[0];
-                            string maNP = selectedRow.Cells["MaNP"].Value.ToString();
-
-                            NghiPhepDTO nghiPhepDTO = new NghiPhepDTO();
-                            nghiPhepDTO.MaNP = maNP;
-                            bool kq = nghiPhepBUL.delete(nghiPhepDTO);
-                            if (kq == true)
-                            {
-                                MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
-                                LoadData();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Xóa không thành công");
-                                return;
-                            }
-                        }
+                       
                     }
                     else
                     {
@@ -238,120 +152,15 @@ namespace KimPhuong.GUI
                 case DynamicControl.menucontrol.ButtonType.Save:
                     if (them)
                     {
-                        DateTime tuNgay, denNgay;
-                        DateTime ngayhientai = DateTime.Now;
-
-                        if (cboMaNV.SelectedIndex > 0)
-                        {
-                            if (DateTime.TryParse(dtpTuNgay.Text, out tuNgay) &&
-                            DateTime.TryParse(dtpDenNgay.Text, out denNgay))
-                            {
-                                if (tuNgay <= denNgay)
-                                {
-                                    if (nghiPhepBUL.KiemTraTrungMa(txtMaNP.Text))
-                                    {
-                                        bool isChuaDuyet = radChuaDuyet.Checked;
-
-                                        string tinhTrang = isChuaDuyet ? "Chưa duyệt" : "Đã duyệt";
-                                        nghiPhepBUL.insert(new NghiPhepDTO
-                                        {
-                                            MaNP = txtMaNP.Text,
-                                            MaNV = cboMaNV.SelectedValue.ToString(),
-                                            TuNgay = tuNgay,
-                                            DenNgay = denNgay,
-                                            LyDo = txtLyDo.Text,
-                                            TinhTrang = tinhTrang
-                                        });
-
-                                        MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        them = false;
-                                        LoadData();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Mã nghỉ phép đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        return;
-                                    }
-
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Ngày bắt đầu hoặc ngày kết thúc không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    return;
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Dữ liệu không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nhân viên không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
+                       
                     }
                     else if (sua)
                     {
-                        DateTime tuNgay, denNgay;
-                        if (CheckInput() != false)
-                        {
-                            if (cboMaNV.SelectedIndex > 0 &&
-                                DateTime.TryParse(dtpTuNgay.Text, out tuNgay) &&
-                                DateTime.TryParse(dtpDenNgay.Text, out denNgay))
-                            {
-                                if (tuNgay <= denNgay)
-                                {
-                                    string tinhTrang = radChuaDuyet.Checked ? "Chưa duyệt" : "Đã duyệt";
-                                    nghiPhepBUL.update(new NghiPhepDTO
-                                    {
-                                        MaNP = txtMaNP.Text,
-                                        MaNV = cboMaNV.SelectedValue.ToString(),
-                                        LyDo = txtLyDo.Text,
-                                        TuNgay = tuNgay,
-                                        DenNgay = denNgay,
-                                        TinhTrang = tinhTrang
-                                    });
-                                    MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    sua = false;
-                                    LoadData();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Dữ liệu không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    return;
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Dữ liệu không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Dữ liệu không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
+                        
                     }
                     else if (tim)
                     {
-                        string maNV = cboMaNV.Text.Trim();
-
-                        dgvNghiPhep.DataSource = null;
-
-                        List<NghiPhepDTO> result = nghiPhepBUL.searchLinq(maNV);
-
-                        dgvNghiPhep.DataSource = result;
-
-                        if (result.Count == 0)
-                        {
-                            MessageBox.Show("Không tìm thấy kết quả phù hợp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
-                        cboMaNV.Enabled = false;
-                        tim = false;
+                        
                     }
                     break;
                 case DynamicControl.menucontrol.ButtonType.Reload:

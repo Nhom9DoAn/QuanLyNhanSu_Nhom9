@@ -10,11 +10,11 @@ namespace KimPhuong.DTO
     {
         string manp;
         string manv;
-        DateTime tungay;
-        DateTime denngay;
+        DateTime ngaybatdau;
+        DateTime ngayketthuc;
         string lydo;
-        string tinhtrang;
-        public string MaNP
+        string trangthai;
+        public string MaNghiPhep
         {
             get { return manp; }
             set { manp = value; }
@@ -24,38 +24,38 @@ namespace KimPhuong.DTO
             get { return manv; }
             set { manv = value; }
         }
-        public DateTime TuNgay
+        public DateTime NgayBatDau
         {
-            get { return tungay; }
-            set { tungay = value; }
+            get { return ngaybatdau; }
+            set { ngaybatdau = value; }
         }
-        public DateTime DenNgay
+        public DateTime NgayKetThuc
         {
-            get { return denngay; }
-            set { denngay = value; }
+            get { return ngayketthuc; }
+            set { ngayketthuc = value; }
         }
         public string LyDo
         {
             get { return lydo; }
             set { lydo = value; }
         }
-        public string TinhTrang
+        public string TrangThai
         {
-            get { return tinhtrang; }
-            set { tinhtrang = value; }
+            get { return trangthai; }
+            set { trangthai = value; }
         }
         public NghiPhepDTO()
         {
 
         }
-        public NghiPhepDTO(string maNP, string maNV, DateTime tuNgay, DateTime denNgay, string lyDo, string tinhTrang)
+        public NghiPhepDTO(string maNP, string maNV, DateTime ngayBatDau, DateTime ngayKetThuc, string lyDo, string trangThai)
         {
-            MaNP = maNP;
+            MaNghiPhep = maNP;
             MaNV = maNV;
-            TuNgay = tuNgay;
-            DenNgay = denNgay;
+            NgayBatDau = ngayBatDau;
+            NgayKetThuc = ngayKetThuc;
             LyDo = lyDo;
-            TinhTrang = tinhTrang;
+            TrangThai = trangThai;
         }
     }
 }

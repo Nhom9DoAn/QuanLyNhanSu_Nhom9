@@ -15,45 +15,53 @@ namespace KimPhuong.BUL
         {
             nghiPhepDAO = new NghiPhepDAO();
         }
-        public List<NghiPhepDTO> getAll()
+        public List<NghiPhep> GetAll()
         {
-            return nghiPhepDAO.getAll();
+            return nghiPhepDAO.GetAll();
         }
-        public bool KiemTraTrungMa(string maNP)
+
+        // Thêm mới nghỉ phép
+        public bool Insert(int maNV, DateTime ngayBatDau, DateTime ngayKetThuc,
+                           string lyDo, string trangThai)
         {
-            return nghiPhepDAO.KiemTraTrungMa(maNP);
+            return nghiPhepDAO.Insert(maNV, ngayBatDau, ngayKetThuc, lyDo, trangThai);
         }
-        public string LayTenNhanVienTuMa(string maNV)
+
+        // Cập nhật thông tin nghỉ phép
+        public bool Update(int maNghiPhep, DateTime ngayBatDau, DateTime ngayKetThuc,
+                           string lyDo, string trangThai)
         {
-            return nghiPhepDAO.LayTenNhanVienTheoMa(maNV);
+            return nghiPhepDAO.Update(maNghiPhep, ngayBatDau, ngayKetThuc, lyDo, trangThai);
         }
-        public string LayNgaySinhNhanVienTuMa(string maNV)
+
+        // Xóa thông tin nghỉ phép
+        public bool Delete(int maNghiPhep)
         {
-            return nghiPhepDAO.LayNgaySinhNhanVienTheoMa(maNV);
+            return nghiPhepDAO.Delete(maNghiPhep);
         }
-        public string LaySDTNhanVienTuMa(string maNV)
+
+        // Lấy thông tin nghỉ phép theo mã nghỉ phép
+        public NghiPhep GetByID(int maNghiPhep)
         {
-            return nghiPhepDAO.LaySDTNhanVienTheoMa(maNV);
+            return nghiPhepDAO.GetByID(maNghiPhep);
         }
-        public string LayTenCV(string maNV)
+
+        // Lấy danh sách nghỉ phép của nhân viên theo mã nhân viên
+        public List<NghiPhep> GetByNhanVien(int maNV)
         {
-            return nghiPhepDAO.LayTenChucVu(maNV);
+            return nghiPhepDAO.GetByNhanVien(maNV);
         }
-        public bool delete(NghiPhepDTO nghiPhep)
+
+        // Tìm kiếm nghỉ phép theo nhiều tiêu chí
+        public List<NghiPhep> Search(int maNV, DateTime tuNgay, DateTime denNgay, string trangThai)
         {
-            return nghiPhepDAO.delete(nghiPhep);
+            return nghiPhepDAO.Search(maNV, tuNgay, denNgay, trangThai);
         }
-        public bool insert(NghiPhepDTO nghiPhep)
+
+        // Tính tổng số ngày nghỉ phép của nhân viên trong khoảng thời gian cụ thể
+        public int GetTongNgayNghi(int maNV, DateTime tuNgay, DateTime denNgay)
         {
-            return nghiPhepDAO.insert(nghiPhep);
-        }
-        public bool update(NghiPhepDTO nghiPhep)
-        {
-            return nghiPhepDAO.update(nghiPhep);
-        }
-        public List<NghiPhepDTO> searchLinq(string maNV)
-        {
-            return nghiPhepDAO.searchLinq(maNV);
+            return nghiPhepDAO.GetTongNgayNghi(maNV, tuNgay, denNgay);
         }
     }
 }
