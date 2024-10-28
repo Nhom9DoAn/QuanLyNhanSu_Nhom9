@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace KimPhuong.DAL
 {
@@ -52,8 +53,9 @@ namespace KimPhuong.DAL
                     return true;
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }
