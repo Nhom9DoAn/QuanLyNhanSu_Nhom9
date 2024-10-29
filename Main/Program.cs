@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Main.ModelTrain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,7 +24,8 @@ namespace Main
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTrangChu());
+            //Application.Run(new frmTrangChu());
+            Application.Run(new ModelForm());
         }
     }
 }
