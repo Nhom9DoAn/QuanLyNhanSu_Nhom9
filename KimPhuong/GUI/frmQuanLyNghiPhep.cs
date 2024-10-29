@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2;
+using Sunny.UI;
 
 namespace KimPhuong.GUI
 {
-    public partial class frmQuanLyNghiPhep : Form
+    public partial class frmQuanLyNghiPhep : UIPage
     {
         public frmQuanLyNghiPhep()
         {
