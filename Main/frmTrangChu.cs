@@ -15,20 +15,32 @@ namespace Main
 {
     public partial class frmTrangChu : UIHeaderAsideMainFrame
     {
-        public frmTrangChu()
+        public frmTrangChu(string tenNhanVien, string chucVu)
         {
             InitializeComponent();
-            int pageIndex = 1000;
-            TreeNode root = Aside.CreateNode("QUẢN LÝ PHÒNG BAN", 61451, 24, pageIndex);
-            Aside.CreateChildNode(root, AddPage(new frmPhongBan(), ++pageIndex));
-            
-            pageIndex = 2000;
-            root = Aside.CreateNode("QUẢN LÝ NHÂN SỰ", 61451, 24, pageIndex);
-            Aside.CreateChildNode(root, AddPage(new frmQuanLyNghiPhep(), ++pageIndex));
-            Aside.CreateChildNode(root, AddPage(new frmHocVan(), ++pageIndex));
-            Aside.CreateChildNode(root, AddPage(new frm_CongTac(), ++pageIndex));
-            Aside.CreateChildNode(root, AddPage(new frm_HopDongLaoDong(), ++pageIndex));
-            Aside.CreateChildNode(root, AddPage(new frm_ThuongPhat(), ++pageIndex));
+            lblTenDangNhap.Text = tenNhanVien;
+            if (chucVu == "Giám đốc")
+            {
+                int pageIndex = 1000;
+                TreeNode root = Aside.CreateNode("QUẢN LÝ PHÒNG BAN", 61451, 24, pageIndex);
+                Aside.CreateChildNode(root, AddPage(new frmQuanLyPhongBan(), ++pageIndex));
+
+                pageIndex = 2000;
+                root = Aside.CreateNode("QUẢN LÝ NHÂN SỰ", 61451, 24, pageIndex);
+                Aside.CreateChildNode(root, AddPage(new frmQuanLyNghiPhep(), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new frm_CongTac(), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new frm_HopDongLaoDong(), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new frm_ThuongPhat(), ++pageIndex));
+            }
+            else
+            {
+                MessageBox.Show("Không có quyền truy cập");
+            }
+        }
+
+        private void frmTrangChu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

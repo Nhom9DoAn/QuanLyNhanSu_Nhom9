@@ -7,115 +7,128 @@ using System.Text;
 using System.Threading.Tasks;
 using KimPhuong.DBC;
 using KimPhuong.DTO;
+using System.Windows.Forms;
 
 namespace KimPhuong.DAL
 {
     public class PhongBanDAO
     {
-        DataTable dt_phongban;
-        SqlDataAdapter adapter;
-        private DBConnection dB;
+        private dbQuanLyNhanSuDataContext db;
+
         public PhongBanDAO()
         {
-            dB = new DBConnection();
-            dt_phongban = new DataTable();
-            adapter = new SqlDataAdapter("select * from PHONGBAN", dB.GetConnection());
-            adapter.Fill(dt_phongban);
+            db = new dbQuanLyNhanSuDataContext();
         }
-        public List<PhongBanDTO> getAll()
+
+        public List<PhongBan> getAll()
         {
-            List<PhongBanDTO> lst = new List<PhongBanDTO>();
-            foreach (DataRow row in dt_phongban.Rows)
+            try
             {
-                PhongBanDTO phongBan = new PhongBanDTO(row["MaPB"].ToString(), row["TenPB"].ToString(),
-                    row["DiaChi"].ToString(), row["SDTPB"].ToString());
-                lst.Add(phongBan);
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    return db.PhongBans.ToList();
+                }
             }
-            return lst;
+            catch
+            {
+                return new List<PhongBan>();
+            }
         }
-        public bool insert(PhongBanDTO phongBan)
+
+        public bool insert(string tenPB, string diaChi, string sdtPB)
         {
-            DataRow newRow = dt_phongban.NewRow();
-            newRow["MaPB"] = phongBan.MaPB;
-            newRow["TenPB"] = phongBan.TenPB;
-            newRow["DiaChi"] = phongBan.DiaChi;
-            newRow["SDTPB"] = phongBan.SoDienThoai;
-            dt_phongban.Rows.Add(newRow);
-
-            SqlCommandBuilder cmd = new SqlCommandBuilder(adapter);
-            int kq = adapter.Update(dt_phongban);
-            if (kq != 0)
+            try
             {
-                return true;
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    PhongBan pb = new PhongBan
+                    {
+                        TenPB = tenPB,
+                        DiaChi = diaChi,
+                        SDTPB = sdtPB
+                    };
+                    db.PhongBans.InsertOnSubmit(pb);
+                    db.SubmitChanges();
+                    return true;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return false;
-            }
-
-        }
-        public bool delete(PhongBanDTO phongBan)
-        {
-            DataRow[] deleteRow = dt_phongban.Select("MaPB = '" + phongBan.MaPB + "'");
-            foreach (DataRow row in deleteRow)
-            {
-                row.Delete();
-            }
-
-            SqlCommandBuilder cmd = new SqlCommandBuilder(adapter);
-            int kq = adapter.Update(dt_phongban);
-
-            if (kq != 0)
-            {
-                return true;
-            }
-            else
-            {
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }
 
-
-        public bool update(PhongBanDTO phongBan)
+        public bool delete(int maPB)
         {
-            DataRow updateRow = dt_phongban.Select("MaPB = '" + phongBan.MaPB + "'").FirstOrDefault();
-
-            if (updateRow != null)
+            try
             {
-                updateRow["TenPB"] = phongBan.TenPB;
-                updateRow["DiaChi"] = phongBan.DiaChi;
-                updateRow["SDTPB"] = phongBan.SoDienThoai;
-
-                SqlCommandBuilder cmd = new SqlCommandBuilder(adapter);
-                int kq = adapter.Update(dt_phongban);
-                return kq != 0;
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    var np = db.PhongBans.FirstOrDefault(x => x.MaPB == maPB);
+                    if (np != null)
+                    {
+                        db.PhongBans.DeleteOnSubmit(np);
+                        db.SubmitChanges();
+                        return true;
+                    }
+                    return false;
+                }
             }
-            return false;
+            catch
+            {
+                return false;
+            }
         }
-        public int tinhTongNhanVienTrongPhongBan(string maPB)
-        {
-            int soNhanVien = 0;
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM NHANVIEN WHERE MaPB = @MaPB", dB.GetConnection());
-            cmd.Parameters.AddWithValue("@MaPB", maPB);
-            soNhanVien = (int) cmd.ExecuteScalar();
-            return soNhanVien;
-        }
-        public List<PhongBanDTO> searchLinq(string maPB, string tenPB)
-        {
-            var query = this.getAll().AsQueryable();
 
-            if (!string.IsNullOrEmpty(maPB))
+        public bool update(int maPB, string tenPB, string diaChi, string sdtPB)
+        {
+            try
             {
-                query = query.Where(pb => pb.MaPB.ToLower().Contains(maPB.ToLower()));
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    var np = db.PhongBans.FirstOrDefault(x => x.MaPB == maPB);
+                    if (np != null)
+                    {
+                        np.TenPB = tenPB;
+                        np.DiaChi = diaChi;
+                        np.SDTPB = sdtPB;
+
+                        db.SubmitChanges();
+                        return true;
+                    }
+                    return false;
+                }
             }
-            if (!string.IsNullOrEmpty(tenPB))
+            catch
             {
-                query = query.Where(pb => pb.TenPB.ToLower().Contains(tenPB.ToLower()));
+                return false;
             }
-            return query.ToList();
+        }
+
+        public List<PhongBan> SearchPhongBan(int? maPB, string tenPB)
+        {
+            try
+            {
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    var query = from pb in db.PhongBans
+                                where
+                                    (!maPB.HasValue || pb.MaPB == maPB) &&
+                                    (string.IsNullOrEmpty(tenPB) || pb.TenPB.ToLower().Contains(tenPB.ToLower()))
+                                select pb;
+
+                    return query.ToList();
+                }
+            }
+            catch
+            {
+                return new List<PhongBan>();
+            }
         }
 
 
     }
+
 
 }

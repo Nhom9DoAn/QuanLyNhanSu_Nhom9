@@ -76,29 +76,17 @@
     <Compile Include="DTO\DTO_NhanVien.cs" />
     <Compile Include="DTO\NghiPhepDTO.cs" />
     <Compile Include="DTO\PhongBanDTO.cs" />
-    <Compile Include="GUI\frmHocVan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\frmHocVan.Designer.cs">
-      <DependentUpon>frmHocVan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\frmNghiPhep.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\frmNghiPhep.Designer.cs">
-      <DependentUpon>frmNghiPhep.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\frmPhongBan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\frmPhongBan.Designer.cs">
-      <DependentUpon>frmPhongBan.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\frmQuanLyNghiPhep.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmQuanLyNghiPhep.Designer.cs">
       <DependentUpon>frmQuanLyNghiPhep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyPhongBan.Designer.cs">
+      <DependentUpon>frmQuanLyPhongBan.cs</DependentUpon>
     </Compile>
     <Compile Include="menuthemxoasua.cs">
       <SubType>UserControl</SubType>
@@ -111,17 +99,11 @@
     <None Include="DAL\dbQuanLyNhanSu.dbml.layout">
       <DependentUpon>dbQuanLyNhanSu.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="GUI\frmHocVan.resx">
-      <DependentUpon>frmHocVan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmNghiPhep.resx">
-      <DependentUpon>frmNghiPhep.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmPhongBan.resx">
-      <DependentUpon>frmPhongBan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLyNghiPhep.resx">
       <DependentUpon>frmQuanLyNghiPhep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQuanLyPhongBan.resx">
+      <DependentUpon>frmQuanLyPhongBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menuthemxoasua.resx">
       <DependentUpon>menuthemxoasua.cs</DependentUpon>

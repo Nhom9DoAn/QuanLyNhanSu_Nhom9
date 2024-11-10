@@ -15,30 +15,25 @@ namespace KimPhuong.BUL
         {
             phongBanDAO = new PhongBanDAO();
         }
-        public List<PhongBanDTO> getAll()
+        public List<PhongBan> getAll()
         {
             return phongBanDAO.getAll();
         }
-        public bool insert(PhongBanDTO pb)
+        public bool insert(string tenPB, string diaChi, string sdtPB)
         {
-            return phongBanDAO.insert(pb);
+            return phongBanDAO.insert(tenPB, diaChi, sdtPB);
         }
-        public bool delete(PhongBanDTO pb)
+        public bool delete(int maPB)
         {
-            return phongBanDAO.delete(pb);
+            return phongBanDAO.delete(maPB);
         }
-        public bool update(PhongBanDTO pb)
+        public bool update(int maPB, string tenPB, string diaChi, string sdtPB)
         {
-            return phongBanDAO.update(pb);
+            return phongBanDAO.update(maPB, tenPB, diaChi, sdtPB);
         }
-        public int tinhTongNhanVienTrongPhongBan(string maPB)
+        public List<PhongBan> searchPhongBan(int? maPB, string tenPB)
         {
-            return phongBanDAO.tinhTongNhanVienTrongPhongBan(maPB);
-
-        }
-        public List<PhongBanDTO> searchLinq(string maPB, string tenPB)
-        {
-            return phongBanDAO.searchLinq(maPB, tenPB);
+            return phongBanDAO.SearchPhongBan(maPB, tenPB);
         }
     }
 }

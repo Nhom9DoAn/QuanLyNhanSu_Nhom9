@@ -8,11 +8,11 @@ namespace KimPhuong.DTO
 {
     public class PhongBanDTO
     {
-        string mapb;
+        int mapb;
         string tenpb;
         string diachi;
         string sodienthoai;
-        public string MaPB
+        public int MaPB
         {
             get { return mapb; }
             set { mapb = value; }
@@ -36,7 +36,7 @@ namespace KimPhuong.DTO
         {
             
         }
-        public PhongBanDTO(string maPB, string tenPB, string diaChi, string soDienThoai)
+        public PhongBanDTO(int maPB, string tenPB, string diaChi, string soDienThoai)
         {
             MaPB = maPB;
             TenPB = tenPB;

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbDangNhap">
+  <DataContextMoniker Name="/dbDangNhapDataContext" />
+  <nestedChildShapes>
+    <classShape Id="99d8be35-0e9c-4851-8e84-0f16f878dad0" absoluteBounds="3.5, 2.5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dbDangNhapDataContext/TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="349079d4-884d-4fc1-9b30-d6faec888209" absoluteBounds="3.515, 2.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="090bc21d-aa4f-4ce5-901b-67c6fc3cfdb5" absoluteBounds="0.75, 1, 2, 4.2708154296875">
+      <DataClassMoniker Name="/dbDangNhapDataContext/NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f586e6e9-cbdc-46c5-9a71-633dba24918a" absoluteBounds="0.765, 1.46, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.19314697265625); (3.5 : 3.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbDangNhapDataContext/NhanVien/NhanVien_TaiKhoan" />
+      <nodes>
+        <classShapeMoniker Id="090bc21d-aa4f-4ce5-901b-67c6fc3cfdb5" />
+        <classShapeMoniker Id="99d8be35-0e9c-4851-8e84-0f16f878dad0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.45923076923077 : 5.2708154296875); (1.45923076923077 : 5.5208154296875); (2.05461538461538 : 5.5208154296875); (2.05461538461538 : 5.2708154296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbDangNhapDataContext/NhanVien/NhanVien_NhanVien" />
+      <nodes>
+        <classShapeMoniker Id="090bc21d-aa4f-4ce5-901b-67c6fc3cfdb5" />
+        <classShapeMoniker Id="090bc21d-aa4f-4ce5-901b-67c6fc3cfdb5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3bee9547-5156-498e-a49e-36ee84054db3" absoluteBounds="3.5, 0.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dbDangNhapDataContext/ChucVu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b86809bd-6094-4278-bdc9-eac12d600500" absoluteBounds="3.5149999999999997, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 1.63064697265625); (2.75 : 1.63064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbDangNhapDataContext/ChucVu/ChucVu_NhanVien" />
+      <nodes>
+        <classShapeMoniker Id="3bee9547-5156-498e-a49e-36ee84054db3" />
+        <classShapeMoniker Id="090bc21d-aa4f-4ce5-901b-67c6fc3cfdb5" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
