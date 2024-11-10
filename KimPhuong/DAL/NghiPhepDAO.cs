@@ -131,7 +131,9 @@ namespace KimPhuong.DAL
             {
                 using (var db = new dbQuanLyNhanSuDataContext())
                 {
-                    return db.NghiPheps.Where(x => x.MaNV == maNV).ToList();
+                    return db.NghiPheps
+                            .Where(x => maNV == 0 || x.MaNV == maNV)
+                            .ToList();
                 }
             }
             catch

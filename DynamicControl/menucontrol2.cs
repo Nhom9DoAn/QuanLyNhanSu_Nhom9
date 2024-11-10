@@ -33,30 +33,32 @@ namespace DynamicControl
         {
             ButtonClicked?.Invoke(sender, buttonType, e);
         }
-        private void SetStatus(Status status)
+        public void SetStatus(Status status)
         {
             currentStatus = status;
             switch (status)
             {
                 case Status.View:
                     btnSua.Enabled = true;
-                    btnSua.Enabled = true;
+                    btnThem.Enabled = true;
                     btnXoa.Enabled = true;
                     btnThoat.Enabled = true;
                     btnLuu.Enabled = false;
                     btnHuy.Enabled = false;
                     btnTim.Enabled = true;
+                    btnLoc.Enabled = true;
                     btnTaiLai.Enabled = true;
                     break;
 
                 case Status.Edit:
                     btnSua.Enabled = false;
-                    btnSua.Enabled = false;
+                    btnThem.Enabled = false;
                     btnXoa.Enabled = false;
                     btnThoat.Enabled = false;
                     btnLuu.Enabled = true;
                     btnHuy.Enabled = true;
                     btnTim.Enabled = false;
+                    btnLoc.Enabled = false;
                     btnTaiLai.Enabled = true;
                     break;
             }
@@ -94,7 +96,6 @@ namespace DynamicControl
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            SetStatus(Status.View);
             OnButtonClicked(sender, ButtonType.Save, e);
         }
 
@@ -111,7 +112,6 @@ namespace DynamicControl
 
         private void btnTaiLai_Click(object sender, EventArgs e)
         {
-            SetStatus(Status.View);
             OnButtonClicked(sender, ButtonType.Reload, e);
         }
     }

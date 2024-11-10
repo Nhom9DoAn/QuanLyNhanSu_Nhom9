@@ -9,7 +9,7 @@ namespace KimPhuong.DTO
 {
     public class DTO_NhanVien
     {
-        string manv;
+        int manv;
         string mapb;
         string macv;
         string hoten;
@@ -27,7 +27,7 @@ namespace KimPhuong.DTO
         string tinhtranghonnhan;
         string manguoiquanly;
 
-        public string Manv { get => manv; set => manv = value; }
+        public int Manv { get => manv; set => manv = value; }
         public string Mapb { get => mapb; set => mapb = value; }
         public string Macv { get => macv; set => macv = value; }
         public string Hoten { get => hoten; set => hoten = value; }
@@ -50,7 +50,7 @@ namespace KimPhuong.DTO
             
         }
         public DTO_NhanVien(
-            string manv,
+            int manv,
             string mapb,
             string macv,
             string hoten,

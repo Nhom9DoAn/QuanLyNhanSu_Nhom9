@@ -24,7 +24,7 @@ namespace Main
             
             pageIndex = 2000;
             root = Aside.CreateNode("QUẢN LÝ NHÂN SỰ", 61451, 24, pageIndex);
-            Aside.CreateChildNode(root, AddPage(new frmNghiPhep(), ++pageIndex));
+            Aside.CreateChildNode(root, AddPage(new frmQuanLyNghiPhep(), ++pageIndex));
             Aside.CreateChildNode(root, AddPage(new frmHocVan(), ++pageIndex));
             Aside.CreateChildNode(root, AddPage(new frm_CongTac(), ++pageIndex));
             Aside.CreateChildNode(root, AddPage(new frm_HopDongLaoDong(), ++pageIndex));
