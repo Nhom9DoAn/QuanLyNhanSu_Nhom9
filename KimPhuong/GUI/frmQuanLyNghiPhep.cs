@@ -117,6 +117,11 @@ namespace KimPhuong.GUI
             return true;
         }
 
+        private void menucontrol_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void menucontrol_ButtonClicked(object sender, DynamicControl.menucontrol2.ButtonType buttonType, EventArgs e)
         {
             switch (buttonType)
@@ -212,7 +217,7 @@ namespace KimPhuong.GUI
                         else if (radChuaDuyet.Checked)
                             trangThai = "Chưa duyệt";
                         else
-                            trangThai = "Đã từ chối";
+                            trangThai = "Từ chối";
 
                         if (nghiPhepBUS.Update(
                             Convert.ToInt32(txtMaNP.Text),

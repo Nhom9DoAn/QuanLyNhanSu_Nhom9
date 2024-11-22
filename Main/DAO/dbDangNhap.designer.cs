@@ -22,7 +22,7 @@ namespace Main.DAO
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QL_NHANSU_UDTM1")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QL_NHANSU_UDTM")]
 	public partial class dbDangNhapDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -42,7 +42,7 @@ namespace Main.DAO
     #endregion
 		
 		public dbDangNhapDataContext() : 
-				base(global::Main.Properties.Settings.Default.QL_NHANSU_UDTM1ConnectionString, mappingSource)
+				base(global::Main.Properties.Settings.Default.QL_NHANSU_UDTMConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

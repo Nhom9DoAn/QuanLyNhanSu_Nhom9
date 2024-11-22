@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_NHANSU_UDTM1" Class="dbQuanLyNhanSuDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ACER\FUANG;Initial Catalog=QL_NHANSU_UDTM1;Integrated Security=True" SettingsObjectName="KimPhuong.Properties.Settings" SettingsPropertyName="QL_NHANSU_UDTM1ConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_NHANSU_UDTM" Class="dbQuanLyNhanSuDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ACER\FUANG;Initial Catalog=QL_NHANSU_UDTM;Integrated Security=True" SettingsObjectName="KimPhuong.Properties.Settings" SettingsPropertyName="QL_NHANSU_UDTMConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChamCong" Member="ChamCongs">
     <Type Name="ChamCong">
       <Column Name="MaChamCong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -44,6 +44,20 @@
       <Column Name="BieuMau" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="TrangThai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="NhanVien_CongTac" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HocVanBangCap" Member="HocVanBangCaps">
+    <Type Name="HocVanBangCap">
+      <Column Name="MaHVBC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenTruong" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ChuyenNganh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BangCap" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NamTotNghiep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiemTB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HinhThucHoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="NhanVien_HocVanBangCap" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HopDong" Member="HopDongs">
@@ -152,8 +166,10 @@
       <Column Name="Hinh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="TinhTrangHonNhan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="DanToc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaChamCong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NhanVien_ChamCong" Member="ChamCongs" ThisKey="MaNV" OtherKey="MaNV" Type="ChamCong" />
       <Association Name="NhanVien_CongTac" Member="CongTacs" ThisKey="MaNV" OtherKey="MaNV" Type="CongTac" />
+      <Association Name="NhanVien_HocVanBangCap" Member="HocVanBangCaps" ThisKey="MaNV" OtherKey="MaNV" Type="HocVanBangCap" />
       <Association Name="NhanVien_HopDong" Member="HopDongs" ThisKey="MaNV" OtherKey="MaNV" Type="HopDong" />
       <Association Name="NhanVien_LichSuLuong" Member="LichSuLuongs" ThisKey="MaNV" OtherKey="MaNV" Type="LichSuLuong" />
       <Association Name="NhanVien_LichSuPhongBan" Member="LichSuPhongBans" ThisKey="MaNV" OtherKey="MaNV" Type="LichSuPhongBan" />
@@ -161,6 +177,7 @@
       <Association Name="NhanVien_NghiPhep" Member="NghiPheps" ThisKey="MaNV" OtherKey="MaNV" Type="NghiPhep" />
       <Association Name="NhanVien_NhanThan" Member="NhanThans" ThisKey="MaNV" OtherKey="MaNV" Type="NhanThan" />
       <Association Name="NhanVien_NhanVien" Member="NhanViens" ThisKey="MaNV" OtherKey="NguoiQuanLy" Type="NhanVien" />
+      <Association Name="NhanVien_TaiKhoan" Member="TaiKhoans" ThisKey="MaNV" OtherKey="MaNV" Type="TaiKhoan" />
       <Association Name="NhanVien_TangCa" Member="TangCas" ThisKey="MaNV" OtherKey="MaNV" Type="TangCa" />
       <Association Name="NhanVien_ThamGiaDaoTao" Member="ThamGiaDaoTaos" ThisKey="MaNV" OtherKey="MaNV" Type="ThamGiaDaoTao" />
       <Association Name="NhanVien_ThuongPhat" Member="ThuongPhats" ThisKey="MaNV" OtherKey="MaNV" Type="ThuongPhat" />
@@ -179,6 +196,19 @@
       <Association Name="PhongBan_LichSuPhongBan" Member="LichSuPhongBans" ThisKey="MaPB" OtherKey="MaPB" Type="LichSuPhongBan" />
       <Association Name="PhongBan_NhanVien" Member="NhanViens" ThisKey="MaPB" OtherKey="MaPB" Type="NhanVien" />
       <Association Name="PhongBan_TuyenDung" Member="TuyenDungs" ThisKey="MaPB" OtherKey="MaPhong" Type="TuyenDung" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenDangNhap" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VaiTro" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayCapNhat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="NhanVien_TaiKhoan" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TangCa" Member="TangCas">

@@ -49,6 +49,10 @@ namespace Main
 
                 this.Hide();
             }
+            else
+            {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng");
+            }
         }
     }
 }

@@ -31,6 +31,7 @@ namespace Main
                 Aside.CreateChildNode(root, AddPage(new frm_CongTac(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frm_HopDongLaoDong(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frm_ThuongPhat(), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new frmHocVanBangCap(), ++pageIndex));
             }
             else
             {

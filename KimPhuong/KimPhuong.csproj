@@ -76,6 +76,12 @@
     <Compile Include="DTO\DTO_NhanVien.cs" />
     <Compile Include="DTO\NghiPhepDTO.cs" />
     <Compile Include="DTO\PhongBanDTO.cs" />
+    <Compile Include="GUI\frmHocVanBangCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmHocVanBangCap.Designer.cs">
+      <DependentUpon>frmHocVanBangCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmQuanLyNghiPhep.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <None Include="DAL\dbQuanLyNhanSu.dbml.layout">
       <DependentUpon>dbQuanLyNhanSu.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="GUI\frmHocVanBangCap.resx">
+      <DependentUpon>frmHocVanBangCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLyNghiPhep.resx">
       <DependentUpon>frmQuanLyNghiPhep.cs</DependentUpon>
     </EmbeddedResource>

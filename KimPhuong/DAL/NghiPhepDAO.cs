@@ -82,8 +82,9 @@ namespace KimPhuong.DAL
                     return false;
                 }
             }
-            catch
+            catch (Exception EX)
             {
+                Console.WriteLine(EX.Message);
                 return false;
             }
         }
