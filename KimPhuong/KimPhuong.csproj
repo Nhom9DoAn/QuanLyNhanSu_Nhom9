@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUL\HocVanBangCapBUS.cs" />
+    <Compile Include="BUL\LichSuPhongBanBUS.cs" />
     <Compile Include="BUL\NghiPhepBUL.cs" />
     <Compile Include="BUL\NhanVienBUS.cs" />
     <Compile Include="BUL\PhongBanBUL.cs" />
@@ -70,6 +71,7 @@
       <DependentUpon>dbQuanLyNhanSu.dbml</DependentUpon>
     </Compile>
     <Compile Include="DAL\HocVanBangCapDAO.cs" />
+    <Compile Include="DAL\LichSuPhongBanDAO.cs" />
     <Compile Include="DAL\NghiPhepDAO.cs" />
     <Compile Include="DAL\NhanVienDAO.cs" />
     <Compile Include="DAL\PhongBanDAO.cs" />
@@ -83,6 +85,12 @@
     </Compile>
     <Compile Include="GUI\frmHocVanBangCap.Designer.cs">
       <DependentUpon>frmHocVanBangCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmLichSuPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmLichSuPhongBan.Designer.cs">
+      <DependentUpon>frmLichSuPhongBan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmQuanLyNghiPhep.cs">
       <SubType>Form</SubType>
@@ -109,6 +117,9 @@
     </None>
     <EmbeddedResource Include="GUI\frmHocVanBangCap.resx">
       <DependentUpon>frmHocVanBangCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmLichSuPhongBan.resx">
+      <DependentUpon>frmLichSuPhongBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLyNghiPhep.resx">
       <DependentUpon>frmQuanLyNghiPhep.cs</DependentUpon>
