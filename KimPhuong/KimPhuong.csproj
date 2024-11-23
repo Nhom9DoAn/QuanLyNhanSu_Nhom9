@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUL\HocVanBangCapBUS.cs" />
     <Compile Include="BUL\NghiPhepBUL.cs" />
     <Compile Include="BUL\NhanVienBUS.cs" />
     <Compile Include="BUL\PhongBanBUL.cs" />
@@ -68,6 +69,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbQuanLyNhanSu.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DAL\HocVanBangCapDAO.cs" />
     <Compile Include="DAL\NghiPhepDAO.cs" />
     <Compile Include="DAL\NhanVienDAO.cs" />
     <Compile Include="DAL\PhongBanDAO.cs" />
