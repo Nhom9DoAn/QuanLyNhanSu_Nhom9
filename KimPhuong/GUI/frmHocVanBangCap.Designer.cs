@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvHocVan = new Sunny.UI.UIDataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -58,12 +59,11 @@
             this.txtNamTotNghiep = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDiemTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGhiChu = new Guna.UI2.WinForms.Guna2TextBox();
-            this.menucontrol = new DynamicControl.menucontrol2();
             this.cbBangCap = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dgvHocVan = new Sunny.UI.UIDataGridView();
+            this.menucontrol = new DynamicControl.menucontrol2();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHocVan)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -82,6 +82,60 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 361F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1223, 867);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // dgvHocVan
+            // 
+            this.dgvHocVan.AllowUserToAddRows = false;
+            this.dgvHocVan.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgvHocVan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHocVan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHocVan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvHocVan.BackgroundColor = System.Drawing.Color.White;
+            this.dgvHocVan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHocVan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvHocVan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHocVan.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvHocVan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHocVan.EnableHeadersVisualStyles = false;
+            this.dgvHocVan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dgvHocVan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.dgvHocVan.Location = new System.Drawing.Point(3, 508);
+            this.dgvHocVan.Name = "dgvHocVan";
+            this.dgvHocVan.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHocVan.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvHocVan.RowHeadersWidth = 62;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dgvHocVan.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvHocVan.RowTemplate.Height = 28;
+            this.dgvHocVan.SelectedIndex = -1;
+            this.dgvHocVan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHocVan.Size = new System.Drawing.Size(1217, 356);
+            this.dgvHocVan.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgvHocVan.TabIndex = 5;
+            this.dgvHocVan.SelectionChanged += new System.EventHandler(this.dgvHocVan_SelectionChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -126,7 +180,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1217, 408);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1217, 407);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // guna2HtmlLabel1
@@ -136,7 +190,7 @@
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(3, 3);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(234, 29);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(239, 52);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Mã học vấn/bằng cấp";
             // 
@@ -147,7 +201,7 @@
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 61);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(126, 29);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(239, 52);
             this.guna2HtmlLabel2.TabIndex = 1;
             this.guna2HtmlLabel2.Text = "Tên trường";
             // 
@@ -158,7 +212,7 @@
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 119);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(163, 29);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(239, 52);
             this.guna2HtmlLabel3.TabIndex = 2;
             this.guna2HtmlLabel3.Text = "Chuyên ngành";
             // 
@@ -169,7 +223,7 @@
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(3, 177);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(106, 29);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(239, 52);
             this.guna2HtmlLabel4.TabIndex = 3;
             this.guna2HtmlLabel4.Text = "Bằng cấp";
             // 
@@ -180,7 +234,7 @@
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(3, 235);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(168, 29);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(239, 29);
             this.guna2HtmlLabel5.TabIndex = 4;
             this.guna2HtmlLabel5.Text = "Năm tốt nghiệp";
             // 
@@ -191,7 +245,7 @@
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(660, 235);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(94, 29);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(239, 52);
             this.guna2HtmlLabel6.TabIndex = 5;
             this.guna2HtmlLabel6.Text = "Chức vụ";
             // 
@@ -202,7 +256,7 @@
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel7.Location = new System.Drawing.Point(660, 177);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(111, 29);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(239, 52);
             this.guna2HtmlLabel7.TabIndex = 6;
             this.guna2HtmlLabel7.Text = "Điện thoại";
             // 
@@ -213,7 +267,7 @@
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel8.Location = new System.Drawing.Point(660, 119);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(111, 29);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(239, 52);
             this.guna2HtmlLabel8.TabIndex = 7;
             this.guna2HtmlLabel8.Text = "Ngày sinh";
             // 
@@ -224,7 +278,7 @@
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel9.Location = new System.Drawing.Point(660, 61);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(156, 29);
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(239, 52);
             this.guna2HtmlLabel9.TabIndex = 8;
             this.guna2HtmlLabel9.Text = "Tên nhân viên";
             // 
@@ -235,7 +289,7 @@
             this.guna2HtmlLabel10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel10.Location = new System.Drawing.Point(660, 3);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(147, 29);
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(239, 52);
             this.guna2HtmlLabel10.TabIndex = 9;
             this.guna2HtmlLabel10.Text = "Mã nhân viên";
             // 
@@ -379,7 +433,7 @@
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel11.Location = new System.Drawing.Point(3, 293);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(177, 29);
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(239, 29);
             this.guna2HtmlLabel11.TabIndex = 20;
             this.guna2HtmlLabel11.Text = "Điểm trung bình";
             // 
@@ -390,7 +444,7 @@
             this.guna2HtmlLabel13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel13.Location = new System.Drawing.Point(3, 351);
             this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(88, 29);
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(239, 29);
             this.guna2HtmlLabel13.TabIndex = 22;
             this.guna2HtmlLabel13.Text = "Ghi chú";
             // 
@@ -509,15 +563,6 @@
             this.txtGhiChu.Size = new System.Drawing.Size(305, 36);
             this.txtGhiChu.TabIndex = 27;
             // 
-            // menucontrol
-            // 
-            this.menucontrol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menucontrol.Location = new System.Drawing.Point(3, 3);
-            this.menucontrol.Name = "menucontrol";
-            this.menucontrol.Size = new System.Drawing.Size(1217, 86);
-            this.menucontrol.TabIndex = 1;
-            this.menucontrol.ButtonClicked += new DynamicControl.menucontrol2.ButtonClickedHandler(this.menucontrol_ButtonClicked);
-            // 
             // cbBangCap
             // 
             this.cbBangCap.BackColor = System.Drawing.Color.Transparent;
@@ -543,59 +588,14 @@
             this.cbBangCap.Size = new System.Drawing.Size(307, 36);
             this.cbBangCap.TabIndex = 28;
             // 
-            // dgvHocVan
+            // menucontrol
             // 
-            this.dgvHocVan.AllowUserToAddRows = false;
-            this.dgvHocVan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.dgvHocVan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvHocVan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHocVan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvHocVan.BackgroundColor = System.Drawing.Color.White;
-            this.dgvHocVan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHocVan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvHocVan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHocVan.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvHocVan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHocVan.EnableHeadersVisualStyles = false;
-            this.dgvHocVan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dgvHocVan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.dgvHocVan.Location = new System.Drawing.Point(3, 509);
-            this.dgvHocVan.Name = "dgvHocVan";
-            this.dgvHocVan.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHocVan.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvHocVan.RowHeadersWidth = 62;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dgvHocVan.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvHocVan.RowTemplate.Height = 28;
-            this.dgvHocVan.SelectedIndex = -1;
-            this.dgvHocVan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHocVan.Size = new System.Drawing.Size(1217, 355);
-            this.dgvHocVan.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.dgvHocVan.TabIndex = 5;
-            this.dgvHocVan.SelectionChanged += new System.EventHandler(this.dgvHocVan_SelectionChanged);
+            this.menucontrol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menucontrol.Location = new System.Drawing.Point(3, 3);
+            this.menucontrol.Name = "menucontrol";
+            this.menucontrol.Size = new System.Drawing.Size(1217, 86);
+            this.menucontrol.TabIndex = 1;
+            this.menucontrol.ButtonClicked += new DynamicControl.menucontrol2.ButtonClickedHandler(this.menucontrol_ButtonClicked);
             // 
             // frmHocVanBangCap
             // 
@@ -605,9 +605,9 @@
             this.Name = "frmHocVanBangCap";
             this.Text = "frmHocVanBangCap";
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHocVan)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHocVan)).EndInit();
             this.ResumeLayout(false);
 
         }

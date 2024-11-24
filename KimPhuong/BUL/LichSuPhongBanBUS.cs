@@ -23,5 +23,9 @@ namespace KimPhuong.BUL
         {
             return lichSuPhongBanDAO.GetAll();
         }
+        public string GetTenPhongBan(int maPhongBan)
+        {
+            return lichSuPhongBanDAO.GetTenPhongBan(maPhongBan);
+        }
     }
 }

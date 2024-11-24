@@ -82,22 +82,22 @@ namespace KimPhuong.GUI
             {
                 if (maNV == 0)
                 {
-                    dgvLichSuPhongBan.DataSource = lichSuPhongBanBUS.GetAll();
+                    dgvLichSuPhongBan.DataSource = lichSuPhongBanBUS.GetAll().Select(ls => new { ls.MaLichSu, ls.MaNV, ls.MaPB, ls.NgayChuyen, ls.GhiChu }).ToList();
                 }
                 else
                 {
-                    dgvLichSuPhongBan.DataSource = lichSuPhongBanBUS.GetLichSuByNhanVien(maNV);
+                    dgvLichSuPhongBan.DataSource = lichSuPhongBanBUS.GetLichSuByNhanVien(maNV).Select(ls => new { ls.MaLichSu, ls.MaNV, ls.MaPB, ls.NgayChuyen, ls.GhiChu }).ToList();
                 }
 
-                if(dgvLichSuPhongBan.Columns.Count > 0)
+                if (dgvLichSuPhongBan.Columns.Count > 0)
                 {
                     dgvLichSuPhongBan.Columns["MaNV"].HeaderText = "Mã nhân viên";
                     dgvLichSuPhongBan.Columns["MaLichSu"].HeaderText = "Mã lịch sử";
                     dgvLichSuPhongBan.Columns["MaPB"].HeaderText = "Mã phòng ban";
                     dgvLichSuPhongBan.Columns["NgayChuyen"].HeaderText = "Ngày chuyển";
-                    dgvLichSuPhongBan.Columns["LyDo"].HeaderText = "Lý do";
+                    dgvLichSuPhongBan.Columns["GhiChu"].HeaderText = "Ghi chú";
                 }
-       
+
             }
             catch (Exception ex)
             {
@@ -108,7 +108,7 @@ namespace KimPhuong.GUI
 
         private void dgvLichSuPhongBan_SizeChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dgvLichSuPhongBan_SelectionChanged(object sender, EventArgs e)
@@ -118,8 +118,11 @@ namespace KimPhuong.GUI
                 DataGridViewRow selected = dgvLichSuPhongBan.SelectedRows[0];
 
                 txtMaNP.Text = selected.Cells["MaLichSu"].Value.ToString();
+                dtpNgayChuyen.Value = Convert.ToDateTime(selected.Cells["NgayChuyen"].Value.ToString());
+                txtGhiChu.Text = selected.Cells["GhiChu"].Value?.ToString() ?? "";
 
-                    
+                int mapb = Convert.ToInt32(selected.Cells["MaPB"].Value.ToString());
+                txtTenPhongBan.Text = lichSuPhongBanBUS.GetTenPhongBan(mapb);
             }
         }
     }

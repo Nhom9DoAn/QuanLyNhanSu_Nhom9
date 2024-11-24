@@ -60,11 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUL\ChuyenPhongBanBUS.cs" />
     <Compile Include="BUL\HocVanBangCapBUS.cs" />
     <Compile Include="BUL\LichSuPhongBanBUS.cs" />
     <Compile Include="BUL\NghiPhepBUL.cs" />
     <Compile Include="BUL\NhanVienBUS.cs" />
     <Compile Include="BUL\PhongBanBUL.cs" />
+    <Compile Include="DAL\ChuyenPhongBanDAO.cs" />
     <Compile Include="DAL\dbQuanLyNhanSu.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,6 +82,12 @@
     <Compile Include="DTO\DTO_NhanVien.cs" />
     <Compile Include="DTO\NghiPhepDTO.cs" />
     <Compile Include="DTO\PhongBanDTO.cs" />
+    <Compile Include="GUI\frmChuyenPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChuyenPhongBan.Designer.cs">
+      <DependentUpon>frmChuyenPhongBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmHocVanBangCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +123,9 @@
     <None Include="DAL\dbQuanLyNhanSu.dbml.layout">
       <DependentUpon>dbQuanLyNhanSu.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="GUI\frmChuyenPhongBan.resx">
+      <DependentUpon>frmChuyenPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmHocVanBangCap.resx">
       <DependentUpon>frmHocVanBangCap.cs</DependentUpon>
     </EmbeddedResource>

@@ -31,5 +31,10 @@ namespace KimPhuong.DAL
                 return new List<LichSuPhongBan>();
             }
         }
+        public string GetTenPhongBan(int maPhongBan)
+        {
+            var phongBan = db.PhongBans.FirstOrDefault(x => x.MaPB == maPhongBan);
+            return phongBan != null ? phongBan.TenPB : "";
+        }
     }
 }
