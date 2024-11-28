@@ -51,10 +51,10 @@
             this.txtGhiChu = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dtpNgayChuyen = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvLichSuPhongBan = new Sunny.UI.UIDataGridView();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtTenPhongBan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvLichSuPhongBan = new Sunny.UI.UIDataGridView();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -120,7 +120,7 @@
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(3, 3);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(159, 29);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(167, 37);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Mã phòng ban";
             // 
@@ -314,7 +314,7 @@
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(3, 132);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(88, 29);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(167, 29);
             this.guna2HtmlLabel4.TabIndex = 3;
             this.guna2HtmlLabel4.Text = "Ghi chú";
             // 
@@ -348,7 +348,7 @@
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 89);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(145, 29);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(167, 29);
             this.guna2HtmlLabel2.TabIndex = 1;
             this.guna2HtmlLabel2.Text = "Ngày chuyển";
             // 
@@ -370,6 +370,40 @@
             this.dtpNgayChuyen.Size = new System.Drawing.Size(453, 36);
             this.dtpNgayChuyen.TabIndex = 13;
             this.dtpNgayChuyen.Value = new System.DateTime(2024, 11, 10, 10, 30, 48, 94);
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 46);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(167, 29);
+            this.guna2HtmlLabel3.TabIndex = 20;
+            this.guna2HtmlLabel3.Text = "Tên phòng ban";
+            // 
+            // txtTenPhongBan
+            // 
+            this.txtTenPhongBan.BorderRadius = 15;
+            this.txtTenPhongBan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenPhongBan.DefaultText = "";
+            this.txtTenPhongBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenPhongBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenPhongBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenPhongBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenPhongBan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtTenPhongBan.Enabled = false;
+            this.txtTenPhongBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenPhongBan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenPhongBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenPhongBan.Location = new System.Drawing.Point(177, 48);
+            this.txtTenPhongBan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenPhongBan.Name = "txtTenPhongBan";
+            this.txtTenPhongBan.PasswordChar = '\0';
+            this.txtTenPhongBan.PlaceholderText = "";
+            this.txtTenPhongBan.SelectedText = "";
+            this.txtTenPhongBan.Size = new System.Drawing.Size(451, 33);
+            this.txtTenPhongBan.TabIndex = 21;
             // 
             // tableLayoutPanel1
             // 
@@ -441,40 +475,6 @@
             this.dgvLichSuPhongBan.TabIndex = 2;
             this.dgvLichSuPhongBan.SelectionChanged += new System.EventHandler(this.dgvLichSuPhongBan_SelectionChanged);
             this.dgvLichSuPhongBan.SizeChanged += new System.EventHandler(this.dgvLichSuPhongBan_SizeChanged);
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 46);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(168, 29);
-            this.guna2HtmlLabel3.TabIndex = 20;
-            this.guna2HtmlLabel3.Text = "Tên phòng ban";
-            // 
-            // txtTenPhongBan
-            // 
-            this.txtTenPhongBan.BorderRadius = 15;
-            this.txtTenPhongBan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenPhongBan.DefaultText = "";
-            this.txtTenPhongBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTenPhongBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTenPhongBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenPhongBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenPhongBan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtTenPhongBan.Enabled = false;
-            this.txtTenPhongBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenPhongBan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenPhongBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenPhongBan.Location = new System.Drawing.Point(177, 48);
-            this.txtTenPhongBan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTenPhongBan.Name = "txtTenPhongBan";
-            this.txtTenPhongBan.PasswordChar = '\0';
-            this.txtTenPhongBan.PlaceholderText = "";
-            this.txtTenPhongBan.SelectedText = "";
-            this.txtTenPhongBan.Size = new System.Drawing.Size(451, 33);
-            this.txtTenPhongBan.TabIndex = 21;
             // 
             // frmLichSuPhongBan
             // 

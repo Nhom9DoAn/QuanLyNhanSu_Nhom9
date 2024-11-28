@@ -17,6 +17,7 @@ namespace KimPhuong.GUI
     {
         NhanVienBUS nhanVienBUS;
         ChuyenPhongBanBUS chuyenPhongBanBUS;
+        PhongBanBUL phongBanBUL;
         public frmChuyenPhongBan()
         {
             chuyenPhongBanBUS = new ChuyenPhongBanBUS();
@@ -24,13 +25,18 @@ namespace KimPhuong.GUI
             InitializeComponent();
             LoadCombobox();
             LoadData();
+            loadPhongBan();
         }
 
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        private void loadPhongBan()
         {
+            cbPhongBan.DataSource = null;
 
+            var phongBan = phongBanBUL.getAll();
+            cbPhongBan.DataSource = phongBan;
+            cbPhongBan.ValueMember = "TenPB";
+            cbPhongBan.DisplayMember = "MaPB";
         }
-
         private void LoadCombobox()
         {
             var dsHienThi = new List<dynamic>()
@@ -75,6 +81,7 @@ namespace KimPhuong.GUI
                     dtpNgaySinh.Value = nv.NgaySinh ?? DateTime.Now;
                     txtSDT.Text = nv.DienThoai;
                     txtChucVu.Text = nhanVienBUS.GetChucVuName(nv.MaNV);
+                    cbPhongBan.SelectedValue = nv.MaPB;
                 }
             }
             catch (Exception ex)
@@ -115,5 +122,14 @@ namespace KimPhuong.GUI
             dgvChuyenPhongBan.Columns["GhiChuDuyet"].HeaderText = "Ghi chú duyệt";
         }
 
+        private void dgvChuyenPhongBan_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgvChuyenPhongBan.SelectedRows.Count>0)
+            {
+                DataGridViewRow selected = dgvChuyenPhongBan.SelectedRows[0];
+
+                cboMaNV.SelectedValue = selected.Cells["MaNV"].Value;
+            }
+        }
     }
 }
