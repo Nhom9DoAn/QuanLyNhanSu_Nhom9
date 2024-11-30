@@ -106,26 +106,25 @@ namespace KimPhuong.DAL
             }
         }
 
-        public List<PhongBan> SearchPhongBan(int? maPB, string tenPB)
+        public List<PhongBan> SearchPhongBan(string keyword)
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
-                {
-                    var query = from pb in db.PhongBans
-                                where
-                                    (!maPB.HasValue || pb.MaPB == maPB) &&
-                                    (string.IsNullOrEmpty(tenPB) || pb.TenPB.ToLower().Contains(tenPB.ToLower()))
-                                select pb;
+                var query = from pb in db.PhongBans
+                            where
+                                (string.IsNullOrEmpty(keyword) ||
+                                pb.MaPB.ToString().Contains(keyword) ||
+                                pb.TenPB.ToLower().Contains(keyword.ToLower()))
+                            select pb;
 
-                    return query.ToList();
-                }
+                return query.ToList();
             }
             catch
             {
                 return new List<PhongBan>();
             }
         }
+
 
 
     }

@@ -22,6 +22,7 @@ namespace KimPhuong.GUI
         {
             chuyenPhongBanBUS = new ChuyenPhongBanBUS();
             nhanVienBUS = new NhanVienBUS();
+            phongBanBUL = new PhongBanBUL();
             InitializeComponent();
             LoadCombobox();
             LoadData();
@@ -92,29 +93,17 @@ namespace KimPhuong.GUI
         }
         private void LoadData()
         {
-            dgvChuyenPhongBan.DataSource = chuyenPhongBanBUS.GetAll().Select(np => new
-            {
-                np.MaChuyenPB,
-                np.MaNV,
-                np.MaPB_Cu,
-                np.MaPB_Moi,
-                np.NgayHieuLuc,
-                np.NgayTao,
-                np.NguoiTao,
-                np.LyDoChuyen,
-                np.TrangThai,
-                np.NgayCapNhatTrangThai,
-                np.NguoiDuyet,
-                np.GhiChuDuyet
-            }).ToList();
+            dgvChuyenPhongBan.DataSource = chuyenPhongBanBUS.GetAll();
 
             dgvChuyenPhongBan.Columns["MaChuyenPB"].HeaderText = "Mã chuyển phòng ban";
             dgvChuyenPhongBan.Columns["MaNV"].HeaderText = "Mã nhân viên";
+            dgvChuyenPhongBan.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
             dgvChuyenPhongBan.Columns["MaPB_Cu"].HeaderText = "Mã phòng ban cũ";
+            dgvChuyenPhongBan.Columns["TenPhongBanCu"].HeaderText = "Tên phòng ban cũ";
             dgvChuyenPhongBan.Columns["MaPB_Moi"].HeaderText = "Mã phòng ban mới";
+            dgvChuyenPhongBan.Columns["TenPhongBanMoi"].HeaderText = "Tên phòng ban mới";
             dgvChuyenPhongBan.Columns["NgayHieuLuc"].HeaderText = "Ngày hiệu lực";
-            dgvChuyenPhongBan.Columns["NgayTao"].HeaderText = "Ngày tạo";
-            dgvChuyenPhongBan.Columns["NguoiTao"].HeaderText = "Người tạo";
+            dgvChuyenPhongBan.Columns["TenNguoiTao"].HeaderText = "Người tạo";
             dgvChuyenPhongBan.Columns["LyDoChuyen"].HeaderText = "Lý do chuyển";
             dgvChuyenPhongBan.Columns["TrangThai"].HeaderText = "Trạng thái";
             dgvChuyenPhongBan.Columns["NgayCapNhatTrangThai"].HeaderText = "Ngày cập nhật trạng thái";
@@ -130,6 +119,11 @@ namespace KimPhuong.GUI
 
                 cboMaNV.SelectedValue = selected.Cells["MaNV"].Value;
             }
+        }
+
+        private void menucontrol_ButtonClicked(object sender, DynamicControl.menucontrol2.ButtonType buttonType, EventArgs e)
+        {
+
         }
     }
 }

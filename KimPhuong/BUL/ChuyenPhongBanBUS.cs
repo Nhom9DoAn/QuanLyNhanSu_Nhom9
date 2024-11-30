@@ -14,7 +14,7 @@ namespace KimPhuong.BUL
         {
             chuyenPhongBanDAO = new ChuyenPhongBanDAO(); 
         }
-        public List<ChuyenPhongBan> GetAll()
+        public List<dynamic> GetAll()
         {
             return chuyenPhongBanDAO.GetAll();
         }
