@@ -172,10 +172,8 @@ namespace KimPhuong.DAL
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
-                {
-                    return db.NhanViens.FirstOrDefault(x => x.MaNV == maNV);
-                }
+                return db.NhanViens.FirstOrDefault(x => x.MaNV == maNV);
+
             }
             catch
             {
@@ -236,22 +234,50 @@ namespace KimPhuong.DAL
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
+                var nv = db.NhanViens.FirstOrDefault(x => x.MaNV == maNV);
+                if (nv != null)
                 {
-                    var nv = db.NhanViens.FirstOrDefault(x => x.MaNV == maNV);
-                    if (nv != null)
-                    {
-                        var chucVu = db.ChucVus.FirstOrDefault(cv => cv.MaCV == nv.MaCV);
-                        return chucVu?.TenCV ?? string.Empty;
-                    }
-                    return string.Empty;
+                    var chucVu = db.ChucVus.FirstOrDefault(cv => cv.MaCV == nv.MaCV);
+                    Console.WriteLine("pb: {0}",nv.MaPB);
+                    return chucVu?.TenCV ?? string.Empty;
                 }
+                return string.Empty;
+
             }
             catch
             {
                 return string.Empty;
             }
         }
+        public string GetPhongBanName(int maNV)
+        {
+            try
+            {
+                var nv = db.NhanViens.FirstOrDefault(x => x.MaNV == maNV);
+                if (nv != null)
+                {
+                    Console.WriteLine($"MaNV: {maNV}, MaPB: {nv.MaPB}");
 
+                    var phongBan = db.PhongBans.FirstOrDefault(pb => pb.MaPB == nv.MaPB);
+
+                    if (phongBan == null)
+                    {
+                        Console.WriteLine($"Không tìm thấy phòng ban cho MaPB: {nv.MaPB}");
+                        return string.Empty;
+                    }
+
+                    Console.WriteLine($"Tên phòng ban: {phongBan.TenPB}");
+                    return phongBan?.TenPB ?? string.Empty;
+                }
+
+                Console.WriteLine($"Không tìm thấy nhân viên có MaNV: {maNV}");
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi: {ex.Message}");
+                return string.Empty;
+            }
+        }
     }
 }

@@ -26,18 +26,8 @@ namespace KimPhuong.GUI
             InitializeComponent();
             LoadCombobox();
             LoadData();
-            loadPhongBan();
         }
 
-        private void loadPhongBan()
-        {
-            cbPhongBan.DataSource = null;
-
-            var phongBan = phongBanBUL.getAll();
-            cbPhongBan.DataSource = phongBan;
-            cbPhongBan.ValueMember = "TenPB";
-            cbPhongBan.DisplayMember = "MaPB";
-        }
         private void LoadCombobox()
         {
             var dsHienThi = new List<dynamic>()
@@ -65,13 +55,14 @@ namespace KimPhuong.GUI
 
                 dynamic selected = cboMaNV.SelectedItem;
                 int maNV = selected.MaNV;
-
+                Console.WriteLine(maNV);
                 if (maNV == 0)
                 {
-                    txtTenNV.Clear();
+                    txtTenNV.Text = "";
                     dtpNgaySinh.Value = DateTime.Now;
-                    txtSDT.Clear();
-                    txtChucVu.Clear();
+                    txtSDT.Text = "";
+                    txtChucVu.Text = "";
+                    txtPhongBan.Text = "";
                     return;
                 }
 
@@ -82,7 +73,7 @@ namespace KimPhuong.GUI
                     dtpNgaySinh.Value = nv.NgaySinh ?? DateTime.Now;
                     txtSDT.Text = nv.DienThoai;
                     txtChucVu.Text = nhanVienBUS.GetChucVuName(nv.MaNV);
-                    cbPhongBan.SelectedValue = nv.MaPB;
+                    txtPhongBan.Text = nhanVienBUS.GetPhongBanName(nv.MaNV);
                 }
             }
             catch (Exception ex)
@@ -118,6 +109,7 @@ namespace KimPhuong.GUI
                 DataGridViewRow selected = dgvChuyenPhongBan.SelectedRows[0];
 
                 cboMaNV.SelectedValue = selected.Cells["MaNV"].Value;
+                
             }
         }
 
