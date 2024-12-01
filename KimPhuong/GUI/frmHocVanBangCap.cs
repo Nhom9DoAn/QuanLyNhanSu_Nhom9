@@ -47,10 +47,16 @@ namespace KimPhuong.GUI
                 return false;
             }
 
-
-            if (string.IsNullOrWhiteSpace(txtDiemTB.Text))
+            if (cbBangCap.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng nhập điểm trung bình!", "Thông báo",
+                MessageBox.Show("Vui lòng chọn loại bằng cấp!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDiemTB.Text) || string.IsNullOrWhiteSpace(txtTenTruong.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ điểm trung bình và tên trường", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }

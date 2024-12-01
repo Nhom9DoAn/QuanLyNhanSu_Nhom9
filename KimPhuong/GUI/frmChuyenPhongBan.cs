@@ -206,9 +206,25 @@ namespace KimPhuong.GUI
                 return false;
             }
 
+            if(dtpNgayHieuLuc.Value < dtpNgayTao.Value)
+            {
+                MessageBox.Show("Ngày có hiệu lực phải bắt đầu từ ngày hôm nay trở đi!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (cbNguoiDuyet.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn người duyệt!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
 
-
-
+            if(string.IsNullOrEmpty(txtLyDo.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập lí do chuyển!", "Thông báo",
+                  MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             return true;
         }
 
