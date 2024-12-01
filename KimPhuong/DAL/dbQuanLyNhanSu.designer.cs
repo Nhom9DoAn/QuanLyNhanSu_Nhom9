@@ -957,7 +957,7 @@ namespace KimPhuong.DAL
 		
 		private System.Nullable<System.DateTime> _NgayTao;
 		
-		private System.Nullable<int> _NguoiTao;
+		private string _NguoiTao;
 		
 		private string _LyDoChuyen;
 		
@@ -970,8 +970,6 @@ namespace KimPhuong.DAL
 		private string _GhiChuDuyet;
 		
 		private EntityRef<NhanVien> _NhanVien;
-		
-		private EntityRef<NhanVien> _NhanVien1;
 		
 		private EntityRef<PhongBan> _PhongBan;
 		
@@ -993,7 +991,7 @@ namespace KimPhuong.DAL
     partial void OnNgayHieuLucChanged();
     partial void OnNgayTaoChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayTaoChanged();
-    partial void OnNguoiTaoChanging(System.Nullable<int> value);
+    partial void OnNguoiTaoChanging(string value);
     partial void OnNguoiTaoChanged();
     partial void OnLyDoChuyenChanging(string value);
     partial void OnLyDoChuyenChanged();
@@ -1010,7 +1008,6 @@ namespace KimPhuong.DAL
 		public ChuyenPhongBan()
 		{
 			this._NhanVien = default(EntityRef<NhanVien>);
-			this._NhanVien1 = default(EntityRef<NhanVien>);
 			this._PhongBan = default(EntityRef<PhongBan>);
 			this._PhongBan1 = default(EntityRef<PhongBan>);
 			OnCreated();
@@ -1047,7 +1044,7 @@ namespace KimPhuong.DAL
 			{
 				if ((this._MaNV != value))
 				{
-					if (this._NhanVien1.HasLoadedOrAssignedValue)
+					if (this._NhanVien.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1148,8 +1145,8 @@ namespace KimPhuong.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NguoiTao", DbType="Int")]
-		public System.Nullable<int> NguoiTao
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NguoiTao", DbType="NVarChar(50)")]
+		public string NguoiTao
 		{
 			get
 			{
@@ -1159,10 +1156,6 @@ namespace KimPhuong.DAL
 			{
 				if ((this._NguoiTao != value))
 				{
-					if (this._NhanVien.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnNguoiTaoChanging(value);
 					this.SendPropertyChanging();
 					this._NguoiTao = value;
@@ -1232,7 +1225,7 @@ namespace KimPhuong.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NguoiDuyet", DbType="VarChar(20)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NguoiDuyet", DbType="NVarChar(20)")]
 		public string NguoiDuyet
 		{
 			get
@@ -1272,7 +1265,7 @@ namespace KimPhuong.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_ChuyenPhongBan", Storage="_NhanVien", ThisKey="NguoiTao", OtherKey="MaNV", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_ChuyenPhongBan", Storage="_NhanVien", ThisKey="MaNV", OtherKey="MaNV", IsForeignKey=true)]
 		public NhanVien NhanVien
 		{
 			get
@@ -1295,47 +1288,13 @@ namespace KimPhuong.DAL
 					if ((value != null))
 					{
 						value.ChuyenPhongBans.Add(this);
-						this._NguoiTao = value.MaNV;
-					}
-					else
-					{
-						this._NguoiTao = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("NhanVien");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_ChuyenPhongBan1", Storage="_NhanVien1", ThisKey="MaNV", OtherKey="MaNV", IsForeignKey=true)]
-		public NhanVien NhanVien1
-		{
-			get
-			{
-				return this._NhanVien1.Entity;
-			}
-			set
-			{
-				NhanVien previousValue = this._NhanVien1.Entity;
-				if (((previousValue != value) 
-							|| (this._NhanVien1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NhanVien1.Entity = null;
-						previousValue.ChuyenPhongBans1.Remove(this);
-					}
-					this._NhanVien1.Entity = value;
-					if ((value != null))
-					{
-						value.ChuyenPhongBans1.Add(this);
 						this._MaNV = value.MaNV;
 					}
 					else
 					{
 						this._MaNV = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("NhanVien1");
+					this.SendPropertyChanged("NhanVien");
 				}
 			}
 		}
@@ -3824,8 +3783,6 @@ namespace KimPhuong.DAL
 		
 		private EntitySet<ChuyenPhongBan> _ChuyenPhongBans;
 		
-		private EntitySet<ChuyenPhongBan> _ChuyenPhongBans1;
-		
 		private EntitySet<CongTac> _CongTacs;
 		
 		private EntitySet<HocVanBangCap> _HocVanBangCaps;
@@ -3908,7 +3865,6 @@ namespace KimPhuong.DAL
 		{
 			this._ChamCongs = new EntitySet<ChamCong>(new Action<ChamCong>(this.attach_ChamCongs), new Action<ChamCong>(this.detach_ChamCongs));
 			this._ChuyenPhongBans = new EntitySet<ChuyenPhongBan>(new Action<ChuyenPhongBan>(this.attach_ChuyenPhongBans), new Action<ChuyenPhongBan>(this.detach_ChuyenPhongBans));
-			this._ChuyenPhongBans1 = new EntitySet<ChuyenPhongBan>(new Action<ChuyenPhongBan>(this.attach_ChuyenPhongBans1), new Action<ChuyenPhongBan>(this.detach_ChuyenPhongBans1));
 			this._CongTacs = new EntitySet<CongTac>(new Action<CongTac>(this.attach_CongTacs), new Action<CongTac>(this.detach_CongTacs));
 			this._HocVanBangCaps = new EntitySet<HocVanBangCap>(new Action<HocVanBangCap>(this.attach_HocVanBangCaps), new Action<HocVanBangCap>(this.detach_HocVanBangCaps));
 			this._HopDongs = new EntitySet<HopDong>(new Action<HopDong>(this.attach_HopDongs), new Action<HopDong>(this.detach_HopDongs));
@@ -4334,7 +4290,7 @@ namespace KimPhuong.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_ChuyenPhongBan", Storage="_ChuyenPhongBans", ThisKey="MaNV", OtherKey="NguoiTao")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_ChuyenPhongBan", Storage="_ChuyenPhongBans", ThisKey="MaNV", OtherKey="MaNV")]
 		public EntitySet<ChuyenPhongBan> ChuyenPhongBans
 		{
 			get
@@ -4344,19 +4300,6 @@ namespace KimPhuong.DAL
 			set
 			{
 				this._ChuyenPhongBans.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_ChuyenPhongBan1", Storage="_ChuyenPhongBans1", ThisKey="MaNV", OtherKey="MaNV")]
-		public EntitySet<ChuyenPhongBan> ChuyenPhongBans1
-		{
-			get
-			{
-				return this._ChuyenPhongBans1;
-			}
-			set
-			{
-				this._ChuyenPhongBans1.Assign(value);
 			}
 		}
 		
@@ -4686,18 +4629,6 @@ namespace KimPhuong.DAL
 		{
 			this.SendPropertyChanging();
 			entity.NhanVien = null;
-		}
-		
-		private void attach_ChuyenPhongBans1(ChuyenPhongBan entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhanVien1 = this;
-		}
-		
-		private void detach_ChuyenPhongBans1(ChuyenPhongBan entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhanVien1 = null;
 		}
 		
 		private void attach_CongTacs(CongTac entity)

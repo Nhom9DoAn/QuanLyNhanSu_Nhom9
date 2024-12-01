@@ -217,6 +217,11 @@ namespace KimPhuong.GUI
 
         }
 
+        private void frmQuanLyPhongBan_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
         public frmQuanLyPhongBan()
         {
             InitializeComponent();

@@ -179,5 +179,10 @@ namespace KimPhuong.GUI
         {
 
         }
+
+        private void frmLichSuPhongBan_Load(object sender, EventArgs e)
+        {
+            LoadCombobox();
+        }
     }
 }

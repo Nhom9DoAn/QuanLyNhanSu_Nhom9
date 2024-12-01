@@ -311,7 +311,6 @@ namespace KimPhuong.GUI
             var results = hocVanBUS.Search(keyword);
             if (results.Any())
             {
-                dgvHocVan.AutoGenerateColumns = true;
                 dgvHocVan.DataSource = results;
             }
             else
@@ -331,6 +330,13 @@ namespace KimPhuong.GUI
             {
                 dgvHocVan.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
             }
+        }
+
+        private void frmHocVanBangCap_Load(object sender, EventArgs e)
+        {
+            LoadData();
+            loaddisable();
+            LoadCombobox();
         }
 
         public frmHocVanBangCap()

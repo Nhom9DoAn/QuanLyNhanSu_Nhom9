@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvLichSuPhongBan = new Sunny.UI.UIDataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -55,10 +55,10 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtTenPhongBan = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtTim = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnTim = new Guna.UI2.WinForms.Guna2Button();
             this.btnTaiLai = new Guna.UI2.WinForms.Guna2Button();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
-            this.btnTim = new Guna.UI2.WinForms.Guna2Button();
+            this.txtTim = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuPhongBan)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
@@ -86,29 +86,29 @@
             // 
             this.dgvLichSuPhongBan.AllowUserToAddRows = false;
             this.dgvLichSuPhongBan.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.dgvLichSuPhongBan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgvLichSuPhongBan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvLichSuPhongBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLichSuPhongBan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvLichSuPhongBan.BackgroundColor = System.Drawing.Color.White;
             this.dgvLichSuPhongBan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLichSuPhongBan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLichSuPhongBan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvLichSuPhongBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLichSuPhongBan.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLichSuPhongBan.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvLichSuPhongBan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvLichSuPhongBan.EnableHeadersVisualStyles = false;
             this.dgvLichSuPhongBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -116,18 +116,18 @@
             this.dgvLichSuPhongBan.Location = new System.Drawing.Point(3, 292);
             this.dgvLichSuPhongBan.Name = "dgvLichSuPhongBan";
             this.dgvLichSuPhongBan.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLichSuPhongBan.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLichSuPhongBan.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvLichSuPhongBan.RowHeadersWidth = 62;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dgvLichSuPhongBan.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dgvLichSuPhongBan.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvLichSuPhongBan.RowTemplate.Height = 28;
             this.dgvLichSuPhongBan.SelectedIndex = -1;
             this.dgvLichSuPhongBan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -243,6 +243,7 @@
             // 
             // txtMaNP
             // 
+            this.txtMaNP.BorderColor = System.Drawing.Color.Gray;
             this.txtMaNP.BorderRadius = 15;
             this.txtMaNP.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMaNP.DefaultText = "";
@@ -267,6 +268,7 @@
             // cboMaNV
             // 
             this.cboMaNV.BackColor = System.Drawing.Color.Transparent;
+            this.cboMaNV.BorderColor = System.Drawing.Color.Gray;
             this.cboMaNV.BorderRadius = 15;
             this.cboMaNV.Dock = System.Windows.Forms.DockStyle.Top;
             this.cboMaNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -284,6 +286,7 @@
             // 
             // txtTenNV
             // 
+            this.txtTenNV.BorderColor = System.Drawing.Color.Gray;
             this.txtTenNV.BorderRadius = 15;
             this.txtTenNV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTenNV.DefaultText = "";
@@ -325,6 +328,7 @@
             // 
             // txtSDT
             // 
+            this.txtSDT.BorderColor = System.Drawing.Color.Gray;
             this.txtSDT.BorderRadius = 15;
             this.txtSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSDT.DefaultText = "";
@@ -348,6 +352,7 @@
             // 
             // txtChucVu
             // 
+            this.txtChucVu.BorderColor = System.Drawing.Color.Gray;
             this.txtChucVu.BorderRadius = 15;
             this.txtChucVu.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtChucVu.DefaultText = "";
@@ -382,6 +387,7 @@
             // 
             // txtGhiChu
             // 
+            this.txtGhiChu.BorderColor = System.Drawing.Color.Gray;
             this.txtGhiChu.BorderRadius = 15;
             this.txtGhiChu.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtGhiChu.DefaultText = "";
@@ -446,6 +452,7 @@
             // 
             // txtTenPhongBan
             // 
+            this.txtTenPhongBan.BorderColor = System.Drawing.Color.Gray;
             this.txtTenPhongBan.BorderRadius = 15;
             this.txtTenPhongBan.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTenPhongBan.DefaultText = "";
@@ -486,28 +493,23 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1385, 51);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
-            // txtTim
+            // btnTim
             // 
-            this.txtTim.BorderRadius = 15;
-            this.txtTim.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTim.DefaultText = "";
-            this.txtTim.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTim.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTim.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtTim.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTim.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTim.Location = new System.Drawing.Point(4, 5);
-            this.txtTim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.PasswordChar = '\0';
-            this.txtTim.PlaceholderText = "";
-            this.txtTim.SelectedText = "";
-            this.txtTim.Size = new System.Drawing.Size(857, 35);
-            this.txtTim.TabIndex = 11;
-            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
+            this.btnTim.Animated = true;
+            this.btnTim.BorderRadius = 15;
+            this.btnTim.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTim.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTim.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTim.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.Location = new System.Drawing.Point(868, 3);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(167, 45);
+            this.btnTim.TabIndex = 14;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnTaiLai
             // 
@@ -545,23 +547,29 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnTim
+            // txtTim
             // 
-            this.btnTim.Animated = true;
-            this.btnTim.BorderRadius = 15;
-            this.btnTim.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTim.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTim.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTim.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Location = new System.Drawing.Point(868, 3);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(167, 45);
-            this.btnTim.TabIndex = 14;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            this.txtTim.BorderColor = System.Drawing.Color.Gray;
+            this.txtTim.BorderRadius = 15;
+            this.txtTim.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTim.DefaultText = "";
+            this.txtTim.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTim.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTim.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtTim.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTim.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTim.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTim.Location = new System.Drawing.Point(4, 5);
+            this.txtTim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.PasswordChar = '\0';
+            this.txtTim.PlaceholderText = "";
+            this.txtTim.SelectedText = "";
+            this.txtTim.Size = new System.Drawing.Size(857, 35);
+            this.txtTim.TabIndex = 11;
+            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
             // 
             // frmLichSuPhongBan
             // 
@@ -570,6 +578,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "frmLichSuPhongBan";
             this.Text = "frmLichSuPhongBan";
+            this.Load += new System.EventHandler(this.frmLichSuPhongBan_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuPhongBan)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
