@@ -19,22 +19,26 @@ namespace Main
         {
             InitializeComponent();
             lblTenDangNhap.Text = tenNhanVien;
+
             if (chucVu == "Giám đốc")
             {
                 int pageIndex = 1000;
-                TreeNode root = Aside.CreateNode("QUẢN LÝ PHÒNG BAN", 61451, 24, pageIndex);
+                TreeNode root = Aside.CreateNode("PHÒNG BAN", 61451, 24, pageIndex);
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyPhongBan(), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new frmChuyenPhongBan(tenNhanVien), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new frmLichSuPhongBan(), ++pageIndex));
 
                 pageIndex = 2000;
-                root = Aside.CreateNode("QUẢN LÝ NHÂN SỰ", 61451, 24, pageIndex);
+                root = Aside.CreateNode("NHÂN SỰ", 61451, 24, pageIndex);
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyNghiPhep(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frm_CongTac(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frm_HopDongLaoDong(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frm_ThuongPhat(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmHocVanBangCap(), ++pageIndex));
-                Aside.CreateChildNode(root, AddPage(new frmLichSuPhongBan(), ++pageIndex));
-                Aside.CreateChildNode(root, AddPage(new frmChuyenPhongBan(tenNhanVien), ++pageIndex));
 
+                pageIndex = 3000;
+                root = Aside.CreateNode("PHÁT TRIỂN", 61451, 24, pageIndex);
+                Aside.CreateChildNode(root, AddPage(new frmKhoaDaoTao(), ++pageIndex));
             }
             else
             {
@@ -45,6 +49,11 @@ namespace Main
         private void frmTrangChu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Aside_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+
         }
     }
 }

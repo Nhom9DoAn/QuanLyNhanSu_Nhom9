@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KimPhuong.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -293,6 +294,52 @@ namespace KimPhuong.DAL
             {
                 return -1;
             }
+        }
+        public (int demNam, int demNu) ThongKeGioiTinhToanCongTy()
+        {
+            try
+            {
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    var genderStats = db.NhanViens
+                        .GroupBy(nv => nv.GioiTinh)
+                        .Select(g => new
+                        {
+                            Gender = g.Key,
+                            Count = g.Count()
+                        })
+                        .ToList();
+
+                    int demNam = genderStats.FirstOrDefault(x => x.Gender == "Nam")?.Count ?? 0;
+                    int demNu = genderStats.FirstOrDefault(x => x.Gender == "Nữ")?.Count ?? 0;
+
+                    return (demNam, demNu);
+                }
+            }
+            catch
+            {
+                return (0, 0);
+            }
+        }
+
+        public List<NhanSuTrend> ThongKeNhanSuTheoNam()
+        {
+            var nhanViens = GetAll();
+
+            var trends = nhanViens
+                .GroupBy(nv => nv.NgayVaoLam.Value.Year)
+                .Select(g => new NhanSuTrend
+                {
+                    Nam = g.Key,
+                    SoLuongVaoLam = g.Count(),
+                    SoLuongNghiViec = nhanViens
+                        .Count(nv => nv.NgayVaoLam.Value.Year == g.Key &&
+                               nv.TrangThai.Contains("Nghỉ việc"))
+                })
+                .OrderBy(x => x.Nam)
+                .ToList();
+
+            return trends;
         }
     }
 }

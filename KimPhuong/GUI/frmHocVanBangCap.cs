@@ -210,10 +210,6 @@ namespace KimPhuong.GUI
                         loaddisable();
                         menucontrol.SetStatus(DynamicControl.menucontrol2.Status.View);
                     }
-                    else if (tim)
-                    {
-                        string manv = cboMaNV.Text;
-                    }
                     break;
 
                 case DynamicControl.menucontrol2.ButtonType.Cancel:

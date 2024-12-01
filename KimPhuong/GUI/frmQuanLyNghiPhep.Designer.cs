@@ -62,6 +62,7 @@
             this.txtChucVu = new Guna.UI2.WinForms.Guna2TextBox();
             this.menucontrol = new DynamicControl.menucontrol2();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnImport = new Guna.UI2.WinForms.Guna2Button();
             this.btnTim = new Guna.UI2.WinForms.Guna2Button();
             this.txtTim = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -82,9 +83,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 369F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1236, 731);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -119,7 +119,7 @@
             this.dgvNghiPhep.EnableHeadersVisualStyles = false;
             this.dgvNghiPhep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dgvNghiPhep.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.dgvNghiPhep.Location = new System.Drawing.Point(3, 365);
+            this.dgvNghiPhep.Location = new System.Drawing.Point(3, 368);
             this.dgvNghiPhep.Name = "dgvNghiPhep";
             this.dgvNghiPhep.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -137,7 +137,7 @@
             this.dgvNghiPhep.RowTemplate.Height = 28;
             this.dgvNghiPhep.SelectedIndex = -1;
             this.dgvNghiPhep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNghiPhep.Size = new System.Drawing.Size(1230, 363);
+            this.dgvNghiPhep.Size = new System.Drawing.Size(1230, 360);
             this.dgvNghiPhep.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dgvNghiPhep.TabIndex = 2;
             this.dgvNghiPhep.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvNghiPhep_RowPrePaint);
@@ -154,11 +154,10 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.85606F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.85606F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.28788F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1230, 356);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.58911F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.58911F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.82178F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1230, 359);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // tableLayoutPanel3
@@ -567,18 +566,37 @@
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.24509F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.3366F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel5.Controls.Add(this.btnImport, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnTim, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtTim, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 63);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1224, 54);
             this.tableLayoutPanel5.TabIndex = 4;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Animated = true;
+            this.btnImport.BorderRadius = 15;
+            this.btnImport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnImport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnImport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnImport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnImport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnImport.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.ForeColor = System.Drawing.Color.White;
+            this.btnImport.Location = new System.Drawing.Point(1073, 3);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(148, 45);
+            this.btnImport.TabIndex = 19;
+            this.btnImport.Text = "Import";
             // 
             // btnTim
             // 
@@ -591,9 +609,9 @@
             this.btnTim.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTim.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Location = new System.Drawing.Point(1092, 3);
+            this.btnTim.Location = new System.Drawing.Point(923, 3);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(129, 45);
+            this.btnTim.Size = new System.Drawing.Size(144, 45);
             this.btnTim.TabIndex = 18;
             this.btnTim.Text = "Tìm";
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
@@ -618,7 +636,7 @@
             this.txtTim.PasswordChar = '\0';
             this.txtTim.PlaceholderText = "";
             this.txtTim.SelectedText = "";
-            this.txtTim.Size = new System.Drawing.Size(1081, 43);
+            this.txtTim.Size = new System.Drawing.Size(912, 43);
             this.txtTim.TabIndex = 17;
             // 
             // frmQuanLyNghiPhep
@@ -674,5 +692,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private Guna.UI2.WinForms.Guna2Button btnTim;
         private Guna.UI2.WinForms.Guna2TextBox txtTim;
+        private Guna.UI2.WinForms.Guna2Button btnImport;
     }
 }

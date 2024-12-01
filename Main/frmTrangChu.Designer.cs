@@ -39,6 +39,7 @@
             this.Aside.LineColor = System.Drawing.Color.Black;
             this.Aside.Location = new System.Drawing.Point(0, 106);
             this.Aside.Size = new System.Drawing.Size(388, 729);
+            this.Aside.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Aside_NodeMouseClick);
             // 
             // Header
             // 
