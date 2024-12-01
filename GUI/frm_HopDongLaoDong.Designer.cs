@@ -29,6 +29,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_HopDongLaoDong));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.grpHopDong = new System.Windows.Forms.GroupBox();
@@ -60,7 +61,7 @@ namespace GUI
             this.dgvHopDong = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menucontrol1 = new DynamicControl.menucontrol();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             this.grpHopDong.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
