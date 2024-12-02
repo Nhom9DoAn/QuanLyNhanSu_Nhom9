@@ -10,7 +10,7 @@ namespace KimPhuong.DBC
 {
     public class DBConnection
     {
-        public static string conStr = "Data Source=ACER\\FUANG;Initial Catalog=QL_NHANSU_UDTM;Integrated Security=True";
+        public static string conStr = "Data Source=NHUHUYNH\\HUYNH1526;Initial Catalog=QL_NHANSU_UDTM;Integrated Security=True";
         public SqlConnection conn = new SqlConnection();
         public DBConnection()
         {

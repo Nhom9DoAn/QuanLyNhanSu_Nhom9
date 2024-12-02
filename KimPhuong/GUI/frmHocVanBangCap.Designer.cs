@@ -234,7 +234,7 @@
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(3, 235);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(239, 29);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(239, 25);
             this.guna2HtmlLabel5.TabIndex = 4;
             this.guna2HtmlLabel5.Text = "Năm tốt nghiệp";
             // 
@@ -433,7 +433,7 @@
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel11.Location = new System.Drawing.Point(3, 293);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(239, 29);
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(239, 25);
             this.guna2HtmlLabel11.TabIndex = 20;
             this.guna2HtmlLabel11.Text = "Điểm trung bình";
             // 
@@ -444,7 +444,7 @@
             this.guna2HtmlLabel13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel13.Location = new System.Drawing.Point(3, 351);
             this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(239, 29);
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(239, 25);
             this.guna2HtmlLabel13.TabIndex = 22;
             this.guna2HtmlLabel13.Text = "Ghi chú";
             // 
@@ -591,9 +591,10 @@
             // menucontrol
             // 
             this.menucontrol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menucontrol.Location = new System.Drawing.Point(3, 3);
+            this.menucontrol.Location = new System.Drawing.Point(3, 2);
+            this.menucontrol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.menucontrol.Name = "menucontrol";
-            this.menucontrol.Size = new System.Drawing.Size(1217, 86);
+            this.menucontrol.Size = new System.Drawing.Size(1217, 88);
             this.menucontrol.TabIndex = 1;
             this.menucontrol.ButtonClicked += new DynamicControl.menucontrol2.ButtonClickedHandler(this.menucontrol_ButtonClicked);
             // 

@@ -85,9 +85,10 @@
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(3, 3);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(170, 29);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(135, 25);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Phòng ban mới";
+            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
             // 
             // guna2HtmlLabel6
             // 
@@ -96,9 +97,10 @@
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(537, 215);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(94, 29);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(75, 25);
             this.guna2HtmlLabel6.TabIndex = 5;
             this.guna2HtmlLabel6.Text = "Chức vụ";
+            this.guna2HtmlLabel6.Click += new System.EventHandler(this.guna2HtmlLabel6_Click);
             // 
             // guna2HtmlLabel7
             // 
@@ -107,9 +109,10 @@
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel7.Location = new System.Drawing.Point(537, 162);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(111, 29);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(90, 25);
             this.guna2HtmlLabel7.TabIndex = 6;
             this.guna2HtmlLabel7.Text = "Điện thoại";
+            this.guna2HtmlLabel7.Click += new System.EventHandler(this.guna2HtmlLabel7_Click);
             // 
             // guna2HtmlLabel8
             // 
@@ -118,9 +121,10 @@
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel8.Location = new System.Drawing.Point(537, 109);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(111, 29);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(88, 25);
             this.guna2HtmlLabel8.TabIndex = 7;
             this.guna2HtmlLabel8.Text = "Ngày sinh";
+            this.guna2HtmlLabel8.Click += new System.EventHandler(this.guna2HtmlLabel8_Click);
             // 
             // guna2HtmlLabel9
             // 
@@ -129,9 +133,10 @@
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel9.Location = new System.Drawing.Point(537, 56);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(156, 29);
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(123, 25);
             this.guna2HtmlLabel9.TabIndex = 8;
             this.guna2HtmlLabel9.Text = "Tên nhân viên";
+            this.guna2HtmlLabel9.Click += new System.EventHandler(this.guna2HtmlLabel9_Click);
             // 
             // guna2HtmlLabel10
             // 
@@ -140,9 +145,10 @@
             this.guna2HtmlLabel10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel10.Location = new System.Drawing.Point(537, 3);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(147, 29);
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(118, 25);
             this.guna2HtmlLabel10.TabIndex = 9;
             this.guna2HtmlLabel10.Text = "Mã nhân viên";
+            this.guna2HtmlLabel10.Click += new System.EventHandler(this.guna2HtmlLabel10_Click);
             // 
             // cboMaNV
             // 
@@ -185,6 +191,7 @@
             this.txtTenNV.SelectedText = "";
             this.txtTenNV.Size = new System.Drawing.Size(305, 36);
             this.txtTenNV.TabIndex = 16;
+            this.txtTenNV.TextChanged += new System.EventHandler(this.txtTenNV_TextChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -199,6 +206,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1069, 484);
             this.tableLayoutPanel2.TabIndex = 3;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // tableLayoutPanel3
             // 
@@ -253,6 +261,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1063, 478);
             this.tableLayoutPanel3.TabIndex = 4;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // guna2HtmlLabel15
             // 
@@ -261,9 +270,10 @@
             this.guna2HtmlLabel15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel15.Location = new System.Drawing.Point(3, 427);
             this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
-            this.guna2HtmlLabel15.Size = new System.Drawing.Size(170, 29);
+            this.guna2HtmlLabel15.Size = new System.Drawing.Size(170, 25);
             this.guna2HtmlLabel15.TabIndex = 30;
             this.guna2HtmlLabel15.Text = "Ghi chú";
+            this.guna2HtmlLabel15.Click += new System.EventHandler(this.guna2HtmlLabel15_Click);
             // 
             // dtpNgaySinh
             // 
@@ -282,6 +292,7 @@
             this.dtpNgaySinh.Size = new System.Drawing.Size(307, 36);
             this.dtpNgaySinh.TabIndex = 17;
             this.dtpNgaySinh.Value = new System.DateTime(2024, 11, 10, 10, 33, 36, 647);
+            this.dtpNgaySinh.ValueChanged += new System.EventHandler(this.dtpNgaySinh_ValueChanged);
             // 
             // txtSDT
             // 
@@ -305,6 +316,7 @@
             this.txtSDT.SelectedText = "";
             this.txtSDT.Size = new System.Drawing.Size(305, 36);
             this.txtSDT.TabIndex = 18;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtChucVu
             // 
@@ -328,6 +340,7 @@
             this.txtChucVu.SelectedText = "";
             this.txtChucVu.Size = new System.Drawing.Size(305, 36);
             this.txtChucVu.TabIndex = 19;
+            this.txtChucVu.TextChanged += new System.EventHandler(this.txtChucVu_TextChanged);
             // 
             // guna2HtmlLabel4
             // 
@@ -336,9 +349,10 @@
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(3, 162);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(170, 29);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(170, 25);
             this.guna2HtmlLabel4.TabIndex = 3;
             this.guna2HtmlLabel4.Text = "Ngày hiệu lực";
+            this.guna2HtmlLabel4.Click += new System.EventHandler(this.guna2HtmlLabel4_Click);
             // 
             // guna2HtmlLabel2
             // 
@@ -347,9 +361,10 @@
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 109);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(170, 29);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(170, 25);
             this.guna2HtmlLabel2.TabIndex = 1;
             this.guna2HtmlLabel2.Text = "Ngày tạo";
+            this.guna2HtmlLabel2.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
             // 
             // dtpNgayTao
             // 
@@ -369,6 +384,7 @@
             this.dtpNgayTao.Size = new System.Drawing.Size(324, 36);
             this.dtpNgayTao.TabIndex = 13;
             this.dtpNgayTao.Value = new System.DateTime(2024, 11, 10, 10, 30, 48, 94);
+            this.dtpNgayTao.ValueChanged += new System.EventHandler(this.dtpNgayTao_ValueChanged);
             // 
             // guna2HtmlLabel3
             // 
@@ -377,9 +393,10 @@
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 56);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(170, 29);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(170, 25);
             this.guna2HtmlLabel3.TabIndex = 20;
             this.guna2HtmlLabel3.Text = "Người tạo";
+            this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
             // 
             // txtNguoiTao
             // 
@@ -403,6 +420,7 @@
             this.txtNguoiTao.SelectedText = "";
             this.txtNguoiTao.Size = new System.Drawing.Size(322, 36);
             this.txtNguoiTao.TabIndex = 21;
+            this.txtNguoiTao.TextChanged += new System.EventHandler(this.txtNguoiTao_TextChanged);
             // 
             // dtpNgayHieuLuc
             // 
@@ -422,6 +440,7 @@
             this.dtpNgayHieuLuc.Size = new System.Drawing.Size(324, 36);
             this.dtpNgayHieuLuc.TabIndex = 22;
             this.dtpNgayHieuLuc.Value = new System.DateTime(2024, 11, 10, 10, 30, 48, 94);
+            this.dtpNgayHieuLuc.ValueChanged += new System.EventHandler(this.dtpNgayHieuLuc_ValueChanged);
             // 
             // guna2HtmlLabel5
             // 
@@ -430,9 +449,10 @@
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(3, 215);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(170, 29);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(170, 25);
             this.guna2HtmlLabel5.TabIndex = 23;
             this.guna2HtmlLabel5.Text = "Lý do chuyển";
+            this.guna2HtmlLabel5.Click += new System.EventHandler(this.guna2HtmlLabel5_Click);
             // 
             // txtLyDo
             // 
@@ -456,6 +476,7 @@
             this.txtLyDo.SelectedText = "";
             this.txtLyDo.Size = new System.Drawing.Size(322, 36);
             this.txtLyDo.TabIndex = 24;
+            this.txtLyDo.TextChanged += new System.EventHandler(this.txtLyDo_TextChanged);
             // 
             // guna2HtmlLabel11
             // 
@@ -464,9 +485,10 @@
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel11.Location = new System.Drawing.Point(537, 268);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(210, 29);
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(210, 25);
             this.guna2HtmlLabel11.TabIndex = 25;
             this.guna2HtmlLabel11.Text = "Phòng ban hiện tại";
+            this.guna2HtmlLabel11.Click += new System.EventHandler(this.guna2HtmlLabel11_Click);
             // 
             // guna2HtmlLabel12
             // 
@@ -475,9 +497,10 @@
             this.guna2HtmlLabel12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel12.Location = new System.Drawing.Point(3, 268);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
-            this.guna2HtmlLabel12.Size = new System.Drawing.Size(170, 29);
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(170, 25);
             this.guna2HtmlLabel12.TabIndex = 27;
             this.guna2HtmlLabel12.Text = "Trạng thái";
+            this.guna2HtmlLabel12.Click += new System.EventHandler(this.guna2HtmlLabel12_Click);
             // 
             // guna2HtmlLabel13
             // 
@@ -486,9 +509,10 @@
             this.guna2HtmlLabel13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel13.Location = new System.Drawing.Point(3, 321);
             this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(170, 29);
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(170, 25);
             this.guna2HtmlLabel13.TabIndex = 28;
             this.guna2HtmlLabel13.Text = "Ngày cập nhật";
+            this.guna2HtmlLabel13.Click += new System.EventHandler(this.guna2HtmlLabel13_Click);
             // 
             // guna2HtmlLabel14
             // 
@@ -497,9 +521,10 @@
             this.guna2HtmlLabel14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel14.Location = new System.Drawing.Point(3, 374);
             this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
-            this.guna2HtmlLabel14.Size = new System.Drawing.Size(170, 29);
+            this.guna2HtmlLabel14.Size = new System.Drawing.Size(170, 25);
             this.guna2HtmlLabel14.TabIndex = 29;
             this.guna2HtmlLabel14.Text = "Người duyệt";
+            this.guna2HtmlLabel14.Click += new System.EventHandler(this.guna2HtmlLabel14_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -517,6 +542,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(324, 47);
             this.tableLayoutPanel4.TabIndex = 31;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // radDaHuy
             // 
@@ -529,6 +555,7 @@
             this.radDaHuy.Size = new System.Drawing.Size(102, 29);
             this.radDaHuy.TabIndex = 2;
             this.radDaHuy.Text = "Đã hủy";
+            this.radDaHuy.CheckedChanged += new System.EventHandler(this.radDaHuy_CheckedChanged);
             // 
             // radDangCho
             // 
@@ -541,6 +568,7 @@
             this.radDangCho.Size = new System.Drawing.Size(102, 29);
             this.radDangCho.TabIndex = 0;
             this.radDangCho.Text = "Đang chờ";
+            this.radDangCho.CheckedChanged += new System.EventHandler(this.radDangCho_CheckedChanged);
             // 
             // radDaDuyet
             // 
@@ -553,6 +581,7 @@
             this.radDaDuyet.Size = new System.Drawing.Size(102, 29);
             this.radDaDuyet.TabIndex = 1;
             this.radDaDuyet.Text = "Đã duyệt";
+            this.radDaDuyet.CheckedChanged += new System.EventHandler(this.radDaDuyet_CheckedChanged);
             // 
             // dtpNgayCapNhat
             // 
@@ -572,6 +601,7 @@
             this.dtpNgayCapNhat.Size = new System.Drawing.Size(324, 36);
             this.dtpNgayCapNhat.TabIndex = 32;
             this.dtpNgayCapNhat.Value = new System.DateTime(2024, 11, 10, 10, 30, 48, 94);
+            this.dtpNgayCapNhat.ValueChanged += new System.EventHandler(this.dtpNgayCapNhat_ValueChanged);
             // 
             // txtNguoiDuyet
             // 
@@ -595,6 +625,7 @@
             this.txtNguoiDuyet.SelectedText = "";
             this.txtNguoiDuyet.Size = new System.Drawing.Size(322, 36);
             this.txtNguoiDuyet.TabIndex = 33;
+            this.txtNguoiDuyet.TextChanged += new System.EventHandler(this.txtNguoiDuyet_TextChanged);
             // 
             // txtGhiChu
             // 
@@ -618,6 +649,7 @@
             this.txtGhiChu.SelectedText = "";
             this.txtGhiChu.Size = new System.Drawing.Size(322, 36);
             this.txtGhiChu.TabIndex = 34;
+            this.txtGhiChu.TextChanged += new System.EventHandler(this.txtGhiChu_TextChanged);
             // 
             // cbPhongBan
             // 
@@ -635,6 +667,7 @@
             this.cbPhongBan.Name = "cbPhongBan";
             this.cbPhongBan.Size = new System.Drawing.Size(307, 36);
             this.cbPhongBan.TabIndex = 35;
+            this.cbPhongBan.SelectedIndexChanged += new System.EventHandler(this.cbPhongBan_SelectedIndexChanged);
             // 
             // guna2ComboBox2
             // 
@@ -653,6 +686,7 @@
             this.guna2ComboBox2.Name = "guna2ComboBox2";
             this.guna2ComboBox2.Size = new System.Drawing.Size(324, 36);
             this.guna2ComboBox2.TabIndex = 36;
+            this.guna2ComboBox2.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox2_SelectedIndexChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -670,6 +704,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.71067F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1075, 947);
             this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // dgvChuyenPhongBan
             // 
@@ -723,6 +758,7 @@
             this.dgvChuyenPhongBan.Size = new System.Drawing.Size(1069, 390);
             this.dgvChuyenPhongBan.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dgvChuyenPhongBan.TabIndex = 2;
+            this.dgvChuyenPhongBan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChuyenPhongBan_CellContentClick);
             this.dgvChuyenPhongBan.SelectionChanged += new System.EventHandler(this.dgvChuyenPhongBan_SelectionChanged);
             // 
             // menucontrol31
@@ -733,6 +769,7 @@
             this.menucontrol31.Name = "menucontrol31";
             this.menucontrol31.Size = new System.Drawing.Size(1067, 53);
             this.menucontrol31.TabIndex = 4;
+            this.menucontrol31.Load += new System.EventHandler(this.menucontrol31_Load);
             // 
             // frmChuyenPhongBan
             // 

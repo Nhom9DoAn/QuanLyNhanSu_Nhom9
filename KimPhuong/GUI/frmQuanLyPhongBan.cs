@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using KimPhuong.BUL;
 using KimPhuong.DTO;
+using DynamicControl;
 using Sunny.UI;
+
 namespace KimPhuong.GUI
 {
     public partial class frmQuanLyPhongBan : UIPage

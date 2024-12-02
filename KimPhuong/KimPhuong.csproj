@@ -60,33 +60,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUL\ChucVuBLL.cs" />
     <Compile Include="BUL\ChuyenPhongBanBUS.cs" />
+    <Compile Include="BUL\CongTacBUL.cs" />
     <Compile Include="BUL\HocVanBangCapBUS.cs" />
+    <Compile Include="BUL\HopDongBLL.cs" />
     <Compile Include="BUL\LichSuPhongBanBUS.cs" />
     <Compile Include="BUL\NghiPhepBUL.cs" />
     <Compile Include="BUL\NhanVienBUS.cs" />
     <Compile Include="BUL\PhongBanBUL.cs" />
+    <Compile Include="BUL\ThuongPhatBLL.cs" />
+    <Compile Include="DAL\ChucVuDAL.cs" />
     <Compile Include="DAL\ChuyenPhongBanDAO.cs" />
+    <Compile Include="DAL\CongTacDAO.cs" />
     <Compile Include="DAL\dbQuanLyNhanSu.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbQuanLyNhanSu.dbml</DependentUpon>
     </Compile>
     <Compile Include="DAL\HocVanBangCapDAO.cs" />
+    <Compile Include="DAL\HopDongDAL.cs" />
     <Compile Include="DAL\LichSuPhongBanDAO.cs" />
     <Compile Include="DAL\NghiPhepDAO.cs" />
     <Compile Include="DAL\NhanVienDAO.cs" />
     <Compile Include="DAL\PhongBanDAO.cs" />
+    <Compile Include="DAL\ThuongPhatDAL.cs" />
     <Compile Include="DBC\DBConnection.cs" />
+    <Compile Include="DTO\ChucVuDTO.cs" />
+    <Compile Include="DTO\CongTacDTO.cs" />
     <Compile Include="DTO\DTO_ChucVu.cs" />
     <Compile Include="DTO\DTO_NhanVien.cs" />
+    <Compile Include="DTO\HopDongDTO.cs" />
     <Compile Include="DTO\NghiPhepDTO.cs" />
     <Compile Include="DTO\PhongBanDTO.cs" />
+    <Compile Include="DTO\ThuongPhatDTO.cs" />
+    <Compile Include="GUI\frmChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChucVu.Designer.cs">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmChuyenPhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmChuyenPhongBan.Designer.cs">
       <DependentUpon>frmChuyenPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyCongTac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyCongTac.Designer.cs">
+      <DependentUpon>frmQuanLyCongTac.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmHocVanBangCap.cs">
       <SubType>Form</SubType>
@@ -100,6 +124,12 @@
     <Compile Include="GUI\frmLichSuPhongBan.Designer.cs">
       <DependentUpon>frmLichSuPhongBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmQuanLyHopDongLaoDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyHopDongLaoDong.Designer.cs">
+      <DependentUpon>frmQuanLyHopDongLaoDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmQuanLyNghiPhep.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +142,12 @@
     <Compile Include="GUI\frmQuanLyPhongBan.Designer.cs">
       <DependentUpon>frmQuanLyPhongBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmQuanLyThuongPhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyThuongPhat.Designer.cs">
+      <DependentUpon>frmQuanLyThuongPhat.cs</DependentUpon>
+    </Compile>
     <Compile Include="menuthemxoasua.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,8 +159,14 @@
     <None Include="DAL\dbQuanLyNhanSu.dbml.layout">
       <DependentUpon>dbQuanLyNhanSu.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="GUI\frmChucVu.resx">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmChuyenPhongBan.resx">
       <DependentUpon>frmChuyenPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQuanLyCongTac.resx">
+      <DependentUpon>frmQuanLyCongTac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmHocVanBangCap.resx">
       <DependentUpon>frmHocVanBangCap.cs</DependentUpon>
@@ -132,11 +174,17 @@
     <EmbeddedResource Include="GUI\frmLichSuPhongBan.resx">
       <DependentUpon>frmLichSuPhongBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQuanLyHopDongLaoDong.resx">
+      <DependentUpon>frmQuanLyHopDongLaoDong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLyNghiPhep.resx">
       <DependentUpon>frmQuanLyNghiPhep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLyPhongBan.resx">
       <DependentUpon>frmQuanLyPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQuanLyThuongPhat.resx">
+      <DependentUpon>frmQuanLyThuongPhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menuthemxoasua.resx">
       <DependentUpon>menuthemxoasua.cs</DependentUpon>

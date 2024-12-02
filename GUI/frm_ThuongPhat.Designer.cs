@@ -99,7 +99,7 @@ namespace GUI
             this.tableLayoutPanel3.Controls.Add(this.cboLoai, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtSoTien, 2, 4);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 32);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 27);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
@@ -108,7 +108,7 @@ namespace GUI
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66616F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66616F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66743F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(597, 314);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(597, 319);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // lblMaCTTTP
@@ -118,7 +118,7 @@ namespace GUI
             this.lblMaCTTTP.Location = new System.Drawing.Point(15, 0);
             this.lblMaCTTTP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMaCTTTP.Name = "lblMaCTTTP";
-            this.lblMaCTTTP.Size = new System.Drawing.Size(164, 62);
+            this.lblMaCTTTP.Size = new System.Drawing.Size(164, 63);
             this.lblMaCTTTP.TabIndex = 0;
             this.lblMaCTTTP.Text = "Mã Thưởng/Phạt";
             this.lblMaCTTTP.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -127,10 +127,10 @@ namespace GUI
             // 
             this.lblTenNT.AutoSize = true;
             this.lblTenNT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTenNT.Location = new System.Drawing.Point(15, 62);
+            this.lblTenNT.Location = new System.Drawing.Point(15, 63);
             this.lblTenNT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenNT.Name = "lblTenNT";
-            this.lblTenNT.Size = new System.Drawing.Size(164, 62);
+            this.lblTenNT.Size = new System.Drawing.Size(164, 63);
             this.lblTenNT.TabIndex = 1;
             this.lblTenNT.Text = "Loại";
             this.lblTenNT.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -139,10 +139,10 @@ namespace GUI
             // 
             this.lblQuanHe.AutoSize = true;
             this.lblQuanHe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblQuanHe.Location = new System.Drawing.Point(15, 124);
+            this.lblQuanHe.Location = new System.Drawing.Point(15, 126);
             this.lblQuanHe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuanHe.Name = "lblQuanHe";
-            this.lblQuanHe.Size = new System.Drawing.Size(164, 62);
+            this.lblQuanHe.Size = new System.Drawing.Size(164, 63);
             this.lblQuanHe.TabIndex = 2;
             this.lblQuanHe.Text = "Lý Do";
             this.lblQuanHe.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -153,17 +153,17 @@ namespace GUI
             this.txtCTTP.Location = new System.Drawing.Point(187, 4);
             this.txtCTTP.Margin = new System.Windows.Forms.Padding(4);
             this.txtCTTP.Name = "txtCTTP";
-            this.txtCTTP.Size = new System.Drawing.Size(393, 35);
+            this.txtCTTP.Size = new System.Drawing.Size(393, 30);
             this.txtCTTP.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(15, 186);
+            this.label1.Location = new System.Drawing.Point(15, 189);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 62);
+            this.label1.Size = new System.Drawing.Size(164, 63);
             this.label1.TabIndex = 8;
             this.label1.Text = "Ngày";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -172,10 +172,10 @@ namespace GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(15, 248);
+            this.label2.Location = new System.Drawing.Point(15, 252);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 66);
+            this.label2.Size = new System.Drawing.Size(164, 67);
             this.label2.TabIndex = 9;
             this.label2.Text = "Số Tiền";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -184,19 +184,19 @@ namespace GUI
             // 
             this.dtpNgayTP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpNgayTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayTP.Location = new System.Drawing.Point(187, 190);
+            this.dtpNgayTP.Location = new System.Drawing.Point(187, 193);
             this.dtpNgayTP.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayTP.Name = "dtpNgayTP";
-            this.dtpNgayTP.Size = new System.Drawing.Size(393, 35);
+            this.dtpNgayTP.Size = new System.Drawing.Size(393, 30);
             this.dtpNgayTP.TabIndex = 11;
             // 
             // txtLyDo
             // 
             this.txtLyDo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLyDo.Location = new System.Drawing.Point(187, 128);
+            this.txtLyDo.Location = new System.Drawing.Point(187, 130);
             this.txtLyDo.Margin = new System.Windows.Forms.Padding(4);
             this.txtLyDo.Name = "txtLyDo";
-            this.txtLyDo.Size = new System.Drawing.Size(393, 35);
+            this.txtLyDo.Size = new System.Drawing.Size(393, 30);
             this.txtLyDo.TabIndex = 14;
             // 
             // cboLoai
@@ -204,19 +204,19 @@ namespace GUI
             this.cboLoai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLoai.FormattingEnabled = true;
-            this.cboLoai.Location = new System.Drawing.Point(187, 66);
+            this.cboLoai.Location = new System.Drawing.Point(187, 67);
             this.cboLoai.Margin = new System.Windows.Forms.Padding(4);
             this.cboLoai.Name = "cboLoai";
-            this.cboLoai.Size = new System.Drawing.Size(393, 32);
+            this.cboLoai.Size = new System.Drawing.Size(393, 28);
             this.cboLoai.TabIndex = 15;
             // 
             // txtSoTien
             // 
             this.txtSoTien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSoTien.Location = new System.Drawing.Point(186, 252);
+            this.txtSoTien.Location = new System.Drawing.Point(186, 256);
             this.txtSoTien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoTien.Name = "txtSoTien";
-            this.txtSoTien.Size = new System.Drawing.Size(395, 35);
+            this.txtSoTien.Size = new System.Drawing.Size(395, 30);
             this.txtSoTien.TabIndex = 16;
             // 
             // tableLayoutPanel1
@@ -285,7 +285,7 @@ namespace GUI
             this.tableLayoutPanel4.Controls.Add(this.masktxtSDTNV, 2, 3);
             this.tableLayoutPanel4.Controls.Add(this.cboChucVu, 2, 4);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(6, 32);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(6, 27);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
@@ -294,7 +294,7 @@ namespace GUI
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(597, 314);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(597, 319);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // lblMaNV
@@ -304,7 +304,7 @@ namespace GUI
             this.lblMaNV.Location = new System.Drawing.Point(15, 0);
             this.lblMaNV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMaNV.Name = "lblMaNV";
-            this.lblMaNV.Size = new System.Drawing.Size(164, 62);
+            this.lblMaNV.Size = new System.Drawing.Size(164, 63);
             this.lblMaNV.TabIndex = 0;
             this.lblMaNV.Text = "Mã Nhân Viên";
             // 
@@ -312,10 +312,10 @@ namespace GUI
             // 
             this.lblTenNV.AutoSize = true;
             this.lblTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTenNV.Location = new System.Drawing.Point(15, 62);
+            this.lblTenNV.Location = new System.Drawing.Point(15, 63);
             this.lblTenNV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenNV.Name = "lblTenNV";
-            this.lblTenNV.Size = new System.Drawing.Size(164, 62);
+            this.lblTenNV.Size = new System.Drawing.Size(164, 63);
             this.lblTenNV.TabIndex = 1;
             this.lblTenNV.Text = "Tên Nhân Viên";
             // 
@@ -323,10 +323,10 @@ namespace GUI
             // 
             this.lblNgaySinh.AutoSize = true;
             this.lblNgaySinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNgaySinh.Location = new System.Drawing.Point(15, 124);
+            this.lblNgaySinh.Location = new System.Drawing.Point(15, 126);
             this.lblNgaySinh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(164, 62);
+            this.lblNgaySinh.Size = new System.Drawing.Size(164, 63);
             this.lblNgaySinh.TabIndex = 2;
             this.lblNgaySinh.Text = "Ngày Sinh";
             // 
@@ -334,10 +334,10 @@ namespace GUI
             // 
             this.lblSDTNV.AutoSize = true;
             this.lblSDTNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSDTNV.Location = new System.Drawing.Point(15, 186);
+            this.lblSDTNV.Location = new System.Drawing.Point(15, 189);
             this.lblSDTNV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSDTNV.Name = "lblSDTNV";
-            this.lblSDTNV.Size = new System.Drawing.Size(164, 62);
+            this.lblSDTNV.Size = new System.Drawing.Size(164, 63);
             this.lblSDTNV.TabIndex = 3;
             this.lblSDTNV.Text = "Số Điện Thoại";
             // 
@@ -345,10 +345,10 @@ namespace GUI
             // 
             this.lblChucVu.AutoSize = true;
             this.lblChucVu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblChucVu.Location = new System.Drawing.Point(15, 248);
+            this.lblChucVu.Location = new System.Drawing.Point(15, 252);
             this.lblChucVu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChucVu.Name = "lblChucVu";
-            this.lblChucVu.Size = new System.Drawing.Size(164, 66);
+            this.lblChucVu.Size = new System.Drawing.Size(164, 67);
             this.lblChucVu.TabIndex = 4;
             this.lblChucVu.Text = "Chức Vụ";
             // 
@@ -360,36 +360,36 @@ namespace GUI
             this.cboMaNV.Location = new System.Drawing.Point(187, 4);
             this.cboMaNV.Margin = new System.Windows.Forms.Padding(4);
             this.cboMaNV.Name = "cboMaNV";
-            this.cboMaNV.Size = new System.Drawing.Size(393, 32);
+            this.cboMaNV.Size = new System.Drawing.Size(393, 28);
             this.cboMaNV.TabIndex = 5;
             // 
             // txtTenNV
             // 
             this.txtTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTenNV.Location = new System.Drawing.Point(187, 66);
+            this.txtTenNV.Location = new System.Drawing.Point(187, 67);
             this.txtTenNV.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(393, 35);
+            this.txtTenNV.Size = new System.Drawing.Size(393, 30);
             this.txtTenNV.TabIndex = 6;
             // 
             // dtpNgaySinhNV
             // 
             this.dtpNgaySinhNV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpNgaySinhNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySinhNV.Location = new System.Drawing.Point(187, 128);
+            this.dtpNgaySinhNV.Location = new System.Drawing.Point(187, 130);
             this.dtpNgaySinhNV.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgaySinhNV.Name = "dtpNgaySinhNV";
-            this.dtpNgaySinhNV.Size = new System.Drawing.Size(393, 35);
+            this.dtpNgaySinhNV.Size = new System.Drawing.Size(393, 30);
             this.dtpNgaySinhNV.TabIndex = 7;
             // 
             // masktxtSDTNV
             // 
             this.masktxtSDTNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.masktxtSDTNV.Location = new System.Drawing.Point(187, 190);
+            this.masktxtSDTNV.Location = new System.Drawing.Point(187, 193);
             this.masktxtSDTNV.Margin = new System.Windows.Forms.Padding(4);
             this.masktxtSDTNV.Mask = "(999) 000-0000";
             this.masktxtSDTNV.Name = "masktxtSDTNV";
-            this.masktxtSDTNV.Size = new System.Drawing.Size(393, 35);
+            this.masktxtSDTNV.Size = new System.Drawing.Size(393, 30);
             this.masktxtSDTNV.TabIndex = 8;
             // 
             // cboChucVu
@@ -397,10 +397,10 @@ namespace GUI
             this.cboChucVu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChucVu.FormattingEnabled = true;
-            this.cboChucVu.Location = new System.Drawing.Point(187, 252);
+            this.cboChucVu.Location = new System.Drawing.Point(187, 256);
             this.cboChucVu.Margin = new System.Windows.Forms.Padding(4);
             this.cboChucVu.Name = "cboChucVu";
-            this.cboChucVu.Size = new System.Drawing.Size(393, 32);
+            this.cboChucVu.Size = new System.Drawing.Size(393, 28);
             this.cboChucVu.TabIndex = 9;
             // 
             // dgvThuongPhat

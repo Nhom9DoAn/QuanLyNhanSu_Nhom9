@@ -17,7 +17,7 @@ namespace KimPhuong.GUI
     {
         NhanVienBUS nhanVienBUS;
         ChuyenPhongBanBUS chuyenPhongBanBUS;
-        PhongBanBUL phongBanBUL;
+        PhongBanBUL phongBanBUL = new PhongBanBUL();
         public frmChuyenPhongBan()
         {
             chuyenPhongBanBUS = new ChuyenPhongBanBUS();
@@ -130,6 +130,191 @@ namespace KimPhuong.GUI
 
                 cboMaNV.SelectedValue = selected.Cells["MaNV"].Value;
             }
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenNV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtChucVu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvChuyenPhongBan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpNgayTao_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNguoiTao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpNgayHieuLuc_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLyDo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void radDaHuy_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radDangCho_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radDaDuyet_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpNgayCapNhat_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNguoiDuyet_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtGhiChu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbPhongBan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menucontrol31_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
