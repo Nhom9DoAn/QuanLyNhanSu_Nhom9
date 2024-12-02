@@ -93,7 +93,7 @@ namespace Main.DAO
     #endregion
 		
 		public dbDangNhapDataContext() : 
-				base(global::Main.Properties.Settings.Default.QL_NHANSU_UDTMConnectionString1, mappingSource)
+				base(global::Main.Properties.Settings.Default.QL_NHANSU_UDTMPConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
