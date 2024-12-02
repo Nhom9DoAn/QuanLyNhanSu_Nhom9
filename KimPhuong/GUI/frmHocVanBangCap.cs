@@ -18,7 +18,7 @@ namespace KimPhuong.GUI
     {
         HocVanBangCapBUS hocVanBUS;
         NhanVienBUS nhanVienBUS;
-        bool them, xoa, sua, tim, loc = false;
+        bool them, sua, tim, loc = false;
 
         private void LoadCombobox()
         {

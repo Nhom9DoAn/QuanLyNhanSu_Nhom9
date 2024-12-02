@@ -598,7 +598,8 @@
             // menucontrol
             // 
             this.menucontrol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menucontrol.Location = new System.Drawing.Point(3, 3);
+            this.menucontrol.Location = new System.Drawing.Point(3, 2);
+            this.menucontrol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.menucontrol.Name = "menucontrol";
             this.menucontrol.Size = new System.Drawing.Size(1891, 47);
             this.menucontrol.TabIndex = 6;

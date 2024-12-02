@@ -55,7 +55,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
-            // 
+          
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -368,6 +368,16 @@
             this.txtTim.SelectedText = "";
             this.txtTim.Size = new System.Drawing.Size(1021, 35);
             this.txtTim.TabIndex = 15;
+            // 
+            // menucontrol
+            // 
+            this.menucontrol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menucontrol.Location = new System.Drawing.Point(3, 2);
+            this.menucontrol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.menucontrol.Name = "menucontrol";
+            this.menucontrol.Size = new System.Drawing.Size(1170, 57);
+            this.menucontrol.TabIndex = 0;
+            this.menucontrol.ButtonClicked += new DynamicControl.menucontrol2.ButtonClickedHandler(this.menucontrol_ButtonClicked);
             // 
             // frmQuanLyPhongBan
             // 

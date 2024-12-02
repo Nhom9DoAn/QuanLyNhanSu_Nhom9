@@ -291,7 +291,7 @@ namespace Main.DAO
 		
 		private int _MaChamCong;
 		
-		private System.Nullable<int> _MaNV;
+		private string _MoTa;
 		
 		private System.Nullable<System.DateTime> _Ngay;
 		
@@ -327,7 +327,7 @@ namespace Main.DAO
 		
 		public ChamCong()
 		{
-			this._NhanVien = default(EntityRef<NhanVien>);
+			this._NhanViens = new EntitySet<NhanVien>(new Action<NhanVien>(this.attach_NhanViens), new Action<NhanVien>(this.detach_NhanViens));
 			OnCreated();
 		}
 		
@@ -351,26 +351,22 @@ namespace Main.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNV", DbType="Int")]
-		public System.Nullable<int> MaNV
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoTa", DbType="NVarChar(500)")]
+		public string MoTa
 		{
 			get
 			{
-				return this._MaNV;
+				return this._MoTa;
 			}
 			set
 			{
-				if ((this._MaNV != value))
+				if ((this._MoTa != value))
 				{
-					if (this._NhanVien.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaNVChanging(value);
+					this.OnMoTaChanging(value);
 					this.SendPropertyChanging();
-					this._MaNV = value;
-					this.SendPropertyChanged("MaNV");
-					this.OnMaNVChanged();
+					this._MoTa = value;
+					this.SendPropertyChanged("MoTa");
+					this.OnMoTaChanged();
 				}
 			}
 		}
@@ -480,7 +476,7 @@ namespace Main.DAO
 		{
 			get
 			{
-				return this._NhanVien.Entity;
+				return this._NhanViens;
 			}
 			set
 			{
@@ -527,6 +523,18 @@ namespace Main.DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_NhanViens(NhanVien entity)
+		{
+			this.SendPropertyChanging();
+			entity.ChucVu = this;
+		}
+		
+		private void detach_NhanViens(NhanVien entity)
+		{
+			this.SendPropertyChanging();
+			entity.ChucVu = null;
 		}
 	}
 	
@@ -703,6 +711,8 @@ namespace Main.DAO
 		private EntityRef<PhongBan> _PhongBan;
 		
 		private EntityRef<PhongBan> _PhongBan1;
+		
+		private EntityRef<NhanVien> _NhanVien1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
