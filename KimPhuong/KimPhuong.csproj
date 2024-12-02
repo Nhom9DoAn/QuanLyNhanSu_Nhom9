@@ -67,9 +67,12 @@
     <Compile Include="BUL\HopDongBLL.cs" />
     <Compile Include="BUL\LichSuPhongBanBUS.cs" />
     <Compile Include="BUL\NghiPhepBUL.cs" />
+    <Compile Include="BUL\NhanThanBLL.cs" />
     <Compile Include="BUL\NhanVienBUS.cs" />
     <Compile Include="BUL\PhongBanBUL.cs" />
     <Compile Include="BUL\ThuongPhatBLL.cs" />
+    <Compile Include="BUL\TuyenDungBLL.cs" />
+    <Compile Include="BUL\UngVienBLL.cs" />
     <Compile Include="DAL\ChucVuDAL.cs" />
     <Compile Include="DAL\ChuyenPhongBanDAO.cs" />
     <Compile Include="DAL\CongTacDAO.cs" />
@@ -82,9 +85,12 @@
     <Compile Include="DAL\HopDongDAL.cs" />
     <Compile Include="DAL\LichSuPhongBanDAO.cs" />
     <Compile Include="DAL\NghiPhepDAO.cs" />
+    <Compile Include="DAL\NhanThanDAL.cs" />
     <Compile Include="DAL\NhanVienDAO.cs" />
     <Compile Include="DAL\PhongBanDAO.cs" />
     <Compile Include="DAL\ThuongPhatDAL.cs" />
+    <Compile Include="DAL\TuyenDungDAL.cs" />
+    <Compile Include="DAL\UngVienDAL.cs" />
     <Compile Include="DBC\DBConnection.cs" />
     <Compile Include="DTO\ChucVuDTO.cs" />
     <Compile Include="DTO\CongTacDTO.cs" />
@@ -92,8 +98,11 @@
     <Compile Include="DTO\DTO_NhanVien.cs" />
     <Compile Include="DTO\HopDongDTO.cs" />
     <Compile Include="DTO\NghiPhepDTO.cs" />
+    <Compile Include="DTO\NhanThanDTO.cs" />
     <Compile Include="DTO\PhongBanDTO.cs" />
     <Compile Include="DTO\ThuongPhatDTO.cs" />
+    <Compile Include="DTO\TuyenDungDTO.cs" />
+    <Compile Include="DTO\UngVienDTO.cs" />
     <Compile Include="GUI\frmChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +114,24 @@
     </Compile>
     <Compile Include="GUI\frmChuyenPhongBan.Designer.cs">
       <DependentUpon>frmChuyenPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmQLNhanThan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQLNhanThan.Designer.cs">
+      <DependentUpon>frmQLNhanThan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmQLNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQLNhanVien.Designer.cs">
+      <DependentUpon>frmQLNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmQLUngVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQLUngVien.Designer.cs">
+      <DependentUpon>frmQLUngVien.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmQuanLyCongTac.cs">
       <SubType>Form</SubType>
@@ -136,6 +163,12 @@
     <Compile Include="GUI\frmQuanLyNghiPhep.Designer.cs">
       <DependentUpon>frmQuanLyNghiPhep.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmQuanLyTuyenDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQuanLyTuyenDung.Designer.cs">
+      <DependentUpon>frmQuanLyTuyenDung.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmQuanLyPhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +198,15 @@
     <EmbeddedResource Include="GUI\frmChuyenPhongBan.resx">
       <DependentUpon>frmChuyenPhongBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQLNhanThan.resx">
+      <DependentUpon>frmQLNhanThan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQLNhanVien.resx">
+      <DependentUpon>frmQLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQLUngVien.resx">
+      <DependentUpon>frmQLUngVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLyCongTac.resx">
       <DependentUpon>frmQuanLyCongTac.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLyNghiPhep.resx">
       <DependentUpon>frmQuanLyNghiPhep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQuanLyTuyenDung.resx">
+      <DependentUpon>frmQuanLyTuyenDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQuanLyPhongBan.resx">
       <DependentUpon>frmQuanLyPhongBan.cs</DependentUpon>

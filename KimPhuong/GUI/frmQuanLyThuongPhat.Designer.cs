@@ -37,6 +37,7 @@ namespace KimPhuong.GUI
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.cb_TenNV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtp_NgayVaoLam = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txt_PhongBan = new Guna.UI2.WinForms.Guna2TextBox();
@@ -61,7 +62,6 @@ namespace KimPhuong.GUI
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgv_QLThuongPhat = new Sunny.UI.UIDataGridView();
-            this.cb_TenNV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -114,6 +114,25 @@ namespace KimPhuong.GUI
             this.guna2GroupBox1.Size = new System.Drawing.Size(732, 323);
             this.guna2GroupBox1.TabIndex = 3;
             this.guna2GroupBox1.Text = "Thông tin nhân viên";
+            // 
+            // cb_TenNV
+            // 
+            this.cb_TenNV.BackColor = System.Drawing.Color.Transparent;
+            this.cb_TenNV.BorderRadius = 15;
+            this.cb_TenNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_TenNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_TenNV.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_TenNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_TenNV.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_TenNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cb_TenNV.ItemHeight = 30;
+            this.cb_TenNV.Items.AddRange(new object[] {
+            "Đã duyệt"});
+            this.cb_TenNV.Location = new System.Drawing.Point(242, 60);
+            this.cb_TenNV.Name = "cb_TenNV";
+            this.cb_TenNV.Size = new System.Drawing.Size(250, 36);
+            this.cb_TenNV.TabIndex = 12;
+            this.cb_TenNV.SelectedIndexChanged += new System.EventHandler(this.cb_TenNV_SelectedIndexChanged);
             // 
             // dtp_NgayVaoLam
             // 
@@ -507,24 +526,6 @@ namespace KimPhuong.GUI
             this.dgv_QLThuongPhat.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dgv_QLThuongPhat.TabIndex = 4;
             this.dgv_QLThuongPhat.SelectionChanged += new System.EventHandler(this.dgv_QLThuongPhat_SelectionChanged);
-            // 
-            // cb_TenNV
-            // 
-            this.cb_TenNV.BackColor = System.Drawing.Color.Transparent;
-            this.cb_TenNV.BorderRadius = 15;
-            this.cb_TenNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_TenNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_TenNV.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_TenNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_TenNV.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cb_TenNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cb_TenNV.ItemHeight = 30;
-            this.cb_TenNV.Items.AddRange(new object[] {
-            "Đã duyệt"});
-            this.cb_TenNV.Location = new System.Drawing.Point(242, 60);
-            this.cb_TenNV.Name = "cb_TenNV";
-            this.cb_TenNV.Size = new System.Drawing.Size(250, 36);
-            this.cb_TenNV.TabIndex = 12;
             // 
             // frmQuanLyThuongPhat
             // 

@@ -133,6 +133,47 @@ namespace KimPhuong.GUI
             disable();
         }
 
+        private void cb_TenNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cb_TenNV.SelectedValue != null)
+                {
+                    int maNV;
+                    if (int.TryParse(cb_TenNV.SelectedValue.ToString(), out maNV))
+                    {
+                        var nv = nvbll.GetByID(maNV);
+                        if (nv != null)
+                        {
+                            int mapb = nv.MaPB.Value;
+                            var phongban = pbbll.getAll();
+                            var phongBanSelected = phongban.FirstOrDefault(b => b.MaPB == mapb);
+
+                            if (phongBanSelected != null)
+                            {
+                                txt_PhongBan.Text = phongBanSelected.TenPB;
+                            }
+                            else
+                            {
+                                txt_PhongBan.Text = "Không tìm thấy phòng ban";
+                            }
+                            dtp_NgayVaoLam.Value = nv.NgayVaoLam.Value;
+                            dtp_NgayVaoLam.Value = nv.NgayVaoLam.HasValue ? nv.NgaySinh.Value : DateTime.Now;
+                            txt_SDT.Text = nv.DienThoai ?? string.Empty;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin nhân viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void dgv_QLThuongPhat_SelectionChanged(object sender, EventArgs e)
         {
             

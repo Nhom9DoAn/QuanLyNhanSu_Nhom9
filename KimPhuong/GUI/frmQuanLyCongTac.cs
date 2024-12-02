@@ -295,12 +295,10 @@ namespace KimPhuong.GUI
 
         private void rad_Loc_CheckedChanged(object sender, EventArgs e)
         {
-            // Đảm bảo tất cả Control đều bị vô hiệu hóa ban đầu
             cb_NhanVien.Enabled = false;
             dtp_NgayBD.Enabled = false;
             cb_TrangThai.Enabled = false;
 
-            // Bật Control tương ứng với RadioButton được chọn
             if (rad_LocTenNV.Checked)
             {
                 cb_NhanVien.Enabled = true;
