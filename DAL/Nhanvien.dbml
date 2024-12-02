@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_NHANSU_UDTM" Class="dbDangNhapDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=PHAPVO\PHAPPHAP;Initial Catalog=QL_NHANSU_UDTM;User ID=saaa;Encrypt=False" SettingsObjectName="Main.Properties.Settings" SettingsPropertyName="QL_NHANSU_UDTMConnectionString1" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_NHANSU_UDTM" Class="NhanvienDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PHAPVO\PHAPPHAP;Initial Catalog=QL_NHANSU_UDTM;User ID=saaa;Encrypt=False" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QL_NHANSU_UDTMConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChamCong" Member="ChamCongs">
     <Type Name="ChamCong">
       <Column Name="MaChamCong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

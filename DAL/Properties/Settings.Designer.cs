@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Main.Properties {
+namespace DAL.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,33 +26,11 @@ namespace Main.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PHAPVO\\PHAPPHAP;Initial Catalog=QL_NHANSU_UDTM1;Integrated Security=T" +
-            "rue")]
-        public string QL_NHANSU_UDTM1ConnectionString {
-            get {
-                return ((string)(this["QL_NHANSU_UDTM1ConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PHAPVO\\PHAPPHAP;Initial Catalog=QL_NHANSU_UDTM;Integrated Security=Tr" +
-            "ue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PHAPVO\\PHAPPHAP;Initial Catalog=QL_NHANSU_UDTM;User ID=saaa;Password=" +
+            "123;Encrypt=False")]
         public string QL_NHANSU_UDTMConnectionString {
             get {
                 return ((string)(this["QL_NHANSU_UDTMConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PHAPVO\\PHAPPHAP;Initial Catalog=QL_NHANSU_UDTM;User ID=saaa;Password=" +
-            "123;Encrypt=False")]
-        public string QL_NHANSU_UDTMConnectionString1 {
-            get {
-                return ((string)(this["QL_NHANSU_UDTMConnectionString1"]));
             }
         }
     }
