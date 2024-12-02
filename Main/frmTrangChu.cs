@@ -51,15 +51,16 @@ namespace Main
         {
             InitializeComponent();
             lblTenDangNhap.Text = tenNhanVien;
-            //MessageBox.Show("Mã nhân viên: " + maNV);
             if (chucVu == "Giám đốc")
             {
                 int pageIndex = 1000;
-                TreeNode root = Aside.CreateNode("QUẢN LÝ PHÒNG BAN", 61451, 24, pageIndex);
+                TreeNode root = Aside.CreateNode("PHÒNG BAN", 61451, 24, pageIndex);
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyPhongBan(), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new frmChuyenPhongBan(tenNhanVien), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new frmLichSuPhongBan(), ++pageIndex));
 
                 pageIndex = 2000;
-                root = Aside.CreateNode("QUẢN LÝ NHÂN SỰ", 61451, 24, pageIndex);
+                root = Aside.CreateNode("NHÂN SỰ", 61451, 24, pageIndex);
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyNghiPhep(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyHopDongLaoDong(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyThuongPhat(), ++pageIndex));
@@ -71,6 +72,9 @@ namespace Main
                 Aside.CreateChildNode(root, AddPage(new frmQLNhanThan(), ++pageIndex));
 
 
+                pageIndex = 3000;
+                root = Aside.CreateNode("PHÁT TRIỂN", 61451, 24, pageIndex);
+                Aside.CreateChildNode(root, AddPage(new frmKhoaDaoTao(), ++pageIndex));
             }
             else if (chucVu == "Nhân viên")
             {
@@ -91,6 +95,11 @@ namespace Main
         private void frmTrangChu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Aside_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+
         }
     }
 }

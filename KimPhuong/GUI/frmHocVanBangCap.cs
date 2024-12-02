@@ -47,10 +47,16 @@ namespace KimPhuong.GUI
                 return false;
             }
 
-
-            if (string.IsNullOrWhiteSpace(txtDiemTB.Text))
+            if (cbBangCap.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng nhập điểm trung bình!", "Thông báo",
+                MessageBox.Show("Vui lòng chọn loại bằng cấp!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDiemTB.Text) || string.IsNullOrWhiteSpace(txtTenTruong.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ điểm trung bình và tên trường", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
@@ -215,11 +221,6 @@ namespace KimPhuong.GUI
                     loaddisable();
                     break;
 
-                case DynamicControl.menucontrol2.ButtonType.Search:
-                    tim = true;
-                    cboMaNV.Enabled = txtTenTruong.Enabled = cbBangCap.Enabled = true;
-                    break;
-
                 case DynamicControl.menucontrol2.ButtonType.Reload:
                     LoadData();
                     break;
@@ -256,7 +257,7 @@ namespace KimPhuong.GUI
                 {
                     txtDiemTB.Text = selected.Cells["DiemTB"].Value?.ToString() ?? "";
                 }
-                if(selected.Cells["MaNV"].Value !=null)
+                if (selected.Cells["MaNV"].Value != null)
                 {
                     cboMaNV.Text = selected.Cells["MaNV"].Value?.ToString() ?? "";
                 }
@@ -299,6 +300,47 @@ namespace KimPhuong.GUI
             }
         }
 
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTim.Text.Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var results = hocVanBUS.Search(keyword);
+            if (results.Any())
+            {
+                dgvHocVan.DataSource = results;
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy kết quả nào phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvHocVan.DataSource = null;
+            }
+        }
+
+        private void dgvHocVan_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex % 2 == 0)
+            {
+                dgvHocVan.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.AliceBlue;
+            }
+            else
+            {
+                dgvHocVan.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+            }
+        }
+
+        private void frmHocVanBangCap_Load(object sender, EventArgs e)
+        {
+            LoadData();
+            loaddisable();
+            LoadCombobox();
+        }
+
         public frmHocVanBangCap()
         {
             InitializeComponent();
@@ -319,20 +361,11 @@ namespace KimPhuong.GUI
         }
         private void LoadData()
         {
-            dgvHocVan.DataSource = hocVanBUS.GetAll().Select(np => new
-            {
-                np.MaHVBC,
-                np.MaNV,
-                np.TenTruong,
-                np.ChuyenNganh,
-                np.BangCap,
-                np.NamTotNghiep,
-                np.DiemTB,
-                np.GhiChu
-            }).ToList();
+            dgvHocVan.DataSource = hocVanBUS.GetAll();
 
             dgvHocVan.Columns["MaHVBC"].HeaderText = "Mã học vấn/bằng cấp";
             dgvHocVan.Columns["MaNV"].HeaderText = "Mã nhân viên";
+            dgvHocVan.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
             dgvHocVan.Columns["TenTruong"].HeaderText = "Tên trường";
             dgvHocVan.Columns["ChuyenNganh"].HeaderText = "Chuyên ngành";
             dgvHocVan.Columns["BangCap"].HeaderText = "Bằng cấp";

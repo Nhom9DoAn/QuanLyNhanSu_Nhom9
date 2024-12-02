@@ -13,6 +13,7 @@ namespace Main
 {
     public partial class frmDangNhap : Form
     {
+        public static int maNV;
         DangNhapBUS dangNhapBUS;
         public frmDangNhap()
         {
@@ -51,7 +52,7 @@ namespace Main
 
             if (dangNhapBUS.KiemTraDangNhap(tenDangNhap, matKhau))
             {
-                int maNV = dangNhapBUS.LayMaNV(tenDangNhap);
+                maNV = dangNhapBUS.LayMaNV(tenDangNhap);
 
                 string tenNhanVien = dangNhapBUS.LayTenNhanVien(maNV);
                 string chucVu = dangNhapBUS.LayChucVu(maNV);

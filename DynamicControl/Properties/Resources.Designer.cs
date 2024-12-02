@@ -59,5 +59,26 @@ namespace DynamicControl.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _312f137caf78454daaf902189550e48a {
+            get {
+                object obj = ResourceManager.GetObject("312f137caf78454daaf902189550e48a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blurred_background_business_office_interior_with_desks_of_computers_business_background_free_photo {
+            get {
+                object obj = ResourceManager.GetObject("blurred-background-business-office-interior-with-desks-of-computers-business-back" +
+                        "ground-free-photo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

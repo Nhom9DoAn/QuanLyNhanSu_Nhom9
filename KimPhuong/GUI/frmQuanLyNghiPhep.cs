@@ -71,19 +71,11 @@ namespace KimPhuong.GUI
         }
         private void LoadData()
         {
-            dgvNghiPhep.DataSource = nghiPhepBUS.GetAll().Select(np => new
-            {
-                np.MaNghiPhep,
-                np.MaNV,
-                np.NgayBatDau,
-                np.NgayKetThuc,
-                np.TongNgay,
-                np.LyDo,
-                np.TrangThai
-            }).ToList();
+            dgvNghiPhep.DataSource = nghiPhepBUS.GetAll();
 
             dgvNghiPhep.Columns["MaNghiPhep"].HeaderText = "Mã nghỉ phép";
             dgvNghiPhep.Columns["MaNV"].HeaderText = "Mã nhân viên";
+            dgvNghiPhep.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
             dgvNghiPhep.Columns["NgayBatDau"].HeaderText = "Từ ngày";
             dgvNghiPhep.Columns["NgayKetThuc"].HeaderText = "Đến ngày";
             dgvNghiPhep.Columns["TongNgay"].HeaderText = "Tổng ngày";
@@ -120,6 +112,28 @@ namespace KimPhuong.GUI
         private void menucontrol_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTim.Text.Trim();
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var results = nghiPhepBUS.Search(keyword);
+            if (results.Any())
+            {
+                dgvNghiPhep.AutoGenerateColumns = true;
+                dgvNghiPhep.DataSource = results;
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy kết quả nào phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvNghiPhep.DataSource = null;
+            }
         }
 
         private void menucontrol_ButtonClicked(object sender, DynamicControl.menucontrol2.ButtonType buttonType, EventArgs e)
@@ -238,51 +252,7 @@ namespace KimPhuong.GUI
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    else if (tim)
-                    {
-                        string trangThai;
-                        if (radDaDuyet.Checked)
-                            trangThai = "Đã duyệt";
-                        else if (radChuaDuyet.Checked)
-                            trangThai = "Chưa duyệt";
-                        else
-                            trangThai = "Đã từ chối";
-
-                        int maNV = 0;
-                        if (cboMaNV.SelectedValue != null)
-                        {
-                            maNV = (int) cboMaNV.SelectedValue;
-                        }
-
-                        var ketQua = nghiPhepBUS.Search(
-                            maNV,
-                            dtpTuNgay.Value,
-                            dtpDenNgay.Value,
-                            trangThai);
-
-                        dgvNghiPhep.DataSource = ketQua.Select(np => new
-                        {
-                            np.MaNghiPhep,
-                            np.MaNV,
-                            np.NgayBatDau,
-                            np.NgayKetThuc,
-                            np.TongNgay,
-                            np.LyDo,
-                            np.TrangThai
-                        }).ToList();
-
-                        dgvNghiPhep.Columns["MaNghiPhep"].HeaderText = "Mã nghỉ phép";
-                        dgvNghiPhep.Columns["MaNV"].HeaderText = "Mã nhân viên";
-                        dgvNghiPhep.Columns["NgayBatDau"].HeaderText = "Từ ngày";
-                        dgvNghiPhep.Columns["NgayKetThuc"].HeaderText = "Đến ngày";
-                        dgvNghiPhep.Columns["TongNgay"].HeaderText = "Tổng ngày";
-                        dgvNghiPhep.Columns["LyDo"].HeaderText = "Lý do";
-                        dgvNghiPhep.Columns["TrangThai"].HeaderText = "Trạng thái";
-
-                        tim = false;
-                        loaddisable();
-                        menucontrol.SetStatus(DynamicControl.menucontrol2.Status.View);
-                    }
+                   
                     else if(loc)
                     {
                         int maNV = 0;
@@ -294,19 +264,11 @@ namespace KimPhuong.GUI
                         var ketQua = nghiPhepBUS.GetByNhanVien(
                             maNV);
 
-                        dgvNghiPhep.DataSource = ketQua.Select(np => new
-                        {
-                            np.MaNghiPhep,
-                            np.MaNV,
-                            np.NgayBatDau,
-                            np.NgayKetThuc,
-                            np.TongNgay,
-                            np.LyDo,
-                            np.TrangThai
-                        }).ToList();
+                        dgvNghiPhep.DataSource = ketQua;
 
                         dgvNghiPhep.Columns["MaNghiPhep"].HeaderText = "Mã nghỉ phép";
                         dgvNghiPhep.Columns["MaNV"].HeaderText = "Mã nhân viên";
+                        dgvNghiPhep.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
                         dgvNghiPhep.Columns["NgayBatDau"].HeaderText = "Từ ngày";
                         dgvNghiPhep.Columns["NgayKetThuc"].HeaderText = "Đến ngày";
                         dgvNghiPhep.Columns["TongNgay"].HeaderText = "Tổng ngày";
@@ -328,12 +290,6 @@ namespace KimPhuong.GUI
                     loaddisable();
                     break;
 
-                case DynamicControl.menucontrol2.ButtonType.Search:
-                    tim = true;
-                    cboMaNV.Enabled = dtpTuNgay.Enabled = dtpDenNgay.Enabled =
-                    radDaDuyet.Enabled = radChuaDuyet.Enabled = true;
-                    break;
-
                 case DynamicControl.menucontrol2.ButtonType.Reload:
                     LoadData();
                     break;
@@ -343,6 +299,7 @@ namespace KimPhuong.GUI
                     break;
                 case DynamicControl.menucontrol2.ButtonType.Loc:
                     cboMaNV.Enabled= true;
+                    txtTenNV.Enabled = false;
                     loc = true;
                     break;
             }

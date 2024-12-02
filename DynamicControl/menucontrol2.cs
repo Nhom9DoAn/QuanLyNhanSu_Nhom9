@@ -23,7 +23,7 @@ namespace DynamicControl
         }
         public enum ButtonType
         {
-            Add, Delete, Edit, Save, Exit, Cancel, Search, Reload, Loc
+            Add, Delete, Edit, Save, Exit, Cancel, Reload, Loc
         }
         private Status currentStatus;
         public delegate void ButtonClickedHandler(object sender, ButtonType buttonType, EventArgs e);
@@ -45,7 +45,6 @@ namespace DynamicControl
                     btnThoat.Enabled = true;
                     btnLuu.Enabled = false;
                     btnHuy.Enabled = false;
-                    btnTim.Enabled = true;
                     btnLoc.Enabled = true;
                     btnTaiLai.Enabled = true;
                     break;
@@ -57,7 +56,6 @@ namespace DynamicControl
                     btnThoat.Enabled = false;
                     btnLuu.Enabled = true;
                     btnHuy.Enabled = true;
-                    btnTim.Enabled = false;
                     btnLoc.Enabled = false;
                     btnTaiLai.Enabled = true;
                     break;
@@ -82,11 +80,6 @@ namespace DynamicControl
             OnButtonClicked(sender, ButtonType.Edit, e);
         }
 
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-            SetStatus(Status.Edit);
-            OnButtonClicked(sender, ButtonType.Search, e);
-        }
 
         private void btnLoc_Click(object sender, EventArgs e)
         {

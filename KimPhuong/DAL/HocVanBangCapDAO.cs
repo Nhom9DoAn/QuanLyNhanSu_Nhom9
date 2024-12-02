@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,18 +16,31 @@ namespace KimPhuong.DAL
             db = new dbQuanLyNhanSuDataContext();
         }
 
-        public List<HocVanBangCap> GetAll()
+        public List<dynamic> GetAll()
         {
             try
             {
-                return db.HocVanBangCaps.ToList();
+                var result = db.HocVanBangCaps.Select(x => new
+                {
+                    x.MaHVBC,
+                    x.MaNV,
+                    TenNhanVien = db.NhanViens.FirstOrDefault(nv => nv.MaNV == x.MaNV).HoTen,
+                    x.TenTruong,
+                    x.ChuyenNganh,
+                    x.BangCap,
+                    x.NamTotNghiep,
+                    x.DiemTB,
+                    x.HinhThucHoc,
+                    x.GhiChu
+                }).ToList();
+                return result.Cast<dynamic>().ToList();
             }
             catch
             {
-                return new List<HocVanBangCap>();
+                return new List<dynamic>();
             }
         }
-        public bool Insert(int maNV, string tenTruong, string chuyenNganh, 
+        public bool Insert(int maNV, string tenTruong, string chuyenNganh,
             string bangCap, int namTotNghiep, double diemTB, string ghiChu)
         {
             try
@@ -97,43 +111,70 @@ namespace KimPhuong.DAL
             }
         }
 
-        public List<HocVanBangCap> Search(int? maNV, string tenTruong, string bangCap)
+        public List<dynamic> Search(string keyword)
         {
             try
             {
                 var query = db.HocVanBangCaps.AsQueryable();
 
-                if (maNV.HasValue && maNV.Value > 0)
+                if (!string.IsNullOrEmpty(keyword))
                 {
-                    query = query.Where(hv => hv.MaNV == maNV.Value);
+                    query = query.Where(hv =>
+                        hv.TenTruong.Contains(keyword) ||
+                        hv.BangCap.Contains(keyword) ||
+                        hv.ChuyenNganh.Contains(keyword) ||
+                        hv.NhanVien.HoTen.Contains(keyword) ||
+                        hv.HinhThucHoc.Contains(keyword)
+                    );
                 }
 
-                if (!string.IsNullOrEmpty(tenTruong))
+                var result = query.Select(hv => new
                 {
-                    query = query.Where(hv => hv.TenTruong.Contains(tenTruong));
-                }
+                    hv.MaHVBC,
+                    hv.MaNV,
+                    TenNhanVien = db.NhanViens.FirstOrDefault(nv => nv.MaNV == hv.MaNV).HoTen,
+                    hv.TenTruong,
+                    hv.ChuyenNganh,
+                    hv.BangCap,
+                    hv.NamTotNghiep,
+                    hv.DiemTB,
+                    hv.GhiChu
 
-                if (!string.IsNullOrEmpty(bangCap))
-                {
-                    query = query.Where(hv => hv.BangCap == bangCap);
-                }
+                }).ToList();
 
-                return query.ToList();
+                return result.Cast<dynamic>().ToList();
             }
             catch
             {
-                return new List<HocVanBangCap>();
+                return new List<dynamic>();
             }
         }
-        public List<HocVanBangCap> GetByNhanVien(int maNV)
+
+
+
+
+        public List<dynamic> GetByNhanVien(int maNV)
         {
             try
             {
-                return db.HocVanBangCaps.Where(hv => hv.MaNV == maNV).ToList();
+                var result = db.HocVanBangCaps.Where(hv => hv.MaNV == maNV).Select(hv => new
+                {
+                    hv.MaHVBC,
+                    hv.MaNV,
+                    TenNhanVien = db.NhanViens.FirstOrDefault(nv => nv.MaNV == hv.MaNV).HoTen,
+                    hv.TenTruong,
+                    hv.ChuyenNganh,
+                    hv.BangCap,
+                    hv.NamTotNghiep,
+                    hv.DiemTB,
+                    hv.GhiChu
+
+                }).ToList();
+                return result.Cast<dynamic>().ToList();
             }
             catch
             {
-                return new List<HocVanBangCap>();
+                return new List<dynamic>();
             }
         }
     }

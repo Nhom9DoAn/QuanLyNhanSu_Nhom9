@@ -78,5 +78,21 @@ namespace KimPhuong.BUS
         {
             return nhanVienDAO.GetChucVuName(maNV);
         }
+        public string GetPhongBanName(int maNV)
+        {
+            return nhanVienDAO.GetPhongBanName(maNV);
+        }
+        public int GetPhongBanID(int maNV)
+        {
+            return nhanVienDAO.GetPhongBanID(maNV);
+        }
+        public (int demNam, int demNu) ThongKeGioiTinhToanCongTy()
+        {
+            return nhanVienDAO.ThongKeGioiTinhToanCongTy();
+        }
+        public List<NhanSuTrend> ThongKeNhanSuTheoNam()
+        {
+            return nhanVienDAO.ThongKeNhanSuTheoNam();
+        }
     }
 }

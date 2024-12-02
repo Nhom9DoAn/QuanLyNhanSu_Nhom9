@@ -16,7 +16,7 @@ namespace KimPhuong.BUL
         {
             nghiPhepDAO = new NghiPhepDAO();
         }
-        public List<NghiPhep> GetAll()
+        public List<dynamic> GetAll()
         {
             return nghiPhepDAO.GetAll();
         }
@@ -43,14 +43,14 @@ namespace KimPhuong.BUL
             return nghiPhepDAO.GetByID(maNghiPhep);
         }
 
-        public List<NghiPhep> GetByNhanVien(int maNV)
+        public List<dynamic> GetByNhanVien(int maNV)
         {
             return nghiPhepDAO.GetByNhanVien(maNV);
         }
 
-        public List<NghiPhep> Search(int maNV, DateTime tuNgay, DateTime denNgay, string trangThai)
+        public List<dynamic> Search(string keyword)
         {
-            return nghiPhepDAO.Search(maNV, tuNgay, denNgay, trangThai);
+            return nghiPhepDAO.Search(keyword);
         }
 
         public int GetTongNgayNghi(int maNV, DateTime tuNgay, DateTime denNgay)

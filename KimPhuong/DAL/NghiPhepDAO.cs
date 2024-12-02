@@ -14,44 +14,57 @@ namespace KimPhuong.DAL
             db = new dbQuanLyNhanSuDataContext();
         }
 
-        public List<NghiPhep> GetAll()
+        public List<dynamic> GetAll()
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
+
+
+                var result = db.NghiPheps.Select(np => new
                 {
-                    return db.NghiPheps.ToList();
-                }
+                    np.MaNghiPhep,
+                    np.MaNV,
+                    TenNhanVien = db.NhanViens.FirstOrDefault(nv => nv.MaNV == np.MaNV).HoTen,
+                    np.TrangThai,
+                    np.NgayBatDau,
+                    np.NgayKetThuc,
+                    np.TongNgay,
+                    np.LyDo
+                }).ToList();
+
+                return result.Cast<dynamic>().ToList();
+
             }
             catch
             {
-                return new List<NghiPhep>();
+                return new List<dynamic>();
             }
         }
+
 
         public bool Insert(int maNV, DateTime ngayBatDau, DateTime ngayKetThuc,
             string lyDo, string trangThai)
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
+
+
+                int tongNgay = (ngayKetThuc - ngayBatDau).Days + 1;
+
+                NghiPhep np = new NghiPhep
                 {
-                    int tongNgay = (ngayKetThuc - ngayBatDau).Days + 1;
+                    MaNV = maNV,
+                    NgayBatDau = ngayBatDau,
+                    NgayKetThuc = ngayKetThuc,
+                    TongNgay = tongNgay,
+                    LyDo = lyDo,
+                    TrangThai = trangThai
+                };
 
-                    NghiPhep np = new NghiPhep
-                    {
-                        MaNV = maNV,
-                        NgayBatDau = ngayBatDau,
-                        NgayKetThuc = ngayKetThuc,
-                        TongNgay = tongNgay,
-                        LyDo = lyDo,
-                        TrangThai = trangThai
-                    };
+                db.NghiPheps.InsertOnSubmit(np);
+                db.SubmitChanges();
+                return true;
 
-                    db.NghiPheps.InsertOnSubmit(np);
-                    db.SubmitChanges();
-                    return true;
-                }
             }
             catch (Exception ex)
             {
@@ -65,22 +78,22 @@ namespace KimPhuong.DAL
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
-                {
-                    var np = db.NghiPheps.FirstOrDefault(x => x.MaNghiPhep == maNghiPhep);
-                    if (np != null)
-                    {
-                        np.NgayBatDau = ngayBatDau;
-                        np.NgayKetThuc = ngayKetThuc;
-                        np.TongNgay = (ngayKetThuc - ngayBatDau).Days + 1;
-                        np.LyDo = lyDo;
-                        np.TrangThai = trangThai;
 
-                        db.SubmitChanges();
-                        return true;
-                    }
-                    return false;
+
+                var np = db.NghiPheps.FirstOrDefault(x => x.MaNghiPhep == maNghiPhep);
+                if (np != null)
+                {
+                    np.NgayBatDau = ngayBatDau;
+                    np.NgayKetThuc = ngayKetThuc;
+                    np.TongNgay = (ngayKetThuc - ngayBatDau).Days + 1;
+                    np.LyDo = lyDo;
+                    np.TrangThai = trangThai;
+
+                    db.SubmitChanges();
+                    return true;
                 }
+                return false;
+
             }
             catch (Exception EX)
             {
@@ -93,17 +106,17 @@ namespace KimPhuong.DAL
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
+
+
+                var np = db.NghiPheps.FirstOrDefault(x => x.MaNghiPhep == maNghiPhep);
+                if (np != null)
                 {
-                    var np = db.NghiPheps.FirstOrDefault(x => x.MaNghiPhep == maNghiPhep);
-                    if (np != null)
-                    {
-                        db.NghiPheps.DeleteOnSubmit(np);
-                        db.SubmitChanges();
-                        return true;
-                    }
-                    return false;
+                    db.NghiPheps.DeleteOnSubmit(np);
+                    db.SubmitChanges();
+                    return true;
                 }
+                return false;
+
             }
             catch
             {
@@ -115,10 +128,10 @@ namespace KimPhuong.DAL
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
-                {
-                    return db.NghiPheps.FirstOrDefault(x => x.MaNghiPhep == maNghiPhep);
-                }
+
+
+                return db.NghiPheps.FirstOrDefault(x => x.MaNghiPhep == maNghiPhep);
+
             }
             catch
             {
@@ -126,62 +139,88 @@ namespace KimPhuong.DAL
             }
         }
 
-        public List<NghiPhep> GetByNhanVien(int maNV)
+        public List<dynamic> GetByNhanVien(int maNV)
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
-                {
-                    return db.NghiPheps
-                            .Where(x => maNV == 0 || x.MaNV == maNV)
-                            .ToList();
-                }
+                var result = db.NghiPheps
+                    .Where(x => maNV == 0 || x.MaNV == maNV)
+                    .Select(np => new
+                    {
+                        np.MaNghiPhep,
+                        np.MaNV,
+                        TenNhanVien = db.NhanViens.FirstOrDefault(nv => nv.MaNV == np.MaNV).HoTen,
+                        np.TrangThai,
+                        np.NgayBatDau,
+                        np.NgayKetThuc,
+                        np.TongNgay,
+                        np.LyDo
+                    })
+                    .ToList();
+
+                return result.Cast<dynamic>().ToList();
+
             }
             catch
             {
-                return new List<NghiPhep>();
+                return new List<dynamic>();
             }
         }
 
-        public List<NghiPhep> Search(int maNV, DateTime tuNgay, DateTime denNgay, string trangThai)
+
+        public List<dynamic> Search(string keyword)
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
-                {
-                    var query = from np in db.NghiPheps
-                                where
-                                    (maNV == 0 || np.MaNV == maNV) &&
-                                    (tuNgay == DateTime.MinValue || np.NgayBatDau >= tuNgay) &&
-                                    (denNgay == DateTime.MinValue || np.NgayKetThuc <= denNgay) &&
-                                    (string.IsNullOrEmpty(trangThai) || np.TrangThai == trangThai)
-                                select np;
 
-                    return query.ToList();
-                }
+                var result = from np in db.NghiPheps
+                             join nv in db.NhanViens on np.MaNV equals nv.MaNV into nvGroup
+                             from nv in nvGroup.DefaultIfEmpty()
+                             where
+                                 (string.IsNullOrEmpty(keyword) ||
+                                  np.MaNV.ToString().Contains(keyword) ||
+                                  np.TrangThai.ToLower().Contains(keyword.ToLower()) ||
+                                  nv.HoTen.ToLower().Contains(keyword.ToLower()) ||
+                                  np.NgayBatDau.ToString().Contains(keyword) ||
+                                  np.NgayKetThuc.ToString().Contains(keyword))
+                             select new
+                             {
+                                 np.MaNghiPhep,
+                                 np.MaNV,
+                                 TenNhanVien = nv.HoTen,
+                                 np.TrangThai,
+                                 np.NgayBatDau,
+                                 np.NgayKetThuc,
+                                 np.TongNgay,
+                                 np.LyDo
+                             };
+
+                return result.Cast<dynamic>().ToList();
+
             }
             catch
             {
-                return new List<NghiPhep>();
+                return new List<dynamic>();
             }
         }
+
 
 
         public int GetTongNgayNghi(int maNV, DateTime tuNgay, DateTime denNgay)
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
-                {
-                    var tongNgay = db.NghiPheps
-                        .Where(x => x.MaNV == maNV &&
-                               x.NgayBatDau >= tuNgay &&
-                               x.NgayKetThuc <= denNgay &&
-                               x.TrangThai == "Đã duyệt")
-                        .Sum(x => x.TongNgay);
 
-                    return tongNgay.HasValue ? tongNgay.Value : 0;
-                }
+
+                var tongNgay = db.NghiPheps
+                    .Where(x => x.MaNV == maNV &&
+                           x.NgayBatDau >= tuNgay &&
+                           x.NgayKetThuc <= denNgay &&
+                           x.TrangThai == "Đã duyệt")
+                    .Sum(x => x.TongNgay);
+
+                return tongNgay.HasValue ? tongNgay.Value : 0;
+
             }
             catch
             {
