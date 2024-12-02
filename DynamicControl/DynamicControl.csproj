@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DangNhapControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DangNhapControl.Designer.cs">
+      <DependentUpon>DangNhapControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="menucontrol.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DangNhapControl.resx">
+      <DependentUpon>DangNhapControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="menucontrol.resx">
       <DependentUpon>menucontrol.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blurred-background-business-office-interior-with-desks-of-computers-business-background-free-photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\312f137caf78454daaf902189550e48a.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

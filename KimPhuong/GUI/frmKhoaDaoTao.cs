@@ -27,5 +27,10 @@ namespace KimPhuong.GUI
 
             dgvKhoaDaoTao.DataSource = khoa;
         }
+
+        private void menucontrol_ButtonClicked(object sender, DynamicControl.menucontrol2.ButtonType buttonType, EventArgs e)
+        {
+
+        }
     }
 }

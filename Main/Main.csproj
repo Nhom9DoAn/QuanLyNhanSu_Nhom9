@@ -144,6 +144,12 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDangNhapUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhapUser.Designer.cs">
+      <DependentUpon>frmDangNhapUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </None>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhapUser.resx">
+      <DependentUpon>frmDangNhapUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
@@ -231,6 +240,10 @@
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{81d08a8d-ecc5-4208-829b-697617d2a503}</Project>
       <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamicControl\DynamicControl.csproj">
+      <Project>{0B83926F-F14A-4323-B0D4-2D36AAC22767}</Project>
+      <Name>DynamicControl</Name>
     </ProjectReference>
     <ProjectReference Include="..\GUI\GUI.csproj">
       <Project>{e1276c77-4fd1-4869-a14b-8457bf572bb9}</Project>
