@@ -310,7 +310,7 @@ namespace KimPhuong.GUI
                     enable();
                     break;
 
-                case DynamicControl.menucontrol2.ButtonType.Search:
+                case DynamicControl.menucontrol2.ButtonType.Loc:
                     tim = true; cb_TenNV.Enabled = true;
                     break;
 

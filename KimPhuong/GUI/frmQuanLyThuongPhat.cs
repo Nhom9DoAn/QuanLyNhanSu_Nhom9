@@ -313,7 +313,7 @@ namespace KimPhuong.GUI
 
                     break;
 
-                case DynamicControl.menucontrol2.ButtonType.Search:
+                case DynamicControl.menucontrol2.ButtonType.Loc:
                     tim = true;
                     break;
 

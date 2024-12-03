@@ -46,7 +46,7 @@ namespace Main
                     string tenNhanVien = dangNhapBUS.LayTenNhanVien(maNV);
                     string chucVu = dangNhapBUS.LayChucVu(maNV);
 
-                    frmTrangChu trangChuForm = new frmTrangChu(tenNhanVien, chucVu);
+                    frmTrangChu trangChuForm = new frmTrangChu(maNV,tenNhanVien, chucVu);
                     trangChuForm.Show();
 
                     this.Hide();

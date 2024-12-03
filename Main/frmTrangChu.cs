@@ -64,7 +64,7 @@ namespace Main
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyThuongPhat(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmHocVanBangCap(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmLichSuPhongBan(), ++pageIndex));
-                Aside.CreateChildNode(root, AddPage(new frmChuyenPhongBan(), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new frmChuyenPhongBan(tenNhanVien), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyCongTac(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmChucVu(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmQLNhanThan(), ++pageIndex));

@@ -260,8 +260,8 @@ namespace KimPhuong.GUI
 
                     break;
 
-                case DynamicControl.menucontrol2.ButtonType.Search:
-                    tim = true; enable();
+                case DynamicControl.menucontrol2.ButtonType.Loc:
+                    tim = true; cb_TrangThai.Enabled = true;
                     break;
 
                 case DynamicControl.menucontrol2.ButtonType.Reload:
