@@ -14,7 +14,7 @@ namespace KimPhuong.BUL
         {
             hocVan = new HocVanBangCapDAO();
         }
-        public List<HocVanBangCap> GetAll()
+        public List<dynamic> GetAll()
         {
             return hocVan.GetAll();
         }
@@ -32,11 +32,11 @@ namespace KimPhuong.BUL
         {
             return hocVan.Update(maHVBC, tenTruong,chuyenNganh, bangCap,namTotNghiep,diemTB, ghiChu);
         }
-        public List<HocVanBangCap> Search(int? maNV, string tenTruong, string bangCap)
+        public List<dynamic> Search(string keyword)
         {
-            return hocVan.Search(maNV, tenTruong, bangCap);
+            return hocVan.Search(keyword);
         }
-        public List<HocVanBangCap> GetByNhanVien(int maNV)
+        public List<dynamic> GetByNhanVien(int maNV)
         {
             return hocVan.GetByNhanVien(maNV);
         }

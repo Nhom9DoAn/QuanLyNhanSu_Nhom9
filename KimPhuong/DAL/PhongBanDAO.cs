@@ -24,10 +24,7 @@ namespace KimPhuong.DAL
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
-                {
-                    return db.PhongBans.ToList();
-                }
+                return db.PhongBans.ToList();
             }
             catch
             {
@@ -39,18 +36,16 @@ namespace KimPhuong.DAL
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
+                PhongBan pb = new PhongBan
                 {
-                    PhongBan pb = new PhongBan
-                    {
-                        TenPB = tenPB,
-                        DiaChi = diaChi,
-                        SDTPB = sdtPB
-                    };
-                    db.PhongBans.InsertOnSubmit(pb);
-                    db.SubmitChanges();
-                    return true;
-                }
+                    TenPB = tenPB,
+                    DiaChi = diaChi,
+                    SDTPB = sdtPB
+                };
+                db.PhongBans.InsertOnSubmit(pb);
+                db.SubmitChanges();
+                return true;
+
             }
             catch (Exception ex)
             {
@@ -63,17 +58,15 @@ namespace KimPhuong.DAL
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
+                var np = db.PhongBans.FirstOrDefault(x => x.MaPB == maPB);
+                if (np != null)
                 {
-                    var np = db.PhongBans.FirstOrDefault(x => x.MaPB == maPB);
-                    if (np != null)
-                    {
-                        db.PhongBans.DeleteOnSubmit(np);
-                        db.SubmitChanges();
-                        return true;
-                    }
-                    return false;
+                    db.PhongBans.DeleteOnSubmit(np);
+                    db.SubmitChanges();
+                    return true;
                 }
+                return false;
+
             }
             catch
             {
@@ -85,20 +78,17 @@ namespace KimPhuong.DAL
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
+                var np = db.PhongBans.FirstOrDefault(x => x.MaPB == maPB);
+                if (np != null)
                 {
-                    var np = db.PhongBans.FirstOrDefault(x => x.MaPB == maPB);
-                    if (np != null)
-                    {
-                        np.TenPB = tenPB;
-                        np.DiaChi = diaChi;
-                        np.SDTPB = sdtPB;
+                    np.TenPB = tenPB;
+                    np.DiaChi = diaChi;
+                    np.SDTPB = sdtPB;
 
-                        db.SubmitChanges();
-                        return true;
-                    }
-                    return false;
+                    db.SubmitChanges();
+                    return true;
                 }
+                return false;
             }
             catch
             {
@@ -106,27 +96,24 @@ namespace KimPhuong.DAL
             }
         }
 
-        public List<PhongBan> SearchPhongBan(int? maPB, string tenPB)
+        public List<PhongBan> SearchPhongBan(string keyword)
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
-                {
-                    var query = from pb in db.PhongBans
-                                where
-                                    (!maPB.HasValue || pb.MaPB == maPB) &&
-                                    (string.IsNullOrEmpty(tenPB) || pb.TenPB.ToLower().Contains(tenPB.ToLower()))
-                                select pb;
+                var query = from pb in db.PhongBans
+                            where
+                                (string.IsNullOrEmpty(keyword) ||
+                                pb.MaPB.ToString().Contains(keyword) ||
+                                pb.TenPB.ToLower().Contains(keyword.ToLower()))
+                            select pb;
 
-                    return query.ToList();
-                }
+                return query.ToList();
             }
             catch
             {
                 return new List<PhongBan>();
             }
         }
-
 
     }
 

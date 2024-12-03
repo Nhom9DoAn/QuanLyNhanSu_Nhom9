@@ -82,13 +82,12 @@ namespace KimPhuong.GUI
             {
                 if (maNV == 0)
                 {
-                    dgvLichSuPhongBan.DataSource = lichSuPhongBanBUS.GetAll().Select(ls => new { ls.MaLichSu, ls.MaNV, ls.MaPB, ls.NgayChuyen, ls.GhiChu }).ToList();
+                    dgvLichSuPhongBan.DataSource = lichSuPhongBanBUS.GetAll();
                 }
                 else
                 {
-                    dgvLichSuPhongBan.DataSource = lichSuPhongBanBUS.GetLichSuByNhanVien(maNV).Select(ls => new { ls.MaLichSu, ls.MaNV, ls.MaPB, ls.NgayChuyen, ls.GhiChu }).ToList();
+                    dgvLichSuPhongBan.DataSource = lichSuPhongBanBUS.GetLichSuByNhanVien(maNV);
                 }
-
                 if (dgvLichSuPhongBan.Columns.Count > 0)
                 {
                     dgvLichSuPhongBan.Columns["MaNV"].HeaderText = "Mã nhân viên";
@@ -96,8 +95,9 @@ namespace KimPhuong.GUI
                     dgvLichSuPhongBan.Columns["MaPB"].HeaderText = "Mã phòng ban";
                     dgvLichSuPhongBan.Columns["NgayChuyen"].HeaderText = "Ngày chuyển";
                     dgvLichSuPhongBan.Columns["GhiChu"].HeaderText = "Ghi chú";
+                    dgvLichSuPhongBan.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
+                    dgvLichSuPhongBan.Columns["TenPhongBan"].HeaderText = "Tên phòng ban"; 
                 }
-
             }
             catch (Exception ex)
             {
@@ -124,6 +124,65 @@ namespace KimPhuong.GUI
                 int mapb = Convert.ToInt32(selected.Cells["MaPB"].Value.ToString());
                 txtTenPhongBan.Text = lichSuPhongBanBUS.GetTenPhongBan(mapb);
             }
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTim.Text;
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var results = lichSuPhongBanBUS.Search(keyword);
+            if (results.Any())
+            {
+                dgvLichSuPhongBan.AutoGenerateColumns = true;
+                dgvLichSuPhongBan.DataSource = results;
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy kết quả nào phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvLichSuPhongBan.DataSource = null;
+            }
+        }
+
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            LoadCombobox();
+        }
+
+        private void dgvLichSuPhongBan_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex % 2 == 0)
+            {
+                dgvLichSuPhongBan.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.AliceBlue;
+            }
+            else
+            {
+                dgvLichSuPhongBan.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+            }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtTim_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmLichSuPhongBan_Load(object sender, EventArgs e)
+        {
+            LoadCombobox();
         }
     }
 }

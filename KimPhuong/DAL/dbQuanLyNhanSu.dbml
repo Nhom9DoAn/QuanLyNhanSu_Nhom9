@@ -41,14 +41,13 @@
       <Column Name="MaPB_Moi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgayHieuLuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NguoiTao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="LyDoChuyen" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="TrangThai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="NgayCapNhatTrangThai" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NguoiDuyet" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NguoiDuyet" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="GhiChuDuyet" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Association Name="NhanVien_ChuyenPhongBan" Member="NhanVien" ThisKey="NguoiTao" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
-      <Association Name="NhanVien_ChuyenPhongBan1" Member="NhanVien1" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+      <Association Name="NhanVien_ChuyenPhongBan" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
       <Association Name="PhongBan_ChuyenPhongBan" Member="PhongBan" ThisKey="MaPB_Cu" OtherKey="MaPB" Type="PhongBan" IsForeignKey="true" />
       <Association Name="PhongBan_ChuyenPhongBan1" Member="PhongBan1" ThisKey="MaPB_Moi" OtherKey="MaPB" Type="PhongBan" IsForeignKey="true" />
     </Type>
@@ -188,8 +187,7 @@
       <Column Name="DanToc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="MaChamCong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NhanVien_ChamCong" Member="ChamCongs" ThisKey="MaNV" OtherKey="MaNV" Type="ChamCong" />
-      <Association Name="NhanVien_ChuyenPhongBan" Member="ChuyenPhongBans" ThisKey="MaNV" OtherKey="NguoiTao" Type="ChuyenPhongBan" />
-      <Association Name="NhanVien_ChuyenPhongBan1" Member="ChuyenPhongBans1" ThisKey="MaNV" OtherKey="MaNV" Type="ChuyenPhongBan" />
+      <Association Name="NhanVien_ChuyenPhongBan" Member="ChuyenPhongBans" ThisKey="MaNV" OtherKey="MaNV" Type="ChuyenPhongBan" />
       <Association Name="NhanVien_CongTac" Member="CongTacs" ThisKey="MaNV" OtherKey="MaNV" Type="CongTac" />
       <Association Name="NhanVien_HocVanBangCap" Member="HocVanBangCaps" ThisKey="MaNV" OtherKey="MaNV" Type="HocVanBangCap" />
       <Association Name="NhanVien_HopDong" Member="HopDongs" ThisKey="MaNV" OtherKey="MaNV" Type="HopDong" />

@@ -17,7 +17,6 @@ namespace KimPhuong.GUI
     public partial class frmQuanLyPhongBan : UIPage
     {
         PhongBanBUL phongBanBUL;
-        PhongBanDTO phongBanDTO;
         bool them, xoa, sua, tim = false;
 
         private void dgvPhongBan_SelectionChanged(object sender, EventArgs e)
@@ -175,12 +174,6 @@ namespace KimPhuong.GUI
                     LoadData();
                     loaddisable();
                     break;
-
-                case DynamicControl.menucontrol2.ButtonType.Search:
-                    tim = true;
-                    txtTenPhongBan.Enabled = true;
-                    break;
-
                 case DynamicControl.menucontrol2.ButtonType.Reload:
                     LoadData();
                     break;
@@ -201,6 +194,34 @@ namespace KimPhuong.GUI
             {
                 dgvPhongBan.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
             }
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTim.Text.Trim();
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var results = phongBanBUL.searchPhongBan(keyword);
+            if (results.Any())
+            {
+                dgvPhongBan.AutoGenerateColumns = true;
+                dgvPhongBan.DataSource = results;
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy kết quả nào phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvPhongBan.DataSource = null;
+            }
+
+        }
+
+        private void frmQuanLyPhongBan_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         public frmQuanLyPhongBan()

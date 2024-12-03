@@ -31,9 +31,9 @@ namespace KimPhuong.BUL
         {
             return phongBanDAO.update(maPB, tenPB, diaChi, sdtPB);
         }
-        public List<PhongBan> searchPhongBan(int? maPB, string tenPB)
+        public List<PhongBan> searchPhongBan(string keyword)
         {
-            return phongBanDAO.SearchPhongBan(maPB, tenPB);
+            return phongBanDAO.SearchPhongBan(keyword);
         }
     }
 }

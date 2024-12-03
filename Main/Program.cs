@@ -1,4 +1,5 @@
 ﻿using Main.ModelTrain;
+using Main.Phap_Form;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace Main
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDangNhap());
+            Application.Run(new frmDangNhapUser());
             //Application.Run(new ModelForm());
         }
     }

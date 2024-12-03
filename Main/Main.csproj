@@ -152,11 +152,23 @@
     <Compile Include="frmLoading.Designer.cs">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDangNhapUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhapUser.Designer.cs">
+      <DependentUpon>frmDangNhapUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTrangChu.Designer.cs">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllEmployee_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetAllEmployee_Form.Designer.cs">
+      <DependentUpon>GetAllEmployee_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTrain\JobData.cs" />
     <Compile Include="ModelTrain\ModelForm.cs">
@@ -166,6 +178,12 @@
       <DependentUpon>ModelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTrain\SalaryPrediction.cs" />
+    <Compile Include="Employee_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_Form.Designer.cs">
+      <DependentUpon>Employee_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDangNhap.resx">
@@ -174,11 +192,20 @@
     <EmbeddedResource Include="frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhapUser.resx">
+      <DependentUpon>frmDangNhapUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GetAllEmployee_Form.resx">
+      <DependentUpon>GetAllEmployee_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModelTrain\ModelForm.resx">
       <DependentUpon>ModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_Form.resx">
+      <DependentUpon>Employee_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -213,6 +240,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{9c0ce86c-3eb5-4d1d-a563-418f22b58b27}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{216bdb43-e99c-4a01-ab05-fb840af4b9cb}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{81d08a8d-ecc5-4208-829b-697617d2a503}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamicControl\DynamicControl.csproj">
+      <Project>{0B83926F-F14A-4323-B0D4-2D36AAC22767}</Project>
+      <Name>DynamicControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GUI\GUI.csproj">
       <Project>{e1276c77-4fd1-4869-a14b-8457bf572bb9}</Project>
       <Name>GUI</Name>
@@ -233,6 +276,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cartoon-snail-loading-loading-gif-animation_27341391.gif" />
+    <Folder Include="Phap_Form\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

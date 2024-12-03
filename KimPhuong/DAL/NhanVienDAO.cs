@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KimPhuong.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -172,10 +173,8 @@ namespace KimPhuong.DAL
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
-                {
-                    return db.NhanViens.FirstOrDefault(x => x.MaNV == maNV);
-                }
+                return db.NhanViens.FirstOrDefault(x => x.MaNV == maNV);
+
             }
             catch
             {
@@ -238,22 +237,111 @@ namespace KimPhuong.DAL
         {
             try
             {
-                using (var db = new dbQuanLyNhanSuDataContext())
+                var nv = db.NhanViens.FirstOrDefault(x => x.MaNV == maNV);
+                if (nv != null)
                 {
-                    var nv = db.NhanViens.FirstOrDefault(x => x.MaNV == maNV);
-                    if (nv != null)
-                    {
-                        var chucVu = db.ChucVus.FirstOrDefault(cv => cv.MaCV == nv.MaCV);
-                        return chucVu?.TenCV ?? string.Empty;
-                    }
-                    return string.Empty;
+                    var chucVu = db.ChucVus.FirstOrDefault(cv => cv.MaCV == nv.MaCV);
+                    return chucVu?.TenCV ?? string.Empty;
                 }
+                return string.Empty;
+
             }
             catch
             {
                 return string.Empty;
             }
         }
+        public string GetPhongBanName(int maNV)
+        {
+            try 
+            {
+                db = new dbQuanLyNhanSuDataContext();
+                var nv = db.NhanViens.FirstOrDefault(x => x.MaNV == maNV);
+                if (nv != null)
+                {
+                    db = new dbQuanLyNhanSuDataContext();
+                    var phongBan = db.PhongBans.FirstOrDefault(pb => pb.MaPB == nv.MaPB);
 
+                    if (phongBan == null)
+                    {
+                        return string.Empty;
+                    }
+                    return phongBan?.TenPB ?? string.Empty;
+                }
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return string.Empty;
+            }
+        }
+        public int GetPhongBanID(int maNV)
+        {
+            try
+            {
+                var nv = db.NhanViens.FirstOrDefault(x => x.MaNV == maNV);
+                if (nv != null)
+                {
+                    var phongBan = db.PhongBans.FirstOrDefault(pb => pb.MaPB == nv.MaPB);
+
+                    if (phongBan == null)
+                    {
+                        return -1;
+                    }
+                    return phongBan.MaPB;
+                }
+                return -1;
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+        public (int demNam, int demNu) ThongKeGioiTinhToanCongTy()
+        {
+            try
+            {
+                using (var db = new dbQuanLyNhanSuDataContext())
+                {
+                    var genderStats = db.NhanViens
+                        .GroupBy(nv => nv.GioiTinh)
+                        .Select(g => new
+                        {
+                            Gender = g.Key,
+                            Count = g.Count()
+                        })
+                        .ToList();
+
+                    int demNam = genderStats.FirstOrDefault(x => x.Gender == "Nam")?.Count ?? 0;
+                    int demNu = genderStats.FirstOrDefault(x => x.Gender == "Nữ")?.Count ?? 0;
+
+                    return (demNam, demNu);
+                }
+            }
+            catch
+            {
+                return (0, 0);
+            }
+        }
+
+        public List<NhanSuTrend> ThongKeNhanSuTheoNam()
+        {
+            var nhanViens = GetAll();
+
+            var trends = nhanViens
+                .GroupBy(nv => nv.NgayVaoLam.Value.Year)
+                .Select(g => new NhanSuTrend
+                {
+                    Nam = g.Key,
+                    SoLuongVaoLam = g.Count(),
+                    SoLuongNghiViec = nhanViens
+                        .Count(nv => nv.NgayVaoLam.Value.Year == g.Key &&
+                               nv.TrangThai.Contains("Nghỉ việc"))
+                })
+                .OrderBy(x => x.Nam)
+                .ToList();
+
+            return trends;
+        }
     }
 }

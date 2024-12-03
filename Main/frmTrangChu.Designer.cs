@@ -39,6 +39,7 @@
             this.Aside.LineColor = System.Drawing.Color.Black;
             this.Aside.Location = new System.Drawing.Point(0, 106);
             this.Aside.Size = new System.Drawing.Size(388, 729);
+            this.Aside.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Aside_NodeMouseClick);
             // 
             // Header
             // 
@@ -77,6 +78,7 @@
             this.Name = "frmTrangChu";
             this.Text = "Trang chủ";
             this.TitleFont = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ZoomScaleRect = new System.Drawing.Rectangle(22, 22, 800, 450);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTrangChu_FormClosing);
             this.Header.ResumeLayout(false);
