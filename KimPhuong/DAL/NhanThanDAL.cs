@@ -100,9 +100,5 @@ namespace KimPhuong.DAL
                 return false;
             }
         }
-
-
-
-
     }
 }

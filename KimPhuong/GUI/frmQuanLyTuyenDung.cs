@@ -148,16 +148,11 @@ namespace KimPhuong.GUI
                 cb_NhanVien.SelectedValue = Convert.ToInt32(selected.Cells["NguoiPhuTrach"].Value);
             }
         }
-
         public void enable()
         {
             txt_TenViTri.Enabled = txt_SoLuong.Enabled = dtp_NgayBD.Enabled = dtp_NgayKT.Enabled =
                 txt_YeuCau.Enabled = cb_PhongBan.Enabled = cb_TrangThai.Enabled = dtp_NgayKT.Enabled = true;
         }
-
-
-
-
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 

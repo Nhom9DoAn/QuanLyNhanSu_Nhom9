@@ -20,7 +20,6 @@ namespace KimPhuong.DTO
         private string hoTen;
         private string tenPB;
 
-
         public int MaUT { get => maUT; set => maUT = value; }
         public int MaPhong { get => maPhong; set => maPhong = value; }
         public int SoLuong { get => soLuong; set => soLuong = value; }

@@ -39,14 +39,12 @@ namespace Main
         //        root = Aside.CreateNode("QUẢN LÝ TUYỂN DỤNG", 61451, 24, pageIndex);
         //        Aside.CreateChildNode(root, AddPage(new frmQuanLyTuyenDung(), ++pageIndex));
 
-
         //    }
         //    else
         //    {
         //        MessageBox.Show("Không có quyền truy cập");
         //    }
         //}
-
         public frmTrangChu(int maNV, string tenNhanVien, string chucVu)
         {
             InitializeComponent();
@@ -75,7 +73,6 @@ namespace Main
             else if (chucVu == "Nhân viên")
             {
                 //MessageBox.Show("Chức vụ: " + chucVu);
-
                 int pageIndex = 1000;
                 TreeNode root = Aside.CreateNode("QUẢN LÝ TUYỂN DỤNG", 61451, 24, pageIndex);
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyTuyenDung(maNV), ++pageIndex));
@@ -86,8 +83,6 @@ namespace Main
                 MessageBox.Show("Không có quyền truy cập");
             }
         }
-
-
         private void frmTrangChu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

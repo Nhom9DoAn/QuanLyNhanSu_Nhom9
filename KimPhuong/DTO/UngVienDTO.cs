@@ -17,7 +17,6 @@ namespace KimPhuong.DTO
         private string email;
         private string dienThoai;
         private string duongDanCV;
-
         public UngVienDTO() { }
         public UngVienDTO(int maUngVien, int maUT, string tenViTri, string hoTen, string email, string dienThoai, string duongDanCV,  DateTime ngayUngTuyen, string trangThai)
         {
@@ -31,7 +30,6 @@ namespace KimPhuong.DTO
             NgayUngTuyen = ngayUngTuyen;
             TrangThai = trangThai;
         }
-
         public int MaUngVien { get => maUngVien; set => maUngVien = value; }
         public int MaUT { get => maUT; set => maUT = value; }
         public string TenViTri { get => tenViTri; set => tenViTri = value; }

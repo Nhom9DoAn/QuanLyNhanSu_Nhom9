@@ -16,7 +16,6 @@ namespace Main
         public frmLoading()
         {
             InitializeComponent();
-
             this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
