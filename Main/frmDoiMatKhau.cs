@@ -54,10 +54,18 @@ namespace Main
                 if (kq)
                 {
                     MessageBox.Show("Đổi mật khẩu thành công, vui lòng đăng nhập lại!", "Thông báo", MessageBoxButtons.OK);
-                    this.Hide();
+                    foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
+                    {
+                        if (form.Name != "frmDangNhapUser")
+                        {
+                            form.Close();
+                        }
+                    }
 
                     frmDangNhapUser dn = new frmDangNhapUser();
-                    dn.ShowDialog();
+                    dn.Show();
+
+                    this.Close();
 
                 }
                 else

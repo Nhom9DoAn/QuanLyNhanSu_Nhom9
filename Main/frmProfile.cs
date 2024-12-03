@@ -40,6 +40,22 @@ namespace Main
             }
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
+            {
+                if (form.Name != "frmDangNhapUser")
+                {
+                    form.Close();
+                }
+            }
+
+            frmDangNhapUser dn = new frmDangNhapUser();
+            dn.Show();
+
+            this.Close();
+        }
+
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMatKhauHienTai.Text))

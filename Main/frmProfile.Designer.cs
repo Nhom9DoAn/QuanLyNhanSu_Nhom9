@@ -45,6 +45,7 @@
             this.txtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMatKhauHienTai = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -54,8 +55,8 @@
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.30751F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.56659F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.04358F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.08232F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.29555F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.95951F));
             this.tableLayoutPanel1.Controls.Add(this.guna2HtmlLabel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2HtmlLabel2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2HtmlLabel3, 0, 1);
@@ -70,6 +71,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtMatKhau, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtMatKhauHienTai, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.guna2HtmlLabel7, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.guna2Button1, 2, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -98,12 +100,12 @@
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2HtmlLabel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(536, 4);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(585, 4);
             this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(128, 29);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(101, 29);
             this.guna2HtmlLabel2.TabIndex = 1;
             this.guna2HtmlLabel2.Text = "Chức vụ:";
             // 
@@ -172,13 +174,13 @@
             this.txtChucVu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChucVu.ForeColor = System.Drawing.Color.Black;
             this.txtChucVu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtChucVu.Location = new System.Drawing.Point(677, 8);
+            this.txtChucVu.Location = new System.Drawing.Point(699, 8);
             this.txtChucVu.Margin = new System.Windows.Forms.Padding(8);
             this.txtChucVu.Name = "txtChucVu";
             this.txtChucVu.PasswordChar = '\0';
             this.txtChucVu.PlaceholderText = "";
             this.txtChucVu.SelectedText = "";
-            this.txtChucVu.Size = new System.Drawing.Size(303, 37);
+            this.txtChucVu.Size = new System.Drawing.Size(281, 37);
             this.txtChucVu.TabIndex = 9;
             // 
             // txtPhongBan
@@ -240,10 +242,10 @@
             this.btnDoiMatKhau.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDoiMatKhau.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoiMatKhau.ForeColor = System.Drawing.Color.White;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(674, 268);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(696, 268);
             this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(309, 43);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(287, 43);
             this.btnDoiMatKhau.TabIndex = 7;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
@@ -344,13 +346,13 @@
             this.txtMatKhauHienTai.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauHienTai.ForeColor = System.Drawing.Color.Black;
             this.txtMatKhauHienTai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMatKhauHienTai.Location = new System.Drawing.Point(677, 206);
+            this.txtMatKhauHienTai.Location = new System.Drawing.Point(699, 206);
             this.txtMatKhauHienTai.Margin = new System.Windows.Forms.Padding(8);
             this.txtMatKhauHienTai.Name = "txtMatKhauHienTai";
             this.txtMatKhauHienTai.PasswordChar = '*';
             this.txtMatKhauHienTai.PlaceholderText = "";
             this.txtMatKhauHienTai.SelectedText = "";
-            this.txtMatKhauHienTai.Size = new System.Drawing.Size(303, 37);
+            this.txtMatKhauHienTai.Size = new System.Drawing.Size(281, 37);
             this.txtMatKhauHienTai.TabIndex = 15;
             // 
             // guna2HtmlLabel7
@@ -358,12 +360,29 @@
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(674, 165);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(696, 165);
             this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(309, 29);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(194, 29);
             this.guna2HtmlLabel7.TabIndex = 14;
             this.guna2HtmlLabel7.Text = "Mật khẩu hiện tại:";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Button1.FillColor = System.Drawing.Color.Gray;
+            this.guna2Button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(534, 267);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(154, 45);
+            this.guna2Button1.TabIndex = 16;
+            this.guna2Button1.Text = "Đăng xuất";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // frmProfile
             // 
@@ -403,5 +422,6 @@
         private Guna.UI2.WinForms.Guna2ToggleSwitch btnXemMatKhau;
         private Guna.UI2.WinForms.Guna2TextBox txtMatKhauHienTai;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

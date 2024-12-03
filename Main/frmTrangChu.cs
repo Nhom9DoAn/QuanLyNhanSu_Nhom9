@@ -103,7 +103,7 @@ namespace Main
         }
         private void frmTrangChu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            
         }
 
         private void Aside_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
