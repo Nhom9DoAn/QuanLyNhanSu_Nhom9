@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiLabel3 = new Sunny.UI.UILabel();
             this.uiLabel4 = new Sunny.UI.UILabel();
-            this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.uiTextBox2 = new Sunny.UI.UITextBox();
             this.comboPhongBan = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comboGT = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -49,23 +47,17 @@
             this.uiTextBox3 = new Sunny.UI.UITextBox();
             this.uiLabel10 = new Sunny.UI.UILabel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.uiTextBox4 = new Sunny.UI.UITextBox();
             this.uiLabel11 = new Sunny.UI.UILabel();
             this.uiTextBox5 = new Sunny.UI.UITextBox();
             this.uiLabel12 = new Sunny.UI.UILabel();
+            this.uiTextBox6 = new Sunny.UI.UITextBox();
+            this.uiLabel13 = new Sunny.UI.UILabel();
+            this.uiTextBox7 = new Sunny.UI.UITextBox();
+            this.uiLabel14 = new Sunny.UI.UILabel();
+            this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.uiLabel1 = new Sunny.UI.UILabel();
             this.SuspendLayout();
-            // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel1.Location = new System.Drawing.Point(26, 29);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(139, 23);
-            this.uiLabel1.TabIndex = 0;
-            this.uiLabel1.Text = "Mã nhân viên";
-            this.uiLabel1.Click += new System.EventHandler(this.uiLabel1_Click);
             // 
             // uiLabel2
             // 
@@ -99,21 +91,6 @@
             this.uiLabel4.TabIndex = 0;
             this.uiLabel4.Text = "Giới tính";
             this.uiLabel4.Click += new System.EventHandler(this.uiLabel1_Click);
-            // 
-            // uiTextBox1
-            // 
-            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiTextBox1.Location = new System.Drawing.Point(172, 29);
-            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
-            this.uiTextBox1.Name = "uiTextBox1";
-            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBox1.ShowText = false;
-            this.uiTextBox1.Size = new System.Drawing.Size(150, 29);
-            this.uiTextBox1.TabIndex = 1;
-            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiTextBox1.Watermark = "";
             // 
             // uiTextBox2
             // 
@@ -164,7 +141,7 @@
             // 
             this.uiLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel5.Location = new System.Drawing.Point(26, 315);
+            this.uiLabel5.Location = new System.Drawing.Point(26, 373);
             this.uiLabel5.Name = "uiLabel5";
             this.uiLabel5.Size = new System.Drawing.Size(139, 23);
             this.uiLabel5.TabIndex = 5;
@@ -175,7 +152,7 @@
             this.guna2DateTimePicker1.Checked = true;
             this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(171, 306);
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(171, 364);
             this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
@@ -264,7 +241,7 @@
             this.guna2DateTimePicker2.Checked = true;
             this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(584, 306);
+            this.guna2DateTimePicker2.Location = new System.Drawing.Point(584, 364);
             this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
@@ -276,7 +253,7 @@
             // 
             this.uiLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel9.Location = new System.Drawing.Point(404, 315);
+            this.uiLabel9.Location = new System.Drawing.Point(404, 373);
             this.uiLabel9.Name = "uiLabel9";
             this.uiLabel9.Size = new System.Drawing.Size(139, 23);
             this.uiLabel9.TabIndex = 11;
@@ -315,25 +292,12 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(123, 387);
+            this.guna2Button1.Location = new System.Drawing.Point(363, 460);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 15;
             this.guna2Button1.Text = "Thêm nhân viên";
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(572, 387);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button2.TabIndex = 16;
-            this.guna2Button2.Text = "Thêm nhân thân";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // uiTextBox4
             // 
@@ -385,16 +349,97 @@
             this.uiLabel12.TabIndex = 17;
             this.uiLabel12.Text = "Gmail";
             // 
+            // uiTextBox6
+            // 
+            this.uiTextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiTextBox6.Location = new System.Drawing.Point(172, 327);
+            this.uiTextBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox6.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox6.Name = "uiTextBox6";
+            this.uiTextBox6.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox6.ShowText = false;
+            this.uiTextBox6.Size = new System.Drawing.Size(150, 29);
+            this.uiTextBox6.TabIndex = 22;
+            this.uiTextBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox6.Watermark = "";
+            // 
+            // uiLabel13
+            // 
+            this.uiLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLabel13.Location = new System.Drawing.Point(26, 327);
+            this.uiLabel13.Name = "uiLabel13";
+            this.uiLabel13.Size = new System.Drawing.Size(139, 23);
+            this.uiLabel13.TabIndex = 21;
+            this.uiLabel13.Text = "Địa chỉ";
+            // 
+            // uiTextBox7
+            // 
+            this.uiTextBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiTextBox7.Location = new System.Drawing.Point(585, 321);
+            this.uiTextBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox7.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox7.Name = "uiTextBox7";
+            this.uiTextBox7.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox7.ShowText = false;
+            this.uiTextBox7.Size = new System.Drawing.Size(150, 29);
+            this.uiTextBox7.TabIndex = 24;
+            this.uiTextBox7.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox7.Watermark = "";
+            this.uiTextBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.uiTextBox7_KeyPress);
+            // 
+            // uiLabel14
+            // 
+            this.uiLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLabel14.Location = new System.Drawing.Point(404, 327);
+            this.uiLabel14.Name = "uiLabel14";
+            this.uiLabel14.Size = new System.Drawing.Size(139, 23);
+            this.uiLabel14.TabIndex = 23;
+            this.uiLabel14.Text = "Lương cơ bản";
+            // 
+            // uiTextBox1
+            // 
+            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox1.Enabled = false;
+            this.uiTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiTextBox1.Location = new System.Drawing.Point(172, 29);
+            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox1.Name = "uiTextBox1";
+            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox1.ShowText = false;
+            this.uiTextBox1.Size = new System.Drawing.Size(150, 29);
+            this.uiTextBox1.TabIndex = 1;
+            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox1.Watermark = "";
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLabel1.Location = new System.Drawing.Point(26, 29);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(139, 23);
+            this.uiLabel1.TabIndex = 0;
+            this.uiLabel1.Text = "Mã nhân viên";
+            this.uiLabel1.Click += new System.EventHandler(this.uiLabel1_Click);
+            // 
             // Employee_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 474);
+            this.ClientSize = new System.Drawing.Size(924, 551);
+            this.Controls.Add(this.uiTextBox7);
+            this.Controls.Add(this.uiLabel14);
+            this.Controls.Add(this.uiTextBox6);
+            this.Controls.Add(this.uiLabel13);
             this.Controls.Add(this.uiTextBox4);
             this.Controls.Add(this.uiLabel11);
             this.Controls.Add(this.uiTextBox5);
             this.Controls.Add(this.uiLabel12);
-            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.uiTextBox3);
             this.Controls.Add(this.uiLabel10);
@@ -424,12 +469,9 @@
         }
 
         #endregion
-
-        private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UILabel uiLabel3;
         private Sunny.UI.UILabel uiLabel4;
-        private Sunny.UI.UITextBox uiTextBox1;
         private Sunny.UI.UITextBox uiTextBox2;
         private Guna.UI2.WinForms.Guna2ComboBox comboPhongBan;
         private Guna.UI2.WinForms.Guna2ComboBox comboGT;
@@ -446,10 +488,15 @@
         private Sunny.UI.UITextBox uiTextBox3;
         private Sunny.UI.UILabel uiLabel10;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Sunny.UI.UITextBox uiTextBox4;
         private Sunny.UI.UILabel uiLabel11;
         private Sunny.UI.UITextBox uiTextBox5;
         private Sunny.UI.UILabel uiLabel12;
+        private Sunny.UI.UITextBox uiTextBox6;
+        private Sunny.UI.UILabel uiLabel13;
+        private Sunny.UI.UITextBox uiTextBox7;
+        private Sunny.UI.UILabel uiLabel14;
+        private Sunny.UI.UITextBox uiTextBox1;
+        private Sunny.UI.UILabel uiLabel1;
     }
 }

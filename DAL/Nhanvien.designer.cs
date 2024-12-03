@@ -3506,8 +3506,6 @@ namespace DAL
 		
 		private string _DanToc;
 		
-		private System.Nullable<int> _MaChamCong;
-		
 		private EntitySet<ChamCong> _ChamCongs;
 		
 		private EntitySet<ChuyenPhongBan> _ChuyenPhongBans;
@@ -3586,8 +3584,6 @@ namespace DAL
     partial void OnTinhTrangHonNhanChanged();
     partial void OnDanTocChanging(string value);
     partial void OnDanTocChanged();
-    partial void OnMaChamCongChanging(System.Nullable<int> value);
-    partial void OnMaChamCongChanged();
     #endregion
 		
 		public NhanVien()
@@ -3982,26 +3978,6 @@ namespace DAL
 					this._DanToc = value;
 					this.SendPropertyChanged("DanToc");
 					this.OnDanTocChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaChamCong", DbType="Int")]
-		public System.Nullable<int> MaChamCong
-		{
-			get
-			{
-				return this._MaChamCong;
-			}
-			set
-			{
-				if ((this._MaChamCong != value))
-				{
-					this.OnMaChamCongChanging(value);
-					this.SendPropertyChanging();
-					this._MaChamCong = value;
-					this.SendPropertyChanged("MaChamCong");
-					this.OnMaChamCongChanged();
 				}
 			}
 		}
