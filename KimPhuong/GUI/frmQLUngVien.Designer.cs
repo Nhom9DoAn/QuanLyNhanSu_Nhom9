@@ -29,13 +29,14 @@ namespace KimPhuong.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_QLUngVien = new Sunny.UI.UIDataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.menu_QLUngVien = new DynamicControl.menucontrol2();
             this.txt_SDTUV = new Guna.UI2.WinForms.Guna2TextBox();
             this.cb_TrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -51,11 +52,11 @@ namespace KimPhuong.GUI
             this.dtp_NgayUT = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btn_UploadFileCV = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_FilePath = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.menu_QLUngVien = new DynamicControl.menucontrol2();
+            this.btn_UploadFileCV = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_XuatFile = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLUngVien)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -66,29 +67,29 @@ namespace KimPhuong.GUI
             // 
             this.dgv_QLUngVien.AllowUserToAddRows = false;
             this.dgv_QLUngVien.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.dgv_QLUngVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgv_QLUngVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_QLUngVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_QLUngVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_QLUngVien.BackgroundColor = System.Drawing.Color.White;
             this.dgv_QLUngVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_QLUngVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_QLUngVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_QLUngVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_QLUngVien.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_QLUngVien.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_QLUngVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_QLUngVien.EnableHeadersVisualStyles = false;
             this.dgv_QLUngVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -96,18 +97,18 @@ namespace KimPhuong.GUI
             this.dgv_QLUngVien.Location = new System.Drawing.Point(3, 3);
             this.dgv_QLUngVien.Name = "dgv_QLUngVien";
             this.dgv_QLUngVien.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_QLUngVien.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_QLUngVien.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_QLUngVien.RowHeadersWidth = 62;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dgv_QLUngVien.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dgv_QLUngVien.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_QLUngVien.RowTemplate.Height = 28;
             this.dgv_QLUngVien.SelectedIndex = -1;
             this.dgv_QLUngVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -128,6 +129,15 @@ namespace KimPhuong.GUI
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1508, 58);
             this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // menu_QLUngVien
+            // 
+            this.menu_QLUngVien.Location = new System.Drawing.Point(3, 2);
+            this.menu_QLUngVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.menu_QLUngVien.Name = "menu_QLUngVien";
+            this.menu_QLUngVien.Size = new System.Drawing.Size(1502, 54);
+            this.menu_QLUngVien.TabIndex = 0;
+            this.menu_QLUngVien.ButtonClicked += new DynamicControl.menucontrol2.ButtonClickedHandler(this.menu_QLUngVien_ButtonClicked);
             // 
             // txt_SDTUV
             // 
@@ -339,6 +349,7 @@ namespace KimPhuong.GUI
             this.tableLayoutPanel1.Controls.Add(this.guna2HtmlLabel8, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btn_UploadFileCV, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lbl_FilePath, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btn_XuatFile, 2, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 58);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -358,23 +369,6 @@ namespace KimPhuong.GUI
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(104, 26);
             this.guna2HtmlLabel6.TabIndex = 4;
             this.guna2HtmlLabel6.Text = "Upload CV";
-            // 
-            // btn_UploadFileCV
-            // 
-            this.btn_UploadFileCV.BorderRadius = 15;
-            this.btn_UploadFileCV.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_UploadFileCV.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_UploadFileCV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_UploadFileCV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_UploadFileCV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_UploadFileCV.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_UploadFileCV.ForeColor = System.Drawing.Color.White;
-            this.btn_UploadFileCV.Location = new System.Drawing.Point(184, 219);
-            this.btn_UploadFileCV.Name = "btn_UploadFileCV";
-            this.btn_UploadFileCV.Size = new System.Drawing.Size(180, 45);
-            this.btn_UploadFileCV.TabIndex = 13;
-            this.btn_UploadFileCV.Text = "Tải CV";
-            this.btn_UploadFileCV.Click += new System.EventHandler(this.btn_UploadFileCV_Click);
             // 
             // lbl_FilePath
             // 
@@ -401,14 +395,39 @@ namespace KimPhuong.GUI
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // menu_QLUngVien
+            // btn_UploadFileCV
             // 
-            this.menu_QLUngVien.Location = new System.Drawing.Point(3, 2);
-            this.menu_QLUngVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.menu_QLUngVien.Name = "menu_QLUngVien";
-            this.menu_QLUngVien.Size = new System.Drawing.Size(1502, 54);
-            this.menu_QLUngVien.TabIndex = 0;
-            this.menu_QLUngVien.ButtonClicked += new DynamicControl.menucontrol2.ButtonClickedHandler(this.menu_QLUngVien_ButtonClicked);
+            this.btn_UploadFileCV.BorderRadius = 15;
+            this.btn_UploadFileCV.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_UploadFileCV.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_UploadFileCV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_UploadFileCV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_UploadFileCV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_UploadFileCV.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_UploadFileCV.ForeColor = System.Drawing.Color.White;
+            this.btn_UploadFileCV.Location = new System.Drawing.Point(184, 219);
+            this.btn_UploadFileCV.Name = "btn_UploadFileCV";
+            this.btn_UploadFileCV.Size = new System.Drawing.Size(180, 45);
+            this.btn_UploadFileCV.TabIndex = 13;
+            this.btn_UploadFileCV.Text = "Tải CV";
+            this.btn_UploadFileCV.Click += new System.EventHandler(this.btn_UploadFileCV_Click);
+            // 
+            // btn_XuatFile
+            // 
+            this.btn_XuatFile.BorderRadius = 15;
+            this.btn_XuatFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_XuatFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_XuatFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_XuatFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_XuatFile.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_XuatFile.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XuatFile.ForeColor = System.Drawing.Color.White;
+            this.btn_XuatFile.Location = new System.Drawing.Point(754, 219);
+            this.btn_XuatFile.Name = "btn_XuatFile";
+            this.btn_XuatFile.Size = new System.Drawing.Size(180, 45);
+            this.btn_XuatFile.TabIndex = 15;
+            this.btn_XuatFile.Text = "Xuất Excel";
+            this.btn_XuatFile.Click += new System.EventHandler(this.btn_XuatFile_Click);
             // 
             // frmQLUngVien
             // 
@@ -452,8 +471,9 @@ namespace KimPhuong.GUI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2Button btn_UploadFileCV;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbl_FilePath;
+        private Guna.UI2.WinForms.Guna2Button btn_UploadFileCV;
+        private Guna.UI2.WinForms.Guna2Button btn_XuatFile;
     }
 }

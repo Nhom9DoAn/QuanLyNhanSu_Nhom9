@@ -321,7 +321,7 @@ namespace KimPhuong.GUI
                             mapbcu,
                             Convert.ToInt32(cbPhongBanMoi.SelectedValue),
                             dtpNgayHieuLuc.Value,
-                            txtNguoiTao.Text,
+                            Convert.ToInt32(txtNguoiTao.Text),
                             txtLyDo.Text,
                             "Đang chờ",
                             dtpNgayCapNhat.Value,

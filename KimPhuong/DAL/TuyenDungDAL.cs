@@ -106,5 +106,21 @@ namespace KimPhuong.DAL
                 return false;
             }
         }
+
+        public TuyenDungDTO GetViTriById(int id)
+        {
+            var viTri = db.TuyenDungs
+                          .Where(td => td.MaUT == id)
+                          .Select(td => new TuyenDungDTO
+                          {
+                              MaUT = td.MaUT,
+                              TenViTri = td.TenViTri
+                          })
+                          .FirstOrDefault();
+
+            return viTri;
+        }
+
+
     }
 }

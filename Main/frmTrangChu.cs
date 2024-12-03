@@ -74,6 +74,7 @@ namespace Main
                 pageIndex = 3000;
                 root = Aside.CreateNode("PHÁT TRIỂN", 61451, 24, pageIndex);
                 Aside.CreateChildNode(root, AddPage(new frmKhoaDaoTao(), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new frmThamGiaDaoTao(), ++pageIndex));
 
                 pageIndex = 4000;
                 root = Aside.CreateNode("QUẢN LÝ TUYỂN DỤNG", 61451, 24, pageIndex);

@@ -8,7 +8,7 @@ namespace Main.DAO
 {
     public class DangNhapDAO
     {
-        private dbDangNhapDataContext dbDangNhapDataContext;
+        private  dbDangNhapDataContext dbDangNhapDataContext;
         public DangNhapDAO()
         {
             dbDangNhapDataContext = new dbDangNhapDataContext();

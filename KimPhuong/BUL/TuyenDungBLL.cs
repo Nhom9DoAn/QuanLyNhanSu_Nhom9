@@ -34,5 +34,10 @@ namespace KimPhuong.BUL
         {
             return td_dal.DeleteTuyenDung(maUT);
         }
+
+        public TuyenDungDTO GetViTriById(int id)
+        {
+            return td_dal.GetViTriById(id);
+        }
     }
 }

@@ -93,7 +93,7 @@ namespace DAL
     #endregion
 		
 		public NhanvienDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QL_NHANSU_UDTMConnectionString2, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QL_NHANSU_UDTMConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

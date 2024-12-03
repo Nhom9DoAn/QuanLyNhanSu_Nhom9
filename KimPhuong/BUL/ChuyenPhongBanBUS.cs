@@ -22,7 +22,7 @@ namespace KimPhuong.BUL
         {
             return chuyenPhongBanDAO.Delete(maChuyenPB);
         }
-        public bool Insert(int maNV, int maPBCu, int maPBMoi, DateTime ngayHieuLuc, string nguoiTao, string lyDoChuyen, string trangThai, DateTime ngaycapnhat, string nguoiduyet, string ghichu)
+        public bool Insert(int maNV, int maPBCu, int maPBMoi, DateTime ngayHieuLuc, int nguoiTao, string lyDoChuyen, string trangThai, DateTime ngaycapnhat, string nguoiduyet, string ghichu)
         {
             return chuyenPhongBanDAO.Insert(maNV, maPBCu, maPBMoi, ngayHieuLuc, nguoiTao, lyDoChuyen, trangThai, ngaycapnhat, nguoiduyet, ghichu);
         }
