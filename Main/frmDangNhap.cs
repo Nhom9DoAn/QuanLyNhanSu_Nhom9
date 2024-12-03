@@ -58,8 +58,8 @@ namespace Main
                 loadingForm.Show();
                 await Task.Delay(2000);
                 //frmTrangChu trangChuForm = new frmTrangChu(tenNhanVien, chucVu);
-                frmTrangChu trangChuForm = new frmTrangChu(maNV, tenNhanVien, chucVu);
-                trangChuForm.Show();
+                //frmTrangChu trangChuForm = new frmTrangChu(maNV, tenNhanVien, chucVu, );
+                //trangChuForm.Show();
 
                 this.Hide();
             }

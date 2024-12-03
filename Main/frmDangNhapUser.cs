@@ -32,7 +32,7 @@ namespace Main
                 }
                 else
                 {
-                    loginControl.txtUsername.PasswordChar = '*';
+                    loginControl.txtPass.PasswordChar = '*';
                 }
             }
             else if (buttonType == DynamicControl.DangNhapControl.ButtonType.DangNhap)
@@ -45,8 +45,8 @@ namespace Main
                     maNV = dangNhapBUS.LayMaNV(username);
                     string tenNhanVien = dangNhapBUS.LayTenNhanVien(maNV);
                     string chucVu = dangNhapBUS.LayChucVu(maNV);
-
-                    frmTrangChu trangChuForm = new frmTrangChu(maNV,tenNhanVien, chucVu);
+                    string phongban = dangNhapBUS.LayPhongBan(maNV);
+                    frmTrangChu trangChuForm = new frmTrangChu(maNV,tenNhanVien, chucVu, phongban, username, password);
                     trangChuForm.Show();
 
                     this.Hide();
