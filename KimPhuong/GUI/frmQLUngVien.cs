@@ -240,16 +240,13 @@ namespace KimPhuong.GUI
         {
             try
             {
-                // Lọc các ứng viên có trạng thái "Đậu phỏng vấn"
-                // Lọc các ứng viên có trạng thái "Đậu phỏng vấn"
+
                 var filteredData = uvbll.getAllUngVien()
                                         .Where(u => u.TrangThai.Equals("Đậu phỏng vấn", StringComparison.OrdinalIgnoreCase))
                                         .ToList();
 
-                // Kiểm tra nếu có ứng viên nào thỏa mãn
                 if (filteredData.Count > 0)
                 {
-                    // Chuẩn bị thông tin để hiển thị trong MessageBox
                     StringBuilder sb = new StringBuilder();
                     sb.AppendLine("Danh sách ứng viên 'Đậu phỏng vấn':");
 
@@ -257,8 +254,6 @@ namespace KimPhuong.GUI
                     {
                         sb.AppendLine($"- {uv.HoTen} - {uv.Email} - {uv.DienThoai} - {uv.NgayUngTuyen.ToString("dd/MM/yyyy")}");
                     }
-
-                    // Hiển thị thông tin trong MessageBox
                     MessageBox.Show(sb.ToString(), "Thông tin ứng viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -266,62 +261,17 @@ namespace KimPhuong.GUI
                     MessageBox.Show("Không có ứng viên nào 'Đậu phỏng vấn'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                // Kiểm tra nếu không có ứng viên nào thỏa mãn
                 if (filteredData.Count == 0)
                 {
                     MessageBox.Show("Không có ứng viên nào có trạng thái 'Đậu phỏng vấn'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
-                // Tạo file Excel mới
-                //using (var package = new OfficeOpenXml.ExcelPackage())
-                //{
-                //    // Tạo worksheet
-                //    var worksheet = package.Workbook.Worksheets.Add("UngVien");
-
-                //    // Thiết lập tiêu đề cột
-                //    worksheet.Cells[1, 1].Value = "Mã Ứng Viên";
-                //    worksheet.Cells[1, 2].Value = "Họ Tên";
-                //    worksheet.Cells[1, 3].Value = "Email";
-                //    worksheet.Cells[1, 4].Value = "Số Điện Thoại";
-                //    worksheet.Cells[1, 5].Value = "Đường Dẫn CV";
-                //    worksheet.Cells[1, 6].Value = "Ngày Ứng Tuyển";
-                //    worksheet.Cells[1, 7].Value = "Vị Trí Ứng Tuyển";
-                //    worksheet.Cells[1, 8].Value = "Trạng Thái";
-
-
-                //    // Điền dữ liệu ứng viên vào các hàng
-                //    int row = 2;
-                //    foreach (var uv in filteredData)
-                //    {
-                //        worksheet.Cells[row, 1].Value = uv.MaUngVien;
-                //        worksheet.Cells[row, 2].Value = uv.HoTen;
-                //        worksheet.Cells[row, 3].Value = uv.Email;
-                //        worksheet.Cells[row, 4].Value = uv.DienThoai;
-                //        worksheet.Cells[row, 5].Value = uv.DuongDanCV;
-                //        worksheet.Cells[row, 6].Value = uv.NgayUngTuyen.ToString("dd/MM/yyyy");
-                //        worksheet.Cells[row, 7].Value = tdbll.GetViTriById(uv.MaUT)?.TenViTri;
-                //        worksheet.Cells[row, 8].Value = uv.TrangThai;
-                //        row++;
-                //    }
-
-                //    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
-                //    SaveFileDialog saveFileDialog = new SaveFileDialog();
-                //    saveFileDialog.Filter = "Excel Files|*.xlsx";
-                //    saveFileDialog.Title = "Lưu File Excel";
-                //    if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                //    {
-                //        FileInfo fi = new FileInfo(saveFileDialog.FileName);
-                //        package.SaveAs(fi);
-                //        MessageBox.Show("Xuất file Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    }
-                //}
                 using (var package = new ExcelPackage())
                 {
-                    // Tạo một sheet mới trong file Excel
+
                     var worksheet = package.Workbook.Worksheets.Add("UngVien");
 
-                    // Thiết lập tiêu đề cột
+
                     worksheet.Cells[1, 1].Value = "Mã Ứng Viên";
                     worksheet.Cells[1, 2].Value = "Họ Tên";
                     worksheet.Cells[1, 3].Value = "Email";
@@ -331,7 +281,7 @@ namespace KimPhuong.GUI
                     worksheet.Cells[1, 7].Value = "Vị Trí Ứng Tuyển";
                     worksheet.Cells[1, 8].Value = "Trạng Thái";
 
-                    int row = 2; // Bắt đầu từ dòng 2 để điền dữ liệu
+                    int row = 2;
                     foreach (var uv in filteredData)
                     {
                         // Điền thông tin ứng viên vào các cột tương ứng
@@ -343,21 +293,18 @@ namespace KimPhuong.GUI
                         worksheet.Cells[row, 7].Value = tdbll.GetViTriById(uv.MaUT)?.TenViTri;
                         worksheet.Cells[row, 8].Value = uv.TrangThai;
 
-                        // Kiểm tra và tạo hyperlink trong cột "Đường Dẫn CV"
                         string cvFilePath = uv.DuongDanCV;
                         if (!string.IsNullOrEmpty(cvFilePath))
                         {
-                            // Thêm hyperlink vào cột 5 (cột "Đường Dẫn CV")
                             worksheet.Cells[row, 5].Hyperlink = new Uri(cvFilePath);
-                            worksheet.Cells[row, 5].Value = "Mở File CV";  // Hiển thị văn bản trong ô
-                            worksheet.Cells[row, 5].Style.Font.UnderLine = true; // Đánh dấu là link
-                            worksheet.Cells[row, 5].Style.Font.Color.SetColor(Color.Blue); // Màu chữ của hyperlink
+                            worksheet.Cells[row, 5].Value = "Mở File CV"; 
+                            worksheet.Cells[row, 5].Style.Font.UnderLine = true;
+                            worksheet.Cells[row, 5].Style.Font.Color.SetColor(Color.Blue);
                         }
 
                         row++;
                     }
 
-                    // Tự động điều chỉnh chiều rộng cột
                     worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
 
                     // Lưu file Excel

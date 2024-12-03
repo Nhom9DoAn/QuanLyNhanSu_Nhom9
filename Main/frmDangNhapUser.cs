@@ -59,10 +59,13 @@ namespace Main
                     maNV = dangNhapBUS.LayMaNV(username);
                     string tenNhanVien = dangNhapBUS.LayTenNhanVien(maNV);
                     string chucVu = dangNhapBUS.LayChucVu(maNV);
-
-                    frmTrangChu trangChuForm = new frmTrangChu(maNV,tenNhanVien, chucVu);
+                    frmLoading loadingForm = new frmLoading();
+                    loadingForm.Show();
+                    await Task.Delay(2000);
+                    //frmTrangChu trangChuForm = new frmTrangChu(maNV,tenNhanVien, chucVu);
+                    string phongban = dangNhapBUS.LayPhongBan(maNV);
+                    frmTrangChu trangChuForm = new frmTrangChu(maNV, tenNhanVien, chucVu, phongban, username, password);
                     trangChuForm.Show();
-
                     this.Hide();
                 }
                 else
