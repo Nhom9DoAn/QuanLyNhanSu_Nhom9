@@ -536,7 +536,7 @@ namespace KimPhuong.GUI
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Name = "frmQuanLyThuongPhat";
-            this.Text = "frmQuanLyThuongPhat";
+            this.Text = "Quản lý thưởng / phạt";
             this.Load += new System.EventHandler(this.frmQuanLyThuongPhat_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);

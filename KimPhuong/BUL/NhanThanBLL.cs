@@ -11,7 +11,6 @@ namespace KimPhuong.BUL
     public class NhanThanBLL
     {
         NhanThanDAL ntdal = new NhanThanDAL();
-
         public List<NhanThanDTO> getAllNhanThan()
         {
             return ntdal.getAllNhanThan();
@@ -22,7 +21,6 @@ namespace KimPhuong.BUL
         {
             return ntdal.AddNhanThan(nhanThanDTO);
         }
-
 
         //sửa
         public bool UpdateNhanThan(NhanThanDTO nhanThanDTO)

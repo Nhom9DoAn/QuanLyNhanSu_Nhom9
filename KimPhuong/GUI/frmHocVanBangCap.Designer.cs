@@ -241,7 +241,7 @@
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(3, 279);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(375, 29);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(375, 25);
             this.guna2HtmlLabel5.TabIndex = 4;
             this.guna2HtmlLabel5.Text = "Năm tốt nghiệp";
             // 
@@ -440,7 +440,7 @@
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel11.Location = new System.Drawing.Point(3, 348);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(375, 29);
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(375, 25);
             this.guna2HtmlLabel11.TabIndex = 20;
             this.guna2HtmlLabel11.Text = "Điểm trung bình";
             // 
@@ -451,7 +451,7 @@
             this.guna2HtmlLabel13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel13.Location = new System.Drawing.Point(3, 417);
             this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(375, 29);
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(375, 25);
             this.guna2HtmlLabel13.TabIndex = 22;
             this.guna2HtmlLabel13.Text = "Ghi chú";
             // 
@@ -601,7 +601,7 @@
             this.menucontrol.Location = new System.Drawing.Point(3, 2);
             this.menucontrol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.menucontrol.Name = "menucontrol";
-            this.menucontrol.Size = new System.Drawing.Size(1891, 47);
+            this.menucontrol.Size = new System.Drawing.Size(1891, 49);
             this.menucontrol.TabIndex = 6;
             this.menucontrol.ButtonClicked += new DynamicControl.menucontrol2.ButtonClickedHandler(this.menucontrol_ButtonClicked);
             // 
@@ -668,7 +668,7 @@
             this.ClientSize = new System.Drawing.Size(1897, 867);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmHocVanBangCap";
-            this.Text = "frmHocVanBangCap";
+            this.Text = "Học vấn, bằng cấp";
             this.Load += new System.EventHandler(this.frmHocVanBangCap_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHocVan)).EndInit();

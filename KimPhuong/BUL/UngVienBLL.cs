@@ -10,6 +10,7 @@ namespace KimPhuong.BUL
 {
     public class UngVienBLL
     {
+
         UngVienDAL uvdal = new UngVienDAL();
         public List<UngVienDTO> getAllUngVien()
         {

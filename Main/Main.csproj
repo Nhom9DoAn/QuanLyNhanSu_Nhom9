@@ -275,7 +275,6 @@
     <None Include="Resources\312f137caf78454daaf902189550e48a.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\cartoon-snail-loading-loading-gif-animation_2734139.gif" />
     <None Include="Resources\cartoon-snail-loading-loading-gif-animation_27341391.gif" />
     <Folder Include="Phap_Form\" />
   </ItemGroup>

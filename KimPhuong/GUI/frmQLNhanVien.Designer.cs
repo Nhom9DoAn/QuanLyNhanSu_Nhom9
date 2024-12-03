@@ -405,7 +405,7 @@ namespace KimPhuong.GUI
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Name = "frmQLNhanVien";
-            this.Text = "frmQLNhanVien";
+            this.Text = "Quản lý nhấn viên";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

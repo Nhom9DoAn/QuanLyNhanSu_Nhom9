@@ -10,7 +10,6 @@ namespace KimPhuong.DAL
     public class TuyenDungDAL
     {
         dbQuanLyNhanSuDataContext db = new dbQuanLyNhanSuDataContext();
-
         public List<TuyenDungDTO> getAllTuyenDung()
         {
             var tuyendung = from td in db.TuyenDungs

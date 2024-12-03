@@ -16,9 +16,7 @@ namespace KimPhuong.DTO
         private string hoTenNT;
         private string quanHe;
         private string diaChi;
-
         public NhanThanDTO() { }
-
         public NhanThanDTO(int maNT, int maNV, string hoTenNV, string hoTenNT, string quanHe, DateTime ngaySinh, string dienThoai, string diaChi )
         {
             MaNT = maNT;

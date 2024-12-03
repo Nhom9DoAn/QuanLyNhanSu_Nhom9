@@ -10,6 +10,7 @@ namespace KimPhuong.BUL
 {
     public class TuyenDungBLL
     {
+
         TuyenDungDAL td_dal = new TuyenDungDAL();
         public List<TuyenDungDTO> getAllTuyenDung()
         {

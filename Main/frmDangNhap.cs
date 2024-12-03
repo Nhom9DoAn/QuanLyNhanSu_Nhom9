@@ -24,7 +24,6 @@ namespace Main
             this.KeyDown += frm_Login_KeyDown;
             this.KeyPreview = true;
         }
-
         private void frm_Login_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -32,7 +31,6 @@ namespace Main
                 guna2Button1_Click(sender, e);
             }
         }
-
         private void guna2ToggleSwitch1_CheckedChanged(object sender, EventArgs e)
         {
             if (guna2ToggleSwitch1.Checked)
@@ -44,7 +42,6 @@ namespace Main
                 txtPassword.PasswordChar = '*';
             }
         }
-
         private async void guna2Button1_Click(object sender, EventArgs e)
         {
             string tenDangNhap = txtUserName.Text;
@@ -60,8 +57,6 @@ namespace Main
                 frmLoading loadingForm = new frmLoading();
                 loadingForm.Show();
                 await Task.Delay(2000);
-
-
                 //frmTrangChu trangChuForm = new frmTrangChu(tenNhanVien, chucVu);
                 frmTrangChu trangChuForm = new frmTrangChu(maNV, tenNhanVien, chucVu);
                 trangChuForm.Show();

@@ -38,7 +38,9 @@ namespace KimPhuong.GUI
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rad_HD6Thang = new Guna.UI2.WinForms.Guna2RadioButton();
             this.cb_TinhTrang = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.rad_HD1Nam = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txt_BieuMau = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -49,6 +51,7 @@ namespace KimPhuong.GUI
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.cb_TenNV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtp_NgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txt_CCCD = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_DiaChi = new Guna.UI2.WinForms.Guna2TextBox();
@@ -65,9 +68,6 @@ namespace KimPhuong.GUI
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgv_DSHopDong = new Sunny.UI.UIDataGridView();
-            this.cb_TenNV = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.rad_HD1Nam = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rad_HD6Thang = new Guna.UI2.WinForms.Guna2RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -140,6 +140,24 @@ namespace KimPhuong.GUI
             this.guna2GroupBox1.TabIndex = 2;
             this.guna2GroupBox1.Text = "Thông tin hợp đồng";
             // 
+            // rad_HD6Thang
+            // 
+            this.rad_HD6Thang.AutoSize = true;
+            this.rad_HD6Thang.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rad_HD6Thang.CheckedState.BorderThickness = 0;
+            this.rad_HD6Thang.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rad_HD6Thang.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rad_HD6Thang.CheckedState.InnerOffset = -4;
+            this.rad_HD6Thang.Location = new System.Drawing.Point(153, 227);
+            this.rad_HD6Thang.Name = "rad_HD6Thang";
+            this.rad_HD6Thang.Size = new System.Drawing.Size(125, 27);
+            this.rad_HD6Thang.TabIndex = 15;
+            this.rad_HD6Thang.Text = "Ký 6 tháng";
+            this.rad_HD6Thang.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rad_HD6Thang.UncheckedState.BorderThickness = 2;
+            this.rad_HD6Thang.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rad_HD6Thang.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
             // cb_TinhTrang
             // 
             this.cb_TinhTrang.BackColor = System.Drawing.Color.Transparent;
@@ -160,6 +178,24 @@ namespace KimPhuong.GUI
             this.cb_TinhTrang.Name = "cb_TinhTrang";
             this.cb_TinhTrang.Size = new System.Drawing.Size(226, 36);
             this.cb_TinhTrang.TabIndex = 14;
+            // 
+            // rad_HD1Nam
+            // 
+            this.rad_HD1Nam.AutoSize = true;
+            this.rad_HD1Nam.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rad_HD1Nam.CheckedState.BorderThickness = 0;
+            this.rad_HD1Nam.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rad_HD1Nam.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rad_HD1Nam.CheckedState.InnerOffset = -4;
+            this.rad_HD1Nam.Location = new System.Drawing.Point(462, 227);
+            this.rad_HD1Nam.Name = "rad_HD1Nam";
+            this.rad_HD1Nam.Size = new System.Drawing.Size(114, 27);
+            this.rad_HD1Nam.TabIndex = 4;
+            this.rad_HD1Nam.Text = "Ký 1 năm";
+            this.rad_HD1Nam.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rad_HD1Nam.UncheckedState.BorderThickness = 2;
+            this.rad_HD1Nam.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rad_HD1Nam.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // guna2HtmlLabel12
             // 
@@ -311,6 +347,25 @@ namespace KimPhuong.GUI
             this.guna2GroupBox2.Size = new System.Drawing.Size(659, 254);
             this.guna2GroupBox2.TabIndex = 3;
             this.guna2GroupBox2.Text = "Thông tin nhân viên";
+            // 
+            // cb_TenNV
+            // 
+            this.cb_TenNV.BackColor = System.Drawing.Color.Transparent;
+            this.cb_TenNV.BorderRadius = 15;
+            this.cb_TenNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_TenNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_TenNV.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_TenNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_TenNV.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_TenNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cb_TenNV.ItemHeight = 30;
+            this.cb_TenNV.Items.AddRange(new object[] {
+            "Đang hiệu lực"});
+            this.cb_TenNV.Location = new System.Drawing.Point(142, 47);
+            this.cb_TenNV.Name = "cb_TenNV";
+            this.cb_TenNV.Size = new System.Drawing.Size(212, 36);
+            this.cb_TenNV.TabIndex = 15;
+            this.cb_TenNV.SelectedIndexChanged += new System.EventHandler(this.cb_TenNV_SelectedIndexChanged);
             // 
             // dtp_NgaySinh
             // 
@@ -572,61 +627,6 @@ namespace KimPhuong.GUI
             this.dgv_DSHopDong.TabIndex = 4;
             this.dgv_DSHopDong.SelectionChanged += new System.EventHandler(this.dgv_DSHopDong_SelectionChanged_1);
             // 
-            // cb_TenNV
-            // 
-            this.cb_TenNV.BackColor = System.Drawing.Color.Transparent;
-            this.cb_TenNV.BorderRadius = 15;
-            this.cb_TenNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cb_TenNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_TenNV.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_TenNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cb_TenNV.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_TenNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cb_TenNV.ItemHeight = 30;
-            this.cb_TenNV.Items.AddRange(new object[] {
-            "Đang hiệu lực"});
-            this.cb_TenNV.Location = new System.Drawing.Point(142, 47);
-            this.cb_TenNV.Name = "cb_TenNV";
-            this.cb_TenNV.Size = new System.Drawing.Size(212, 36);
-            this.cb_TenNV.TabIndex = 15;
-            this.cb_TenNV.SelectedIndexChanged += new System.EventHandler(this.cb_TenNV_SelectedIndexChanged);
-            // 
-            // rad_HD1Nam
-            // 
-            this.rad_HD1Nam.AutoSize = true;
-            this.rad_HD1Nam.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rad_HD1Nam.CheckedState.BorderThickness = 0;
-            this.rad_HD1Nam.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rad_HD1Nam.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rad_HD1Nam.CheckedState.InnerOffset = -4;
-            this.rad_HD1Nam.Location = new System.Drawing.Point(462, 227);
-            this.rad_HD1Nam.Name = "rad_HD1Nam";
-            this.rad_HD1Nam.Size = new System.Drawing.Size(114, 27);
-            this.rad_HD1Nam.TabIndex = 4;
-            this.rad_HD1Nam.Text = "Ký 1 năm";
-            this.rad_HD1Nam.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rad_HD1Nam.UncheckedState.BorderThickness = 2;
-            this.rad_HD1Nam.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rad_HD1Nam.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // rad_HD6Thang
-            // 
-            this.rad_HD6Thang.AutoSize = true;
-            this.rad_HD6Thang.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rad_HD6Thang.CheckedState.BorderThickness = 0;
-            this.rad_HD6Thang.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rad_HD6Thang.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rad_HD6Thang.CheckedState.InnerOffset = -4;
-            this.rad_HD6Thang.Location = new System.Drawing.Point(153, 227);
-            this.rad_HD6Thang.Name = "rad_HD6Thang";
-            this.rad_HD6Thang.Size = new System.Drawing.Size(125, 27);
-            this.rad_HD6Thang.TabIndex = 15;
-            this.rad_HD6Thang.Text = "Ký 6 tháng";
-            this.rad_HD6Thang.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rad_HD6Thang.UncheckedState.BorderThickness = 2;
-            this.rad_HD6Thang.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rad_HD6Thang.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
             // frmQuanLyHopDongLaoDong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -637,7 +637,7 @@ namespace KimPhuong.GUI
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Name = "frmQuanLyHopDongLaoDong";
-            this.Text = "frmQuanLyHopDongLaoDong";
+            this.Text = "Hợp đồng lao động";
             this.Load += new System.EventHandler(this.frmQuanLyHopDongLaoDong_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
