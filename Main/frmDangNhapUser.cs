@@ -35,7 +35,6 @@ namespace Main
                 dangNhapControl1_ButtonClicked(sender, buttonType, args);
             }
         }
-
         private async void dangNhapControl1_ButtonClicked(object sender, DynamicControl.DangNhapControl.ButtonType buttonType, EventArgs e)
         {
             if (buttonType == DynamicControl.DangNhapControl.ButtonType.XemMatKhau)
@@ -46,7 +45,7 @@ namespace Main
                 }
                 else
                 {
-                    loginControl.txtUsername.PasswordChar = '*';
+                    loginControl.txtPass.PasswordChar = '*';
                 }
             }
             else if (buttonType == DynamicControl.DangNhapControl.ButtonType.DangNhap)
@@ -62,7 +61,9 @@ namespace Main
                     frmLoading loadingForm = new frmLoading();
                     loadingForm.Show();
                     await Task.Delay(2000);
-                    frmTrangChu trangChuForm = new frmTrangChu(maNV,tenNhanVien, chucVu);
+                    //frmTrangChu trangChuForm = new frmTrangChu(maNV,tenNhanVien, chucVu);
+                    string phongban = dangNhapBUS.LayPhongBan(maNV);
+                    frmTrangChu trangChuForm = new frmTrangChu(maNV,tenNhanVien, chucVu, phongban, username, password);
                     trangChuForm.Show();
 
                     this.Hide();

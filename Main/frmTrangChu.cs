@@ -17,6 +17,7 @@ namespace Main
 {
     public partial class frmTrangChu : UIHeaderAsideMainFrame
     {
+        static string TENNV, CHUCVU, PHONGBAN, TENDANGNHAP, MATKHAU;
         //public frmTrangChu(string tenNhanVien, string chucVu)
         //{
         //    InitializeComponent();
@@ -47,8 +48,9 @@ namespace Main
         //        MessageBox.Show("Không có quyền truy cập");
         //    }
         //}
-        public frmTrangChu(int maNV, string tenNhanVien, string chucVu)
+        public frmTrangChu(int maNV, string tenNhanVien, string chucVu, string phongban, string username, string pass)
         {
+            TENNV = tenNhanVien; CHUCVU = chucVu; PHONGBAN = phongban; TENDANGNHAP = username; MATKHAU = pass;
             InitializeComponent();
             lblTenDangNhap.Text = tenNhanVien;
             if (chucVu == "Giám đốc")
@@ -102,7 +104,7 @@ namespace Main
         }
         private void frmTrangChu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            
         }
 
         private void Aside_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -112,6 +114,8 @@ namespace Main
 
         private void uiAvatar1_Click(object sender, EventArgs e)
         {
+            frmProfile frm = new frmProfile(TENNV, CHUCVU, PHONGBAN, TENDANGNHAP, MATKHAU);
+            frm.ShowDialog();
 
         }
     }
