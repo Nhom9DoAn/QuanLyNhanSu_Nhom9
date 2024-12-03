@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
+using Sunny.UI;
 
 namespace Main
 {
-    public partial class GetAllEmployee_Form : Form
+    public partial class GetAllEmployee_Form : UIPage
     {
         public GetAllEmployee_Form()
         {

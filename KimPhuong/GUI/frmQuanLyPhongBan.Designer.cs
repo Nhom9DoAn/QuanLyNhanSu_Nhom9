@@ -55,7 +55,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
-          
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -137,8 +137,8 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.76238F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.24752F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.33663F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.67327F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.26455F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1176, 202);
             this.tableLayoutPanel2.TabIndex = 3;
@@ -146,9 +146,10 @@
             // menucontrol
             // 
             this.menucontrol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menucontrol.Location = new System.Drawing.Point(3, 3);
+            this.menucontrol.Location = new System.Drawing.Point(3, 2);
+            this.menucontrol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.menucontrol.Name = "menucontrol";
-            this.menucontrol.Size = new System.Drawing.Size(1170, 42);
+            this.menucontrol.Size = new System.Drawing.Size(1170, 29);
             this.menucontrol.TabIndex = 0;
             this.menucontrol.ButtonClicked += new DynamicControl.menucontrol2.ButtonClickedHandler(this.menucontrol_ButtonClicked);
             // 
@@ -321,11 +322,11 @@
             this.tableLayoutPanel4.Controls.Add(this.btnTim, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtTim, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 51);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 36);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1170, 45);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1170, 60);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
             // btnTim
@@ -368,16 +369,6 @@
             this.txtTim.SelectedText = "";
             this.txtTim.Size = new System.Drawing.Size(1021, 35);
             this.txtTim.TabIndex = 15;
-            // 
-            // menucontrol
-            // 
-            this.menucontrol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menucontrol.Location = new System.Drawing.Point(3, 2);
-            this.menucontrol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.menucontrol.Name = "menucontrol";
-            this.menucontrol.Size = new System.Drawing.Size(1170, 57);
-            this.menucontrol.TabIndex = 0;
-            this.menucontrol.ButtonClicked += new DynamicControl.menucontrol2.ButtonClickedHandler(this.menucontrol_ButtonClicked);
             // 
             // frmQuanLyPhongBan
             // 

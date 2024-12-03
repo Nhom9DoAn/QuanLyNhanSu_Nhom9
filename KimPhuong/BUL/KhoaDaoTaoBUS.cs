@@ -38,5 +38,9 @@ namespace KimPhuong.BUL
         {
             return khoaDaoTaoDAO.Search(keyword);
         }
+        public List<KhoaDaoTao> GetKhoaDaoTaoByTrangThai(string trangThai)
+        {
+            return khoaDaoTaoDAO.GetKhoaDaoTaoByTrangThai(trangThai);
+        }
     }
 }

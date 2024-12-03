@@ -363,15 +363,18 @@ namespace KimPhuong.GUI
         {
             dgvHocVan.DataSource = hocVanBUS.GetAll();
 
-            dgvHocVan.Columns["MaHVBC"].HeaderText = "Mã học vấn/bằng cấp";
-            dgvHocVan.Columns["MaNV"].HeaderText = "Mã nhân viên";
-            dgvHocVan.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
-            dgvHocVan.Columns["TenTruong"].HeaderText = "Tên trường";
-            dgvHocVan.Columns["ChuyenNganh"].HeaderText = "Chuyên ngành";
-            dgvHocVan.Columns["BangCap"].HeaderText = "Bằng cấp";
-            dgvHocVan.Columns["NamTotNghiep"].HeaderText = "Năm tốt nghiệp";
-            dgvHocVan.Columns["DiemTB"].HeaderText = "D9iểm trung bình";
-            dgvHocVan.Columns["GhiChu"].HeaderText = "Ghi chú";
+            if (dgvHocVan.Rows.Count > 0)
+            {
+                dgvHocVan.Columns["MaHVBC"].HeaderText = "Mã học vấn/bằng cấp";
+                dgvHocVan.Columns["MaNV"].HeaderText = "Mã nhân viên";
+                dgvHocVan.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
+                dgvHocVan.Columns["TenTruong"].HeaderText = "Tên trường";
+                dgvHocVan.Columns["ChuyenNganh"].HeaderText = "Chuyên ngành";
+                dgvHocVan.Columns["BangCap"].HeaderText = "Bằng cấp";
+                dgvHocVan.Columns["NamTotNghiep"].HeaderText = "Năm tốt nghiệp";
+                dgvHocVan.Columns["DiemTB"].HeaderText = "D9iểm trung bình";
+                dgvHocVan.Columns["GhiChu"].HeaderText = "Ghi chú";
+            }
         }
     }
 }

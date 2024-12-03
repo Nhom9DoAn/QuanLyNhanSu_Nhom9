@@ -65,7 +65,7 @@ namespace KimPhuong.GUI
             cbPhongBanMoi.DataSource = dspb;
             cbPhongBanMoi.DisplayMember = "TenPB";
             cbPhongBanMoi.ValueMember = "MaPB";
-            cbPhongBanMoi.SelectedIndex = 0;
+            
         }
 
         private void loaddisable()
@@ -118,6 +118,7 @@ namespace KimPhuong.GUI
         }
         private void LoadData()
         {
+            dgvChuyenPhongBan.DataSource = null;
             dgvChuyenPhongBan.DataSource = chuyenPhongBanBUS.GetAll();
 
             if (dgvChuyenPhongBan.Rows.Count > 0)

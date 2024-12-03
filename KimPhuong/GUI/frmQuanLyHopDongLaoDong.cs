@@ -298,11 +298,23 @@ namespace KimPhuong.GUI
             if (dgv_DSHopDong.SelectedRows.Count > 0)
             {
                 DataGridViewRow selected = dgv_DSHopDong.SelectedRows[0];
-                dtp_NgayBD.Value = Convert.ToDateTime(selected.Cells["NgayBatDau"].Value);
-                dtp_NgayKT.Value = Convert.ToDateTime(selected.Cells["NgayKetThuc"].Value);
-                
+                DateTime ngayKetThuc = selected.Cells["NgayKetThuc"].Value != DBNull.Value
+    ? Convert.ToDateTime(selected.Cells["NgayKetThuc"].Value)
+    : DateTime.MinValue;
+
+                if (ngayKetThuc != DateTime.MinValue)
+                {
+                    dtp_NgayKT.Value = ngayKetThuc;
+                }
+                else
+                {
+                    dtp_NgayKT.Value = DateTime.Now;
+                }
+            
+
+
                 cb_LoaiHD.SelectedItem = selected.Cells["LoaiHD"].Value.ToString();
-                txt_BieuMau.Text = selected.Cells["BieuMau"].Value.ToString();
+                txt_BieuMau.Text = selected.Cells["BieuMau"].Value?.ToString() ?? "";
                 cb_TinhTrang.SelectedItem = selected.Cells["TinhTrang"].Value.ToString();
                 cb_TenNV.SelectedValue = Convert.ToInt32(selected.Cells["MaNV"].Value);
                 

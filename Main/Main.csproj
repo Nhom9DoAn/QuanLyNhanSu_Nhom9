@@ -276,6 +276,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cartoon-snail-loading-loading-gif-animation_27341391.gif" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Phap_Form\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

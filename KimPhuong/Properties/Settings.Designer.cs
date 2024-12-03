@@ -36,7 +36,7 @@ namespace KimPhuong.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ACER\\FUANG;Initial Catalog=QL_NHANSU_UDTM1;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ACER\\FUANG;Initial Catalog=QL_NHANSU_UDTM;Integrated Security=True")]
         public string QL_NHANSU_UDTM1ConnectionString {
             get {
                 return ((string)(this["QL_NHANSU_UDTM1ConnectionString"]));

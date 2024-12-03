@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DAL;
+using Sunny.UI;
 
 namespace Main.Phap_Form
 {
-    public partial class Employee_Form : Form
+    public partial class Employee_Form : UIPage
     {
         public Employee_Form()
         {

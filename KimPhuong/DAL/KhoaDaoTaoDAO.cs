@@ -39,7 +39,7 @@ namespace KimPhuong.DAL
 
         public bool Insert(string tenkh, string donvi,
             DateTime ngaybd, DateTime ngaykt,
-            int chiPhi, string ghiChu)
+            int chiPhi, string trangThai)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace KimPhuong.DAL
                     NgayBatDau = ngaybd,
                     NgayKetThuc = ngaykt,
                     ChiPhi = chiPhi,
-                    TrangThai = ghiChu
+                    TrangThai = trangThai
                 };
 
                 db.KhoaDaoTaos.InsertOnSubmit(kdt);
@@ -141,6 +141,11 @@ namespace KimPhuong.DAL
             {
                 return new List<dynamic>();
             }
+        }
+        public List<KhoaDaoTao> GetKhoaDaoTaoByTrangThai(string trangThai)
+        {
+            var result = db.KhoaDaoTaos.Where(kd => kd.TrangThai == trangThai).ToList();
+            return result;
         }
     }
 }

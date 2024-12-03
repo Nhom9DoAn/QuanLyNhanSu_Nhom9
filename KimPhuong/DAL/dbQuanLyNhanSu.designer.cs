@@ -93,7 +93,7 @@ namespace KimPhuong.DAL
     #endregion
 		
 		public dbQuanLyNhanSuDataContext() : 
-				base(global::KimPhuong.Properties.Settings.Default.QL_NHANSU_UDTMConnectionString, mappingSource)
+				base(global::KimPhuong.Properties.Settings.Default.QL_NHANSU_UDTM1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

@@ -19,8 +19,8 @@ namespace KimPhuong.DAL
                               nv.MaNV,
                               nv.HoTen,
                               hd.LoaiHD,
-                              hd.NgayBatDau.Value,
-                              hd.NgayKetThuc.Value,
+                              hd.NgayBatDau.GetValueOrDefault(),
+                              hd.NgayKetThuc.GetValueOrDefault(),
                               hd.BieuMau,
                               hd.TinhTrang
 

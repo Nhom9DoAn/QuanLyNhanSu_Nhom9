@@ -23,7 +23,7 @@ namespace Main.DAO
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QL_NHANSU_UDTM")]
-	public partial class dbDangNhapDataContext : System.Data.Linq.DataContext
+	public partial class dangnhapDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -92,31 +92,31 @@ namespace Main.DAO
     partial void DeleteTuyenDung(TuyenDung instance);
     #endregion
 		
-		public dbDangNhapDataContext() : 
-				base(global::Main.Properties.Settings.Default.QL_NHANSU_UDTMConnectionString2, mappingSource)
+		public dangnhapDataContext() : 
+				base(global::Main.Properties.Settings.Default.QL_NHANSU_UDTMConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbDangNhapDataContext(string connection) : 
+		public dangnhapDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbDangNhapDataContext(System.Data.IDbConnection connection) : 
+		public dangnhapDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbDangNhapDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public dangnhapDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbDangNhapDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public dangnhapDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
