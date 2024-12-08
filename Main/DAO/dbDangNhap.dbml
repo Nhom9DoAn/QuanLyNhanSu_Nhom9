@@ -12,6 +12,19 @@
       <Association Name="NhanVien_ChamCong" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.UngVien" Member="UngViens">
+    <Type Name="UngVien">
+      <Column Name="MaUngVien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaUT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DuongDanCV" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NgayUngTuyen" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="TuyenDung_UngVien" Member="TuyenDung" ThisKey="MaUT" OtherKey="MaUT" Type="TuyenDung" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.ChucVu" Member="ChucVus">
     <Type Name="ChucVu">
       <Column Name="MaCV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -272,19 +285,6 @@
       <Association Name="TuyenDung_UngVien" Member="UngViens" ThisKey="MaUT" OtherKey="MaUT" Type="UngVien" />
       <Association Name="PhongBan_TuyenDung" Member="PhongBan" ThisKey="MaPhong" OtherKey="MaPB" Type="PhongBan" IsForeignKey="true" />
       <Association Name="NhanVien_TuyenDung" Member="NhanVien" ThisKey="NguoiPhuTrach" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.UngVien" Member="UngViens">
-    <Type Name="UngVien">
-      <Column Name="MaUngVien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaUT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="DienThoai" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="DuongDanCV" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="NgayUngTuyen" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Association Name="TuyenDung_UngVien" Member="TuyenDung" ThisKey="MaUT" OtherKey="MaUT" Type="TuyenDung" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
