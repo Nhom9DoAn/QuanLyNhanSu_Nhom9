@@ -138,6 +138,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbDangNhap.dbml</DependentUpon>
     </Compile>
+    <Compile Include="FormDiemDanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiemDanh.Designer.cs">
+      <DependentUpon>FormDiemDanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +169,12 @@
     <Compile Include="ModelTrain\ModelForm.Designer.cs">
       <DependentUpon>ModelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelTrain\PredictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModelTrain\PredictForm.Designer.cs">
+      <DependentUpon>PredictForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModelTrain\SalaryPrediction.cs" />
     <Compile Include="Employee_Form.cs">
       <SubType>Form</SubType>
@@ -175,6 +187,9 @@
     <None Include="DAO\dbDangNhap.dbml.layout">
       <DependentUpon>dbDangNhap.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="FormDiemDanh.resx">
+      <DependentUpon>FormDiemDanh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee_Form.resx">
       <DependentUpon>Employee_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelTrain\PredictForm.resx">
+      <DependentUpon>PredictForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

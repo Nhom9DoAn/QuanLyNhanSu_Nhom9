@@ -33,7 +33,9 @@ namespace Main.ModelTrain
 
                 var context = new MLContext();
                 // Tải dữ liệu từ tệp CSV
-                var data = context.Data.LoadFromTextFile<JobData>("D:\\ds_salaries.csv", separatorChar: ',', hasHeader: true);
+                var dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ds_salaries.csv");
+                var data = context.Data.LoadFromTextFile<JobData>(dataPath, separatorChar: ',', hasHeader: true);
+
 
                 // Chia dữ liệu thành tập huấn luyện và tập kiểm tra
                 var trainTestSplit = context.Data.TrainTestSplit(data, testFraction: 0.2);
@@ -70,8 +72,10 @@ namespace Main.ModelTrain
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+
             var context = new MLContext();
-            var data = context.Data.LoadFromTextFile<JobData>("D:\\ds_salaries.csv", separatorChar: ',', hasHeader: true);
+            var dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ds_salaries.csv");
+            var data = context.Data.LoadFromTextFile<JobData>(dataPath, separatorChar: ',', hasHeader: true);
             var jobDataList = context.Data.CreateEnumerable<JobData>(data, reuseRowObject: false).ToList();
             dataGridView1.DataSource = jobDataList;
         }

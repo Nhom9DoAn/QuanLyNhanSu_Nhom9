@@ -25,8 +25,8 @@ namespace Main
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GetAllEmployee_Form());
-            //Application.Run(new ModelForm());
+           // Application.Run(new FormDiemDanh());
+            Application.Run(new PredictForm());
         }
     }
 }
