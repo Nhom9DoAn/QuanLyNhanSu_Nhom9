@@ -83,6 +83,9 @@ namespace Main
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyTuyenDung(maNV), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmQLUngVien(), ++pageIndex));
 
+
+                pageIndex = 5000;
+                root = Aside.CreateNode("THỐNG KÊ", 61451, 24, pageIndex);
             }
             else if (chucVu == "Bộ phận phát triển")
             {
@@ -96,6 +99,9 @@ namespace Main
                 TreeNode root = Aside.CreateNode("QUẢN LÝ TUYỂN DỤNG", 61451, 24, pageIndex);
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyTuyenDung(maNV), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmQLUngVien(), ++pageIndex));
+
+                pageIndex = 5000;
+                root = Aside.CreateNode("THỐNG KÊ", 61451, 24, pageIndex);
             }
             else
             {
@@ -109,7 +115,21 @@ namespace Main
 
         private void Aside_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-
+            if (e.Node.Text == "THỐNG KÊ")
+            {
+               
+                var existingPage = GetPage(5000);
+                if (existingPage != null)
+                {
+                    SelectPage(5000);
+                }
+                else
+                {
+                    var page = new frmThongKe();
+                    AddPage(page, 5000);
+                    SelectPage(5000);
+                }
+            }
         }
 
         private void uiAvatar1_Click(object sender, EventArgs e)

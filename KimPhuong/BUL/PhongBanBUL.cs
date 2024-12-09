@@ -19,6 +19,10 @@ namespace KimPhuong.BUL
         {
             return phongBanDAO.getAll();
         }
+        public dynamic ThongKeGioiTinhTheoPhong(int maPhongBan)
+        {
+            return phongBanDAO.ThongKeGioiTinhTheoPhong(maPhongBan);
+        }
         public bool insert(string tenPB, string diaChi, string sdtPB)
         {
             return phongBanDAO.insert(tenPB, diaChi, sdtPB);

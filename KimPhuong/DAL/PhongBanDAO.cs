@@ -32,6 +32,26 @@ namespace KimPhuong.DAL
             }
         }
 
+        public dynamic ThongKeGioiTinhTheoPhong(int maPhongBan)
+        {
+            var result = db.NhanViens
+                .Where(nv => nv.MaPB == maPhongBan)
+                .GroupBy(nv => nv.PhongBan)
+                .Select(g => new
+                {
+                    MaPhongBan = g.Key.MaPB,
+                    TenPhongBan = g.Key.TenPB,
+                    SoNam = g.Count(nv => nv.GioiTinh == "Nam"),
+                    SoNu = g.Count(nv => nv.GioiTinh == "Nữ"),
+                    TongSo = g.Count()
+                })
+                .FirstOrDefault();
+
+            return result;
+
+        }
+
+
         public bool insert(string tenPB, string diaChi, string sdtPB)
         {
             try

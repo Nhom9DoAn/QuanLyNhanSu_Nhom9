@@ -16,6 +16,22 @@ namespace KimPhuong.DAL
             db = new dbQuanLyNhanSuDataContext();
         }
 
+        public dynamic ThongKeTheoBangCap()
+        {
+            
+            var result = db.HocVanBangCaps
+                .GroupBy(hv => hv.BangCap) 
+                .Select(g => new
+                {
+                    BangCap = g.Key,
+                    SoLuong = g.Count()
+                })
+                .ToList();
+
+            return result;
+        }
+
+
         public List<dynamic> GetAll()
         {
             try

@@ -18,6 +18,10 @@ namespace KimPhuong.BUL
         {
             return hocVan.GetAll();
         }
+        public dynamic ThongKeTheoBangCap()
+        {
+            return hocVan.ThongKeTheoBangCap();
+        }
         public bool Delete(int maHVBC)
         {
             return hocVan.Delete(maHVBC);
