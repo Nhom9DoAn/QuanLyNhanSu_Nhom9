@@ -44,7 +44,7 @@ namespace KimPhuong.DAL
                 return new List<dynamic>();
             }
         }
-        public bool Insert(int maNV, int maPBCu, int maPBMoi, DateTime ngayHieuLuc, int nguoiTao, string lyDoChuyen, string trangThai, DateTime ngaycapnhat, string nguoiduyet, string ghichu)
+        public bool Insert(int maNV, int maPBCu, int maPBMoi, DateTime ngayHieuLuc, string nguoiTao, string lyDoChuyen, string trangThai, DateTime ngaycapnhat, string nguoiduyet, string ghichu)
         {
             try
             {
@@ -178,7 +178,7 @@ namespace KimPhuong.DAL
                         (cp.NhanVien.HoTen != null && cp.NhanVien.HoTen.Contains(keyword)) ||
                         (cp.PhongBan.TenPB != null && cp.PhongBan.TenPB.Contains(keyword)) ||
                         (cp.LyDoChuyen != null && cp.LyDoChuyen.Contains(keyword)) ||
-                        (cp.NguoiTao.HasValue && cp.NguoiTao.Value.ToString().Contains(keyword)) || // Convert int? to string and then use Contains
+                        (cp.NguoiTao != null && cp.NguoiTao.Contains(keyword)) ||
                         (cp.TrangThai != null && cp.TrangThai.Contains(keyword))
                     );
                 }

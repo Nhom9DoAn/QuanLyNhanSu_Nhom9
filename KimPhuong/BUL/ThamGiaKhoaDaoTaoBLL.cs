@@ -39,5 +39,10 @@ namespace KimPhuong.BUL
             return tgdal.GetThamGiaDaoTaoByMa(maNV, maKhoaDaoTao);
         }
 
+        public List<ThamGiaKhoaDaoTaoDTO> Search(string keyword)
+        {
+            return tgdal.Search(keyword);
+        }
+
     }
 }

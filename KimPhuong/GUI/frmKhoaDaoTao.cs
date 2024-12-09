@@ -17,11 +17,17 @@ namespace KimPhuong.GUI
     {
         bool them, sua, loc = false;
         KhoaDaoTaoBUS khoaDaoTaoBUS;
-        public frmKhoaDaoTao()
+        int mamh_selected;
+        string TENNV, CHUCVU, PHONGBAN;
+        public frmKhoaDaoTao(string tenNhanVien, string chucVu, string phongban)
         {
             InitializeComponent();
             khoaDaoTaoBUS = new KhoaDaoTaoBUS();
             loadKhoaDaoTao();
+
+            TENNV = tenNhanVien;
+            CHUCVU = chucVu;
+            PHONGBAN = phongban;
 
             cbTrangThai.Items.Clear();
             cbTrangThai.Items.Add("Đang mở đăng kí");
@@ -67,6 +73,7 @@ namespace KimPhuong.GUI
             {
 
                 DataGridViewRow row = dgvKhoaDaoTao.SelectedRows[0];
+                mamh_selected = Convert.ToInt32(row.Cells["MaKhoaDaoTao"].Value);
                 txtMaKhoa.Text = row.Cells["MaKhoaDaoTao"].Value.ToString();
                 txtTenKhoa.Text = row.Cells["TenKhoaHoc"].Value.ToString();
                 txtDonVi.Text = row.Cells["DonViDaoTao"].Value.ToString();
@@ -130,7 +137,62 @@ namespace KimPhuong.GUI
 
         private void btnXuatWord_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Word Documents|*.docx";
+                saveDialog.DefaultExt = "docx";
 
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string templatePath = Application.StartupPath + "\\Templates\\templatexuatword.dotx";
+                    Console.WriteLine(templatePath);
+                    if (!System.IO.File.Exists(templatePath))
+                    {
+                        MessageBox.Show("Không tìm thấy file template!", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    WordExport wordExport = new WordExport(templatePath, false);
+                    var monhoc = khoaDaoTaoBUS.Get1KhoaDaoTao(mamh_selected);
+                    var data = dgvKhoaDaoTao.DataSource as IEnumerable<dynamic>;
+                    string ngayThongBao = DateTime.Now.Day.ToString();
+                    string thangThongBao = DateTime.Now.Month.ToString();
+                    string namThongBao = DateTime.Now.Year.ToString();
+
+                    if (data != null)
+                    {
+                        var list = data.ToList();
+
+                        Dictionary<string, string> info = new Dictionary<string, string>()
+                        {
+                            {"tenkhoahoc", monhoc.TenKhoaHoc},
+                            {"donvidaotao", monhoc.DonViDaoTao},
+                            {"ngaybatdau", monhoc.NgayBatDau.Value.Date.ToString("dd/MM/yyyy")},
+                            {"ngayketthuc", monhoc.NgayKetThuc.Value.Date.ToString("dd/MM/yyyy")},
+                            {"chiphi", monhoc.ChiPhi.Value.ToString("#,0 VND") },
+                            {"ngaythongbao", ngayThongBao },
+                            {"thangthongbao", thangThongBao },
+                            {"namthongbao", namThongBao},
+                            {"nguoitao", TENNV},
+                            {"chucvu", CHUCVU},
+                            {"phongban", PHONGBAN},
+                        };
+
+                        wordExport.WriteFields(info);
+                        wordExport.SaveAs(saveDialog.FileName);
+
+                        MessageBox.Show("Xuất file thành công!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool ValidateInput()

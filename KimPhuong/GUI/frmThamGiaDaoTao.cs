@@ -86,7 +86,19 @@ namespace KimPhuong.GUI
 
         public void loadThamGia()
         {
+            dgv_QLThamGiaDaoTao.DataSource = null;
+
             dgv_QLThamGiaDaoTao.DataSource = tgbll.getAllKhoaDaoTao();
+
+            if(dgv_QLThamGiaDaoTao.Rows.Count > 0 )
+            {
+                dgv_QLThamGiaDaoTao.Columns["MaKhoaDaoTao"].HeaderText = "Mã khóa đào tạo";
+                dgv_QLThamGiaDaoTao.Columns["TenKhoaHoc"].HeaderText = "Tên khóa học";
+                dgv_QLThamGiaDaoTao.Columns["HoTen"].HeaderText = "Họ và tên";
+                dgv_QLThamGiaDaoTao.Columns["NgayThamGia"].HeaderText = "Ngày tham gia";
+                dgv_QLThamGiaDaoTao.Columns["KetQua"].HeaderText = "Kết quả";
+                dgv_QLThamGiaDaoTao.Columns["ChungChi"].HeaderText = "Chứng chỉ"; 
+            }
         }
 
         private void frmThamGiaDaoTao_Load(object sender, EventArgs e)
@@ -148,6 +160,26 @@ namespace KimPhuong.GUI
         public void disable()
         {
             cb_KhoaDaoTao.Enabled = cb_NhanVien.Enabled = dtp_NgayThamGia.Enabled = btn_UploadFileChungChi.Enabled = txt_KetQua.Enabled = false;
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTim.Text.Trim();
+            var results = tgbll.Search(keyword);
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (results.Any())
+            {
+                dgv_QLThamGiaDaoTao.DataSource = results;
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy kết quả phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void menu_QLThamGiaDaoTao_ButtonClicked(object sender, DynamicControl.menucontrol2.ButtonType buttonType, EventArgs e)
@@ -234,7 +266,9 @@ namespace KimPhuong.GUI
                     break;
 
                 case DynamicControl.menucontrol2.ButtonType.Reload:
+                    loadNhanVien();
                     loadKhoaDaoTao();
+                    loadThamGia();
                     disable();
                     break;
 

@@ -116,5 +116,37 @@ namespace KimPhuong.DAL
             return null;
         }
 
+        public List<ThamGiaKhoaDaoTaoDTO> Search(string keyword)
+        {
+            try
+            {
+                var query = from tgkdt in db.ThamGiaDaoTaos
+                            join nv in db.NhanViens on tgkdt.MaNV equals nv.MaNV
+                            join khoadt in db.KhoaDaoTaos on tgkdt.MaKhoaDaoTao equals khoadt.MaKhoaDaoTao
+                            where string.IsNullOrEmpty(keyword) ||
+                                  tgkdt.MaNV.ToString().Contains(keyword) ||
+                                  nv.HoTen.Contains(keyword) ||
+                                  tgkdt.MaKhoaDaoTao.ToString().Contains(keyword) ||
+                                  khoadt.TenKhoaHoc.Contains(keyword) ||
+                                  tgkdt.KetQua.Contains(keyword) ||
+                                  tgkdt.ChungChi.Contains(keyword)
+                            select new ThamGiaKhoaDaoTaoDTO(
+                                tgkdt.MaNV,
+                                nv.HoTen,
+                                tgkdt.MaKhoaDaoTao,
+                                khoadt.TenKhoaHoc,
+                                tgkdt.NgayThamGia.Value,
+                                tgkdt.KetQua,
+                                tgkdt.ChungChi
+                            );
+
+                return query.ToList();
+            }
+            catch
+            {
+                return new List<ThamGiaKhoaDaoTaoDTO>();
+            }
+        }
+
     }
 }

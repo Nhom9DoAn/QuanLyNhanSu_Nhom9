@@ -15,6 +15,12 @@ namespace KimPhuong.DAL
             db = new dbQuanLyNhanSuDataContext();
         }
 
+        public KhoaDaoTao Get1KhoaDaoTao(int maKhoaHoc)
+        {
+                return db.KhoaDaoTaos.FirstOrDefault(t => t.MaKhoaDaoTao == maKhoaHoc);
+        }
+
+
         public List<dynamic> GetAll()
         {
             try
