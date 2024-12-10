@@ -51,7 +51,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDangNhapUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDangNhapUser";
+            this.Text = "ĐĂNG NHẬP";
             this.ResumeLayout(false);
 
         }

@@ -12,6 +12,7 @@ using KimPhuong.GUI;
 using Sunny.UI;
 using GUI;
 using Main.Phap_Form;
+using Main.ModelTrain;
 
 namespace Main
 {
@@ -72,6 +73,7 @@ namespace Main
                 Aside.CreateChildNode(root, AddPage(new frmQuanLyCongTac(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmChucVu(), ++pageIndex));
                 Aside.CreateChildNode(root, AddPage(new frmQLNhanThan(), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new FormDiemDanh(), ++pageIndex));
 
                 pageIndex = 3000;
                 root = Aside.CreateNode("PHÁT TRIỂN", 61451, 24, pageIndex);
@@ -86,6 +88,11 @@ namespace Main
 
                 pageIndex = 5000;
                 root = Aside.CreateNode("THỐNG KÊ", 61451, 24, pageIndex);
+
+                pageIndex = 6000;
+                root = Aside.CreateNode("MODEL", 61451, 24, pageIndex);
+                Aside.CreateChildNode(root, AddPage(new ModelForm(), ++pageIndex));
+                Aside.CreateChildNode(root, AddPage(new PredictForm(), ++pageIndex));
             }
             else if (chucVu == "Bộ phận phát triển")
             {

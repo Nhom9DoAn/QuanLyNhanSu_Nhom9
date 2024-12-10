@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DAL;
+using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Main
 {
-    public partial class FormDiemDanh : Form
+    public partial class FormDiemDanh : UIPage
     {
         public FormDiemDanh()
         {

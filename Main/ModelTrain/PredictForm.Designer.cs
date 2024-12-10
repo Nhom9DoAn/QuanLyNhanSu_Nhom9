@@ -52,7 +52,7 @@
             this.comboBoxExperienceLevel.FormattingEnabled = true;
             this.comboBoxExperienceLevel.Location = new System.Drawing.Point(12, 12);
             this.comboBoxExperienceLevel.Name = "comboBoxExperienceLevel";
-            this.comboBoxExperienceLevel.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxExperienceLevel.Size = new System.Drawing.Size(200, 28);
             this.comboBoxExperienceLevel.TabIndex = 0;
             // 
             // comboBoxEmploymentType
@@ -61,7 +61,7 @@
             this.comboBoxEmploymentType.FormattingEnabled = true;
             this.comboBoxEmploymentType.Location = new System.Drawing.Point(12, 39);
             this.comboBoxEmploymentType.Name = "comboBoxEmploymentType";
-            this.comboBoxEmploymentType.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxEmploymentType.Size = new System.Drawing.Size(200, 28);
             this.comboBoxEmploymentType.TabIndex = 1;
             // 
             // comboBoxJobTitle
@@ -70,7 +70,7 @@
             this.comboBoxJobTitle.FormattingEnabled = true;
             this.comboBoxJobTitle.Location = new System.Drawing.Point(12, 66);
             this.comboBoxJobTitle.Name = "comboBoxJobTitle";
-            this.comboBoxJobTitle.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxJobTitle.Size = new System.Drawing.Size(200, 28);
             this.comboBoxJobTitle.TabIndex = 2;
             // 
             // comboBoxCompanySize
@@ -79,14 +79,14 @@
             this.comboBoxCompanySize.FormattingEnabled = true;
             this.comboBoxCompanySize.Location = new System.Drawing.Point(12, 93);
             this.comboBoxCompanySize.Name = "comboBoxCompanySize";
-            this.comboBoxCompanySize.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxCompanySize.Size = new System.Drawing.Size(200, 28);
             this.comboBoxCompanySize.TabIndex = 3;
             // 
             // numericUpDownRemoteRatio
             // 
             this.numericUpDownRemoteRatio.Location = new System.Drawing.Point(12, 120);
             this.numericUpDownRemoteRatio.Name = "numericUpDownRemoteRatio";
-            this.numericUpDownRemoteRatio.Size = new System.Drawing.Size(200, 20);
+            this.numericUpDownRemoteRatio.Size = new System.Drawing.Size(200, 26);
             this.numericUpDownRemoteRatio.TabIndex = 4;
             this.numericUpDownRemoteRatio.ValueChanged += new System.EventHandler(this.numericUpDownRemoteRatio_ValueChanged);
             // 
@@ -102,7 +102,7 @@
             // 
             // PredictForm
             // 
-            this.ClientSize = new System.Drawing.Size(224, 181);
+            this.ClientSize = new System.Drawing.Size(237, 186);
             this.Controls.Add(this.buttonPredict);
             this.Controls.Add(this.numericUpDownRemoteRatio);
             this.Controls.Add(this.comboBoxCompanySize);

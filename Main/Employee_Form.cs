@@ -14,7 +14,7 @@ using Sunny.UI;
 namespace Main.Phap_Form
 {
 
-    public partial class Employee_Form : Form
+    public partial class Employee_Form : UIPage
     {
         public int maNV { get; set; }
         public Employee_Form()

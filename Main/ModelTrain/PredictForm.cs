@@ -1,4 +1,5 @@
 ﻿using Microsoft.ML;
+using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Main.ModelTrain
 {
-    public partial class PredictForm : Form
+    public partial class PredictForm : UIPage
     {
         private readonly MLContext _context;
         private readonly ITransformer _trainedModel;

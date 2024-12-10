@@ -11,10 +11,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.ML.Trainers;
 using System.IO;
+using Sunny.UI;
 
 namespace Main.ModelTrain
 {
-    public partial class ModelForm : Form
+    public partial class ModelForm : UIPage
     {
         public ModelForm()
         {

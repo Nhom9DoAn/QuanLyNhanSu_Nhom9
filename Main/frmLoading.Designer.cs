@@ -50,7 +50,7 @@ namespace Main
             this.ClientSize = new System.Drawing.Size(526, 289);
             this.Controls.Add(this.guna2PictureBox1);
             this.Name = "frmLoading";
-            this.Text = "frmLoading";
+            this.Text = "LOADING...";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
