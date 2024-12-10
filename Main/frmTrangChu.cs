@@ -88,7 +88,7 @@ namespace Main
 
                 pageIndex = 5000;
                 root = Aside.CreateNode("THỐNG KÊ", 61451, 24, pageIndex);
-
+                Aside.CreateChildNode(root, AddPage(new frm_BaoCaoTongKetCongTac(tenNhanVien, phongban), ++pageIndex));
                 pageIndex = 6000;
                 root = Aside.CreateNode("MODEL", 61451, 24, pageIndex);
                 Aside.CreateChildNode(root, AddPage(new ModelForm(), ++pageIndex));
