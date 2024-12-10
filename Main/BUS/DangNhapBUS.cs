@@ -31,5 +31,13 @@ namespace Main.BUS
         {
             return dangNhapDAO.LayMaNV(tenDangNhap);
         }
+        public string LayPhongBan(int maNV)
+        {
+            return dangNhapDAO.LayPhongBan(maNV);
+        }
+        public bool doiMatKhau(string taiKhoan, string matKhauMoi)
+        {
+            return dangNhapDAO.doiMatKhau(taiKhoan, matKhauMoi);
+        }
     }
 }

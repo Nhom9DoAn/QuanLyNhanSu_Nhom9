@@ -49,23 +49,27 @@
             // 
             // uiAvatar1
             // 
+            this.uiAvatar1.Dock = System.Windows.Forms.DockStyle.Right;
             this.uiAvatar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.uiAvatar1.Location = new System.Drawing.Point(2173, 5);
+            this.uiAvatar1.Location = new System.Drawing.Point(2176, 0);
             this.uiAvatar1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiAvatar1.Name = "uiAvatar1";
-            this.uiAvatar1.Size = new System.Drawing.Size(60, 60);
+            this.uiAvatar1.Size = new System.Drawing.Size(60, 71);
             this.uiAvatar1.TabIndex = 0;
             this.uiAvatar1.Text = "uiAvatar1";
+            this.uiAvatar1.Click += new System.EventHandler(this.uiAvatar1_Click);
             // 
             // lblTenDangNhap
             // 
+            this.lblTenDangNhap.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblTenDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblTenDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lblTenDangNhap.Location = new System.Drawing.Point(1982, 22);
+            this.lblTenDangNhap.Location = new System.Drawing.Point(1991, 0);
             this.lblTenDangNhap.Name = "lblTenDangNhap";
-            this.lblTenDangNhap.Size = new System.Drawing.Size(185, 28);
+            this.lblTenDangNhap.Size = new System.Drawing.Size(185, 71);
             this.lblTenDangNhap.TabIndex = 1;
             this.lblTenDangNhap.Text = "uiLabel1";
+            this.lblTenDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmTrangChu
             // 

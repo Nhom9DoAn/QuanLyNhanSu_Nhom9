@@ -14,6 +14,10 @@ namespace KimPhuong.BUL
         {
             khoaDaoTaoDAO = new KhoaDaoTaoDAO();
         }
+        public KhoaDaoTao Get1KhoaDaoTao(int maKhoaHoc)
+        {
+            return khoaDaoTaoDAO.Get1KhoaDaoTao(maKhoaHoc);
+        }
         public List<dynamic> GetAll()
         {
             return khoaDaoTaoDAO.GetAll();
@@ -37,6 +41,10 @@ namespace KimPhuong.BUL
         public List<dynamic> Search(string keyword)
         {
             return khoaDaoTaoDAO.Search(keyword);
+        }
+        public List<KhoaDaoTao> GetKhoaDaoTaoByTrangThai(string trangThai)
+        {
+            return khoaDaoTaoDAO.GetKhoaDaoTaoByTrangThai(trangThai);
         }
     }
 }

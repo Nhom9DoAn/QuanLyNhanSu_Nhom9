@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_NHANSU_UDTM" Class="dbQuanLyNhanSuDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ACER\FUANG;Initial Catalog=QL_NHANSU_UDTM;Integrated Security=True" SettingsObjectName="KimPhuong.Properties.Settings" SettingsPropertyName="QL_NHANSU_UDTMConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.ChamCong" Member="ChamCongs">
-    <Type Name="ChamCong">
-      <Column Name="MaChamCong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="GioVao" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="GioRa" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Association Name="NhanVien_ChamCong" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ACER\FUANG;Initial Catalog=QL_NHANSU_UDTM;Integrated Security=True" SettingsObjectName="KimPhuong.Properties.Settings" SettingsPropertyName="QL_NHANSU_UDTMConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.UngVien" Member="UngViens">
     <Type Name="UngVien">
       <Column Name="MaUngVien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -23,6 +11,18 @@
       <Column Name="NgayUngTuyen" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TrangThai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="TuyenDung_UngVien" Member="TuyenDung" ThisKey="MaUT" OtherKey="MaUT" Type="TuyenDung" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChamCong" Member="ChamCongs">
+    <Type Name="ChamCong">
+      <Column Name="MaChamCong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GioVao" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="GioRa" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="NhanVien_ChamCong" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ChucVu" Member="ChucVus">
@@ -45,7 +45,7 @@
       <Column Name="LyDoChuyen" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="TrangThai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="NgayCapNhatTrangThai" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NguoiDuyet" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NguoiDuyet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GhiChuDuyet" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Association Name="NhanVien_ChuyenPhongBan" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
       <Association Name="PhongBan_ChuyenPhongBan" Member="PhongBan" ThisKey="MaPB_Cu" OtherKey="MaPB" Type="PhongBan" IsForeignKey="true" />

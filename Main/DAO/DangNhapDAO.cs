@@ -8,7 +8,7 @@ namespace Main.DAO
 {
     public class DangNhapDAO
     {
-        private dbDangNhapDataContext dbDangNhapDataContext;
+        private  dbDangNhapDataContext dbDangNhapDataContext;
         public DangNhapDAO()
         {
             dbDangNhapDataContext = new dbDangNhapDataContext();
@@ -61,6 +61,47 @@ namespace Main.DAO
                     .FirstOrDefault();
 
                 return taiKhoan?.MaNV ?? 0;
+            }
+        }
+
+        public string LayPhongBan(int maNV)
+        {
+            using (var db = new dbDangNhapDataContext())
+            {
+                var nhanVien = db.NhanViens
+                    .Where(nv => nv.MaNV == maNV)
+                    .FirstOrDefault();
+
+                var pb = db.PhongBans
+                    .Where(cv => cv.MaPB == nhanVien.MaPB)
+                    .FirstOrDefault();
+
+                return pb?.TenPB;
+            }
+        }
+
+        public bool doiMatKhau(string taiKhoan, string matKhauMoi)
+        {
+            try
+            {
+                using (var db = new dbDangNhapDataContext())
+                {
+                    var kq = db.TaiKhoans.FirstOrDefault(tk => tk.TenDangNhap == taiKhoan);
+
+                    if (kq == null)
+                    {
+                        return false;
+                    }
+                    
+                    kq.MatKhau = matKhauMoi;
+                    db.SubmitChanges();
+
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 

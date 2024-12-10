@@ -25,8 +25,7 @@ namespace Main
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new FormDiemDanh());
-            Application.Run(new PredictForm());
+            Application.Run(new frmDangNhapUser());
         }
     }
 }

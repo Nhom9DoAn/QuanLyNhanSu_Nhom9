@@ -175,13 +175,14 @@ namespace KimPhuong.DAL
                 if (!string.IsNullOrEmpty(keyword))
                 {
                     query = query.Where(cp =>
-                        cp.NhanVien.HoTen.Contains(keyword) ||
-                        cp.PhongBan.TenPB.Contains(keyword) ||
-                        cp.LyDoChuyen.Contains(keyword) ||
-                        cp.NguoiTao.Contains(keyword) ||
-                        cp.TrangThai.Contains(keyword)
+                        (cp.NhanVien.HoTen != null && cp.NhanVien.HoTen.Contains(keyword)) ||
+                        (cp.PhongBan.TenPB != null && cp.PhongBan.TenPB.Contains(keyword)) ||
+                        (cp.LyDoChuyen != null && cp.LyDoChuyen.Contains(keyword)) ||
+                        (cp.NguoiTao != null && cp.NguoiTao.Contains(keyword)) ||
+                        (cp.TrangThai != null && cp.TrangThai.Contains(keyword))
                     );
                 }
+
 
                 var result = query.Select(cp => new
                 {

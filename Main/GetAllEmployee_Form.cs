@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using BLL;
 using DAL;
 using Main.Phap_Form;
+using Sunny.UI;
 
 namespace Main
 {
-    public partial class GetAllEmployee_Form : Form
+    public partial class GetAllEmployee_Form : UIPage
     {
         public GetAllEmployee_Form()
         {
